@@ -14,4 +14,6 @@ def get_db():
 
 
 def init_db():
-    pass
+    db = get_db()
+    with open('init.sql') as f:
+        db.executescript(f.read())
