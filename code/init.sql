@@ -18,3 +18,4 @@ CREATE TABLE cargo(
     destin TEXT,  /* 终点 */
     m_cargo FLOAT
 );
+
