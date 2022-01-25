@@ -57,7 +57,7 @@ output.to_csv(path, encoding='utf-8', index=False, header=False)
 db.close_db(mydb)
 
 input_data_path = path
-input_data = pd.read_csv(input_data_path, header=None)  # 读取csv文件
+input_data = pd.read_csv(input_data_path,header=None)  # 读取csv文件
 
 # print(input_data)
 
