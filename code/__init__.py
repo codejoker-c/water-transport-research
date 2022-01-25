@@ -27,11 +27,11 @@ info_ship = cur.fetchall()
 
 Loc_Correspond={"重庆":15,"大连":20,"东莞":22,"福州":28,"泰兴":42,"南通":73,"海安":56,"盐城":35,"宣城":5}
 
-Ship_info_array=cur.execute(
+Ship_info_array=cur.execute(    
     'SELECT p.id, loc, M_ship, V_ship, Cost_trans, Cost_live '        
     ' FROM ship p '
 ).fetchall()
-Cargo_info_array=cur.execute(
+Cargo_info_array=cur.execute(   
     'SELECT p.id, depart, destin, m_cargo, target_money '        
     ' FROM cargo p '
 ).fetchall()
@@ -146,3 +146,4 @@ if __name__ == '__main__':
     f.close()
 
 # 需要的工作是将这些信息进行计算，之后将权值存到一个文件中去
+
