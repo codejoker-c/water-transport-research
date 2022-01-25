@@ -14,9 +14,13 @@ def get_db():
     return db
 
 
-def init_db():
-    db = get_db()
-    with open('init.sql',encoding='utf-8',mode='r') as f:
-        db.executescript(f.read())
+def init_db(db):
+    with open('init.sql', encoding='utf-8', mode='r') as f1:
+        db.executescript(f1.read())
+    with open('test.sql', encoding='utf-8', mode='r') as f2:
+        db.executescript(f2.read())
 
 
+def close_db(db):
+    if db is not None:
+        db.close()
