@@ -25,7 +25,6 @@ Cargo_info_array = cur.execute(
     ' FROM cargo p '
 ).fetchall()
 
-
 result = [[0 for i in range(len(Ship_info_array))] for j in range(len(Cargo_info_array))]
 # print(result)
 
@@ -50,25 +49,21 @@ for i in range(len(Ship_info_array)):
 
         result[i][j] = Profit
 
-output = pd.DataFrame(data=result[1:], columns=result[0])
+output = pd.DataFrame(data=result)
 
 
-path = os.path.join(os.getcwd(),'csv','result.csv')
-output.to_csv(path, encoding='utf-8')
+path = os.path.join(os.getcwd(), 'csv', 'result.csv')
+output.to_csv(path, encoding='utf-8', index=False, header=False)
 db.close_db(mydb)
 
 input_data_path = path
 input_data = pd.read_csv(input_data_path, header=None)  # 读取csv文件
 
+# print(input_data)
 
 input_data.head()
 X = input_data.values.tolist()  # 将每一行数据转化成一个列表
-# 略过第一列
-Y = []
-for i in X:
-    Y.append(i[1:])
-
-graphlist = Y
+graphlist = X
 
 ningraphlist_num = 1000000000
 for i in range(len(graphlist)):
@@ -85,11 +80,10 @@ else:
         for j in range(len(graphlist[i])):
             graphlist[i][j] = int(graphlist[i][j])
 
-
 # 声明数据结构  创建一个Array的数组a用作输入
 a = np.array(graphlist)  # np array with dimension N*N
 
-calout_path = os.path.join(os.getcwd(),'csv','match_result.csv')
+calout_path = os.path.join(os.getcwd(), 'csv', 'match_result.csv')
 
 # 开始执行
 if __name__ == '__main__':
@@ -108,6 +102,3 @@ if __name__ == '__main__':
         # writer.writerow(["index","a_name"])
         writer.writerows(csvout)
 # 需要的工作是将这些信息进行计算，之后将权值存到一个文件中去
-
-# cur.close()
-db.close_db(mydb)
