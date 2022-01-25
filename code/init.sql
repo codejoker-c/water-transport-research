@@ -17,6 +17,6 @@ CREATE TABLE cargo(
     depart TEXT NOT NULL,  /* 出发地 */
     destin TEXT NOT NULL,  /* 终点 */
     m_cargo FLOAT NUO NULL, /* 货重 kg */
-    target_money FLOAT NUO NULL /*目标价钱*/
+    target_money FLOAT NUO NULL /* 目标价钱 */
 );
 
