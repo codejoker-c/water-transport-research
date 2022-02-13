@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/login_pic"
+    tools:context=".MainActivity"
+    >
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textColor="@color/black"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="395dp"
+        android:backgroundTint="@color/teal_200"
+        android:clickable="true"
+        android:onClick="onClick">
+    </Button>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="277dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="60dp"
+        android:padding="5dp"
+        android:rotationX="0"
+        android:text="欢迎使用，请注册/登录"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="360dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="@string/reg"
+
+        android:onClick="onClick"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="用户名:"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="265dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="250dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="密码:"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="320dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="300dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:visibility="visible" />
+
+</RelativeLayout>
