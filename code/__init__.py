@@ -1,6 +1,4 @@
 import os
-
-import km_code
 import db
 import numpy as np
 import pandas as pd
