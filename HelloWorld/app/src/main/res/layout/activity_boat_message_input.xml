@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BoatMessageInput"
+    android:background="@mipmap/ocean"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="欢迎输入船主信息"
+        android:background="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+
+        ></TextView>
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="船主姓名:"
+       android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+       android:layout_marginLeft="10dp"
+       android:layout_marginTop="150dp"
+       ></TextView>
+
+    <EditText
+        android:id="@+id/name_ship"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:background="@drawable/round_editstyle"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="145dp"
+        ></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="船主联系方式:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="200dp"
+        ></TextView>
+
+ <EditText
+     android:id="@+id/phone_ship"
+     android:layout_width="130dp"
+     android:layout_height="30dp"
+     android:layout_marginLeft="130dp"
+     android:layout_marginTop="195dp"
+     android:inputType="phone"
+     android:background="@drawable/round_editstyle"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="船重(kg):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="250dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/weight_ship"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="245dp"
+        android:background="@drawable/round_editstyle"
+        android:inputType="number"></EditText>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="300dp"
+        android:text="船载重(kg):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
+
+    <EditText
+        android:id="@+id/kg_ship"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="295dp"
+        android:background="@drawable/round_editstyle"
+        android:inputType="number"></EditText>
+
+    <TextView
+        android:id="@+id/kind_txt_ship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="350dp"
+        android:text="船载重货物类型(可选择):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
+
+
+    <Spinner
+        android:id="@+id/spinner_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:layout_toRightOf="@+id/kind_txt_ship"
+        android:background="@drawable/round_editstyle"
+        android:entries="@array/spinner_array"></Spinner>
+
+    <TextView
+        android:id="@+id/spin_info_ship"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="50dp"
+        android:visibility="invisible"
+        ></TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="400dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="船所在地(实例：xx市):"></TextView>
+
+ <EditText
+     android:id="@+id/depart_ship"
+     android:layout_width="130dp"
+     android:layout_height="30dp"
+     android:background="@drawable/round_editstyle"
+     android:layout_marginLeft="185dp"
+     android:layout_marginTop="395dp"
+     ></EditText>
+
+    <Button
+        android:id="@+id/submit_ship"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="450dp"
+        android:background="@color/teal_200"
+        android:onClick="onClick"
+        android:text="提交"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"></Button>
+
+
+
+</RelativeLayout>
