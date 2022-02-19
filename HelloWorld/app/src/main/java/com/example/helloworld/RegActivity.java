@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +13,13 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.concurrent.ExecutionException;
+
 public class RegActivity extends AppCompatActivity {
 
     EditText reg_username,reg_password,reg_password_confirm;
-    TextView wrong_pass;
+    TextView error;
+    private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,36 +29,55 @@ public class RegActivity extends AppCompatActivity {
         reg_username=findViewById(R.id.reg_username);
         reg_password=findViewById(R.id.reg_password);
         reg_password_confirm=findViewById(R.id.reg_password_confirm);
-        wrong_pass=findViewById(R.id.wrong_password);
+        //显示错误信息
+        error=findViewById(R.id.reg_error);
 
+        //通过ViewModelProvider来获取WT_ViewModel实例，然后与数据库交互
+        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
 
 
     }
 
-    public void onClick(View view) {
-        Intent intent=new Intent();
+    public void onClick(View view) throws ExecutionException, InterruptedException {
+        Intent intent=new Intent(this,RegActivity.class);
         switch (view.getId()) {
             case R.id.reg_button:
-
-                String msg1=reg_password.getText().toString().trim();
-                String msg2=reg_password_confirm.getText().toString().trim();
-/*                wrong_pass.setText(msg2);
-                wrong_pass.setVisibility(view.VISIBLE);*/
-                if(msg1.equals(msg2)==true){
-                    intent.setClass(RegActivity.this,HomeMenuActivity.class);
-/*                    if (TextUtils.isEmpty(msg1)) {
-                        Toast.makeText(this,"输入内容不能为空！",Toast.LENGTH_SHORT).show();
-                        return;
-                    }*/
+                String psd=reg_password.getText().toString().trim();
+                String psd_confirm=reg_password_confirm.getText().toString().trim();
+                String username = reg_username.getText().toString().trim();
+                if(username.isEmpty()){
+                    error.setText("用户名不能为空！");
+                    error.setVisibility(view.VISIBLE);
+                }
+                else if(psd.isEmpty()){
+                    error.setText("密码不能为空！");
+                    error.setVisibility(view.VISIBLE);
+                }
+                else if(psd_confirm.isEmpty()){
+                    error.setText("请确认您的密码");
+                    error.setVisibility(view.VISIBLE);
                 }
                 else{
-                    wrong_pass.setVisibility(view.VISIBLE);
-                    return;
+                    User muser = mWT_ViewModel.findUserWithUsername(username).get();
+                    if(muser!=null){
+                        error.setText("该用户名已存在！");
+                        error.setVisibility(view.VISIBLE);
+                    }
+                    else{
+                        if(psd.equals(psd_confirm)){
+                            intent.setClass(RegActivity.this,MainActivity.class);
+                            User new_user = new User(username,psd);
+                            mWT_ViewModel.insert(new_user);
+                            startActivity(intent);
+                        }
+                        else{
+                            error.setText("两次输入的密码不一致！");
+                            error.setVisibility(view.VISIBLE);
+                        }
+                    }
                 }
-
                 break;
         }
-        startActivity(intent);
     }
 
     //你需要监听的edit对象调用addTextChangedListener方法

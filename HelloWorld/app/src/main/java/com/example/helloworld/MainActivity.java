@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,13 +12,16 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.concurrent.ExecutionException;
+
 public class MainActivity extends AppCompatActivity {
 
-    Button button;
+    Button login_btn;
     //ImageView imageview;
-    TextView textView;
-    EditText editText1;
-    EditText editText2;
+    TextView textView,error;
+    EditText login_username;
+    EditText login_password;
+    WT_ViewModel mWT_ViewModel;
 
 
     @Override
@@ -25,44 +29,53 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button=findViewById(R.id.button);
+        login_btn=findViewById(R.id.login_btn);
         //imageview=findViewById(R.id.login_pic);
         textView=findViewById(R.id.textView);
-        editText1=findViewById(R.id.editTextTextPersonName);
-        editText2=findViewById(R.id.editTextTextPassword);
-
-
-        //imageview.setImageResource(R.drawable.cdbfd312b6e69308fb8dcbcd1231d2d);
-        /*button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                imageview.setVisibility(View.VISIBLE);
-            }
-        });*/
-
-/*        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent();
-                intent.setClass(MainActivity.this,HomeMenuActivity.class);
-                startActivity(intent);
-            }
-        });*/
-
+        login_username=findViewById(R.id.login_username);
+        login_password=findViewById(R.id.login_password);
+        error = findViewById(R.id.login_error);
+        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
     }
 
 
-    public void onClick(View view) {
+    public void onClick(View view) throws ExecutionException, InterruptedException {
         Intent intent=new Intent();
         switch (view.getId()) {
-            case R.id.button:
-                intent.setClass(MainActivity.this,HomeMenuActivity.class);
+            case R.id.login_btn:
+                String username = login_username.getText().toString().trim();
+                String psd = login_password.getText().toString().trim();
+                if(username.isEmpty()){
+                    error.setText("用户名不能为空！");
+                    error.setVisibility(view.VISIBLE);
+                }
+                else if(psd.isEmpty()){
+                    error.setText("密码不能为空！");
+                    error.setVisibility(view.VISIBLE);
+                }
+                else{
+                    User user = mWT_ViewModel.findUserWithUsername(username).get();
+                    if(user==null){
+                        error.setText("该用户名不存在");
+                        error.setVisibility(view.VISIBLE);
+                    }
+                    else{
+                        if(psd.equals(user.getPassword())){
+                            intent.setClass(MainActivity.this,HomeMenuActivity.class);
+                            startActivity(intent);
+                        }
+                        else{
+                            error.setText("密码错误！");
+                            error.setVisibility(view.VISIBLE);
+                        }
+                    }
+                }
                 break;
             case R.id.register:
                 intent.setClass(MainActivity.this,RegActivity.class);
+                startActivity(intent);
                 break;
         }
-        startActivity(intent);
 
 
     }

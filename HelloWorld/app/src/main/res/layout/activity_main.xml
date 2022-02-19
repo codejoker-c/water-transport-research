@@ -10,7 +10,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login_btn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:text="登录"
@@ -59,7 +59,7 @@
         ></TextView>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/login_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70dp"
@@ -71,15 +71,14 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="密码:"
-        android:textStyle="bold"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="320dp"
-        ></TextView>
+        android:text="密码:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"></TextView>
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/login_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="70dp"
@@ -87,5 +86,17 @@
         android:ems="10"
         android:inputType="textPassword"
         android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/login_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="360dp"
+        android:textColor="@color/red"
+        android:visibility="invisible"
+
+        />
 
 </RelativeLayout>
