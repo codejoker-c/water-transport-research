@@ -3,14 +3,15 @@ package com.example.helloworld;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.helloworld.database.User;
+import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.concurrent.ExecutionException;
 
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         login_btn=findViewById(R.id.login_btn);
         //imageview=findViewById(R.id.login_pic);
-        textView=findViewById(R.id.textView);
+        textView=findViewById(R.id.reg_textView);
         login_username=findViewById(R.id.login_username);
         login_password=findViewById(R.id.login_password);
         error = findViewById(R.id.login_error);

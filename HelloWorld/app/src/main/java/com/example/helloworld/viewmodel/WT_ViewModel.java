@@ -1,10 +1,12 @@
-package com.example.helloworld;
+package com.example.helloworld.viewmodel;
 
 
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
 
+import com.example.helloworld.database.User;
+import com.example.helloworld.database.WT_Repository;
 import com.google.common.util.concurrent.ListenableFuture;
 
 public class WT_ViewModel extends AndroidViewModel {

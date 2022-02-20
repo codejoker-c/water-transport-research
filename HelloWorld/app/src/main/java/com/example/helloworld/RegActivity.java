@@ -5,13 +5,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import com.example.helloworld.database.User;
+import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.concurrent.ExecutionException;
 
@@ -76,6 +75,10 @@ public class RegActivity extends AppCompatActivity {
                         }
                     }
                 }
+                break;
+            case R.id.login_textview:
+                intent.setClass(RegActivity.this,MainActivity.class);
+                startActivity(intent);
                 break;
         }
     }

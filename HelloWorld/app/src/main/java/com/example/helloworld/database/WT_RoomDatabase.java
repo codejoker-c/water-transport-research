@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.example.helloworld.database;
 
 
 import android.content.Context;
@@ -9,6 +9,7 @@ import androidx.room.Insert;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
