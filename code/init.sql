@@ -16,7 +16,7 @@ CREATE TABLE cargo(
     id INTEGER PRIMARY KEY,
     depart TEXT NOT NULL,  /* 出发地 */
     destin TEXT NOT NULL,  /* 终点 */
-    m_cargo FLOAT NUO NULL, /* 货重 kg */
-    target_money FLOAT NUO NULL /*目标价钱*/
+    m_cargo FLOAT NOT NULL, /* 货重 kg */
+    target_money FLOAT NOT NULL /* 目标价钱 */
 );
 

@@ -13,7 +13,9 @@
             android:name=".CargoMessageInput"
             android:exported="false" />
         <activity
-            android:name=".BoatMessageInput"
+            android:name=".BoatMessageInput"/>
+        <activity
+            android:name=".UserActivity"
             android:exported="false" />
         <activity
             android:name=".RegActivity"

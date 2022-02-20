@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HomeMenuActivity"
+    >
 
-    android:padding="20dp">
+    <include layout="@layout/main_titlebar"/>
 
     <Button
         android:id="@+id/home_btn1"

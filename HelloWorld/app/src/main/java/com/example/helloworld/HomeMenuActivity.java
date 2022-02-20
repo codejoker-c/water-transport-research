@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.helloworld.user.UserContext;
+
 public class HomeMenuActivity extends AppCompatActivity {
 
     Button btn1,btn2,btn3;
@@ -35,6 +37,9 @@ public class HomeMenuActivity extends AppCompatActivity {
                 break;
             case R.id.home_btn3:
                 intent.setClass(HomeMenuActivity.this,AboutActivity2.class);
+                break;
+            case R.id.ib_menu:
+                UserContext.user_center(intent,HomeMenuActivity.this);
                 break;
         }
         startActivity(intent);
