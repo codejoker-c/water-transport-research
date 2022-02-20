@@ -1,5 +1,8 @@
+//apply plugin: 'com.chaquo.python' //添加行
+
 plugins {
     id 'com.android.application'
+    id 'com.chaquo.python'
 }
 
 android {
@@ -13,6 +16,14 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 指定abi，如需在模拟器调试，增加"x86"，否则指定"armeabi-v7a"即可
+            abiFilters "armeabi-v7a", "x86"
+        }
+        python {
+            // 指定python路径
+            buildPython "D:/Python/python.exe"
+        }
     }
 
     buildTypes {

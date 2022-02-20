@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".CargoMessageInput"
+            android:exported="false" />
+        <activity
+            android:name=".BoatMessageInput"/>
+        <activity
             android:name=".UserActivity"
             android:exported="false" />
         <activity

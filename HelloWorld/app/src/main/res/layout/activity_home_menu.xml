@@ -15,11 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
 
-        android:text="输入数据"
+        android:text="船主输入数据"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-
-        android:layout_marginTop="180dp"
+        android:background="@color/purple_200"
+        android:layout_marginTop="150dp"
         android:onClick="onClick">
     </Button>
 
@@ -27,12 +27,25 @@
         android:id="@+id/home_btn2"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="查询数据"
+        android:text="货主输入数据"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        android:background="@color/purple_200"
+        android:layout_marginTop="40dp"
+
+        android:onClick="onClick">
+    </Button>
+
+    <Button
+        android:id="@+id/home_btn3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/purple_200"
+        android:text="查询匹配结果"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
 
         android:layout_marginTop="40dp"
-
         android:onClick="onClick">
     </Button>
 

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CargoMessageInput"
+    android:background="@mipmap/ocean"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="欢迎输入货物信息"
+        android:background="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+
+        ></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货主姓名:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="150dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/name_cargo"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:background="@drawable/round_editstyle"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="145dp"
+        ></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货主联系方式:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="200dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/phone_cargo"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="195dp"
+        android:inputType="phone"
+        android:background="@drawable/round_editstyle"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货重(kg):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="250dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/weight_cargo"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="245dp"
+        android:inputType="number"
+        android:background="@drawable/round_editstyle"></EditText>
+
+
+    <TextView
+        android:id="@+id/kind_txt_cargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货物类型(可选择):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="300dp"
+        ></TextView>
+
+
+    <Spinner
+        android:id="@+id/spinner_cargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_toRightOf="@+id/kind_txt_cargo"
+        android:background="@drawable/round_editstyle"
+        android:entries="@array/spinner_array"></Spinner>
+
+    <TextView
+        android:id="@+id/spin_info_cargo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="50dp"
+        android:visibility="invisible"
+        ></TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货所在地(示例：xx市):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="10dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/depart_cargo"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="345dp"
+        android:background="@drawable/round_editstyle"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货目的地(示例：xx市):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="10dp"
+        ></TextView>
+
+    <EditText
+        android:id="@+id/destination_cargo"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:background="@drawable/round_editstyle"
+        android:layout_marginLeft="182dp"
+        android:layout_marginTop="395dp"
+        ></EditText>
+
+
+    <Button
+        android:id="@+id/submit_cargo"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="450dp"
+        android:text="提交"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:background="@color/teal_200"
+        android:onClick="onClick"
+        ></Button>
+
+
+
+</RelativeLayout>
