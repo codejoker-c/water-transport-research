@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.helloworld.database.User;
+import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.concurrent.ExecutionException;
@@ -30,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        login_btn=findViewById(R.id.login_btn);
+        login_btn = findViewById(R.id.login_btn);
         //imageview=findViewById(R.id.login_pic);
-        textView=findViewById(R.id.reg_textView);
-        login_username=findViewById(R.id.login_username);
-        login_password=findViewById(R.id.login_password);
+        textView = findViewById(R.id.reg_textView);
+        login_username = findViewById(R.id.login_username);
+        login_password = findViewById(R.id.login_password);
         error = findViewById(R.id.login_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
     }
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     else{
                         if(psd.equals(user.getPassword())){
                             intent.setClass(MainActivity.this,HomeMenuActivity.class);
+                            UserContext.setLoginState(user);
                             startActivity(intent);
                         }
                         else{
@@ -74,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.register:
                 intent.setClass(MainActivity.this,RegActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ib_menu:
+                UserContext.user_center(intent,MainActivity.this);
                 startActivity(intent);
                 break;
         }
