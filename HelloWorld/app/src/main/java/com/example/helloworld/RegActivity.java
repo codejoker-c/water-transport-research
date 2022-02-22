@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.helloworld.database.User;
@@ -18,6 +20,7 @@ public class RegActivity extends AppCompatActivity {
 
     EditText reg_username,reg_password,reg_password_confirm;
     TextView error;
+    Spinner reg_indentity;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
 
     @Override
@@ -28,11 +31,25 @@ public class RegActivity extends AppCompatActivity {
         reg_username=findViewById(R.id.reg_username);
         reg_password=findViewById(R.id.reg_password);
         reg_password_confirm=findViewById(R.id.reg_password_confirm);
+        reg_indentity=findViewById(R.id.reg_identity);
         //显示错误信息
         error=findViewById(R.id.reg_error);
 
         //通过ViewModelProvider来获取WT_ViewModel实例，然后与数据库交互
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+
+        reg_indentity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String str=((TextView)view).toString();   //str存放选择的字符串
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
     }
