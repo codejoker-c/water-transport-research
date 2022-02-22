@@ -7,4 +7,11 @@
 
     </string-array>
 
+    <string-array name="spinner_login">
+        <item>船主</item>
+        <item>货主</item>
+
+    </string-array>
+
+
 </resources>

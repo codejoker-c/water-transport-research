@@ -6,9 +6,19 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import android.util.Log;
+import com.chaquo.python.Kwarg;
+import com.chaquo.python.PyObject;
+import com.chaquo.python.android.AndroidPlatform;
+import com.chaquo.python.Python;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.helloworld.database.User;
 import com.example.helloworld.user.UserContext;
@@ -23,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     TextView textView,error;
     EditText login_username;
     EditText login_password;
+    Spinner login_identity;
     WT_ViewModel mWT_ViewModel;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +46,25 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.reg_textView);
         login_username = findViewById(R.id.login_username);
         login_password = findViewById(R.id.login_password);
+        login_identity=findViewById(R.id.login_identity);
         error = findViewById(R.id.login_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+
+        login_identity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String str=((TextView) view).toString();   //str 用来存放船主或货主的身份信息
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
     }
 
 
@@ -86,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 }
 
 
