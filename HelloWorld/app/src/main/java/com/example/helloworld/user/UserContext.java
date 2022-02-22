@@ -44,5 +44,9 @@ public class UserContext {
         return isLogin;
     }
 
+    public static User getUser(){
+        return user;
+    }
+
 
 }

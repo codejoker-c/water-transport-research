@@ -85,7 +85,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
-        android:id="@+id/kg_ship"
+        android:id="@+id/loadweight_ship"
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:layout_marginLeft="100dp"
@@ -149,6 +149,15 @@
         android:onClick="onClick"
         android:text="提交"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"></Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/boat_info_error"
+        android:visibility="invisible"
+        android:text=""
+        android:textColor="@color/red"
+    />
 
 
 

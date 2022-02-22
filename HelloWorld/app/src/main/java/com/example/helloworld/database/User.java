@@ -24,6 +24,7 @@ public class User {
     @Ignore
     public Status status=Status.logout;
 
+    //ignore的字段不能放入构造函数中
     public User(String username,String password){
         this.username = username;
         this.password = password;

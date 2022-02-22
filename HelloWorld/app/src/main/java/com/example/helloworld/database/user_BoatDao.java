@@ -1,10 +1,14 @@
 package com.example.helloworld.database;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.google.common.util.concurrent.ListenableFuture;
+
+import java.util.List;
 
 @Dao()
 public interface user_BoatDao {
@@ -16,5 +20,11 @@ public interface user_BoatDao {
 
     @Query("DELETE FROM user_Boat WHERE username = :username")
     void deleteuserBoatWithUsername(String username);
+
+    @Update
+    void update(user_Boat userBoat);
+
+    @Query("SELECT * FROM USER_BOAT")
+    LiveData<List<user_Boat>> getAlluserBoat();
 
 }

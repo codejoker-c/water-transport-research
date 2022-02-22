@@ -3,7 +3,11 @@ package com.example.helloworld.database;
 import android.app.Application;
 
 
+import androidx.lifecycle.LiveData;
+
 import com.google.common.util.concurrent.ListenableFuture;
+
+import java.util.List;
 
 public class WT_Repository {
     private user_BoatDao muser_boatDao;
@@ -34,5 +38,25 @@ public class WT_Repository {
 
     public ListenableFuture<user_Cargo> finduserCargoWithUsername(String un){
         return muser_cargoDao.finduserCargoWithUsername(un);
+    }
+
+    public void update(user_Cargo userCargo){
+        WT_RoomDatabase.databaseWriteExecutor.execute(()->{
+            muser_cargoDao.updata(userCargo);
+        });
+    }
+
+    public void update(user_Boat userBoat){
+        WT_RoomDatabase.databaseWriteExecutor.execute(()->{
+            muser_boatDao.update(userBoat);
+        });
+    }
+
+    public LiveData<List<user_Boat>> getAlluserBoat(){
+        return muser_boatDao.getAlluserBoat();
+    }
+
+    public LiveData<List<user_Cargo>> getAlluserCargo(){
+        return muser_cargoDao.getAlluserCargo();
     }
 }

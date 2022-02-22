@@ -17,6 +17,7 @@ import com.example.helloworld.database.user_Boat;
 import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class RegActivity extends AppCompatActivity {
@@ -103,7 +104,7 @@ public class RegActivity extends AppCompatActivity {
                         intent.setClass(RegActivity.this,MainActivity.class);
                         startActivity(intent);
                     }
-
+                    List<user_Boat> u = mWT_ViewModel.getAlluserBoat().getValue();
                     /*
                     User muser = mWT_ViewModel.findUserWithUsername(username).get();
                     if(muser!=null){

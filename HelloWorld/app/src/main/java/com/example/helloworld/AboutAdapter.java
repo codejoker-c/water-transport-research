@@ -40,6 +40,5 @@ public class AboutAdapter extends PagerAdapter {
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         View view=viewList.get(position);
         container.removeView(view);
-
     }
 }

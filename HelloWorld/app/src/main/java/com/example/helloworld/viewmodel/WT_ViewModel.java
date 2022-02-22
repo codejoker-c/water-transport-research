@@ -4,12 +4,15 @@ package com.example.helloworld.viewmodel;
 import android.app.Application;
 
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
 import com.example.helloworld.database.User;
 import com.example.helloworld.database.WT_Repository;
 import com.example.helloworld.database.user_Boat;
 import com.example.helloworld.database.user_Cargo;
 import com.google.common.util.concurrent.ListenableFuture;
+
+import java.util.List;
 
 public class WT_ViewModel extends AndroidViewModel {
     private WT_Repository mRepository;
@@ -37,5 +40,13 @@ public class WT_ViewModel extends AndroidViewModel {
 
     public ListenableFuture<user_Cargo> finduserCargoWithUsername(String un){
         return mRepository.finduserCargoWithUsername(un);
+    }
+
+    public LiveData<List<user_Boat>> getAlluserBoat(){
+        return mRepository.getAlluserBoat();
+    }
+
+    public LiveData<List<user_Cargo>> getAlluserCargo(){
+        return mRepository.getAlluserCargo();
     }
 }
