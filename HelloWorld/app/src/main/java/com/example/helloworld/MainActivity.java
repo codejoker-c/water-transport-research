@@ -20,6 +20,7 @@ import com.chaquo.python.Python;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.helloworld.database.Status;
 import com.example.helloworld.database.User;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         error = findViewById(R.id.login_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
 
+        /*
         login_identity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        */
 
     }
 
@@ -83,7 +85,18 @@ public class MainActivity extends AppCompatActivity {
                     error.setVisibility(view.VISIBLE);
                 }
                 else{
-                    User user = mWT_ViewModel.findUserWithUsername(username).get();
+                    String str = login_identity.getSelectedItem().toString();
+                    User user;
+                    if(str.equals("船主")) {
+                        user = mWT_ViewModel.finduserBoatWithUsername(username).get();
+                        if(user != null)
+                            user.status = Status.boat;
+                    }
+                    else {
+                        user = mWT_ViewModel.finduserCargoWithUsername(username).get();
+                        if(user != null)
+                            user.status = Status.cargo;
+                    }
                     if(user==null){
                         error.setText("该用户名不存在");
                         error.setVisibility(view.VISIBLE);

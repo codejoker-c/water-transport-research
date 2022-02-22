@@ -1,6 +1,7 @@
 package com.example.helloworld.database;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 
 @Entity(tableName = "user_Cargo")
 public class user_Cargo extends User {
@@ -16,14 +17,18 @@ public class user_Cargo extends User {
 
     public String destin;
 
-    public user_Cargo(String username,String password,Status status,String name,String phone,int cargo_weight,String cargo_type,String depart,String destin){
-        super(username,password,status);
+    public user_Cargo(String username,String password,String name,String phone,int cargo_weight,String cargo_type,String depart,String destin){
+        super(username,password);
         this.name = name;
         this.phone = phone;
         this.cargo_type = cargo_type;
         this.cargo_weight = cargo_weight;
         this.destin = destin;
         this.depart = depart;
+    }
+    @Ignore
+    public user_Cargo(String username,String password){
+        super(username,password);
     }
 
 

@@ -14,7 +14,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {user_Boat.class,user_Cargo.class},version = 1,exportSchema = false)
+@Database(entities = {user_Boat.class,user_Cargo.class},version = 2,exportSchema = false)
 public abstract class WT_RoomDatabase extends RoomDatabase {
     //public abstract UserDao userDao();
     public abstract user_BoatDao user_boatDao();
@@ -35,6 +35,7 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             WT_RoomDatabase.class,"WT_database")
                             .addCallback(sRoomsRoomDatabaseCallback)
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }

@@ -11,7 +11,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.helloworld.database.Status;
 import com.example.helloworld.database.User;
+import com.example.helloworld.database.user_Boat;
+import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.concurrent.ExecutionException;
@@ -38,6 +41,7 @@ public class RegActivity extends AppCompatActivity {
         //通过ViewModelProvider来获取WT_ViewModel实例，然后与数据库交互
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
 
+        /*
         reg_indentity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -50,7 +54,7 @@ public class RegActivity extends AppCompatActivity {
 
             }
         });
-
+        */
 
     }
 
@@ -61,6 +65,7 @@ public class RegActivity extends AppCompatActivity {
                 String psd=reg_password.getText().toString().trim();
                 String psd_confirm=reg_password_confirm.getText().toString().trim();
                 String username = reg_username.getText().toString().trim();
+                String str = reg_indentity.getSelectedItem().toString();
                 if(username.isEmpty()){
                     error.setText("用户名不能为空！");
                     error.setVisibility(view.VISIBLE);
@@ -73,7 +78,32 @@ public class RegActivity extends AppCompatActivity {
                     error.setText("请确认您的密码");
                     error.setVisibility(view.VISIBLE);
                 }
+                else if (!psd.equals(psd_confirm)){
+                    error.setText("两次密码输入不一致");
+                    error.setVisibility(view.VISIBLE);
+                }
                 else{
+                    User muser = null;
+
+                    if(str.equals("船主"))
+                        muser = mWT_ViewModel.finduserBoatWithUsername(username).get();
+                    else
+                        muser = mWT_ViewModel.finduserCargoWithUsername(username).get();
+
+                    if(muser!=null){
+                        error.setText("该用户名已存在！");
+                        error.setVisibility(view.VISIBLE);
+                    }
+                    else{
+                        if(str.equals("船主"))
+                            mWT_ViewModel.insert(new user_Boat(username,psd));
+                        else
+                            mWT_ViewModel.insert(new user_Cargo(username,psd));
+
+                        intent.setClass(RegActivity.this,MainActivity.class);
+                        startActivity(intent);
+                    }
+
                     /*
                     User muser = mWT_ViewModel.findUserWithUsername(username).get();
                     if(muser!=null){
