@@ -57,6 +57,7 @@ public class RegActivity extends AppCompatActivity {
                     error.setVisibility(view.VISIBLE);
                 }
                 else{
+                    /*
                     User muser = mWT_ViewModel.findUserWithUsername(username).get();
                     if(muser!=null){
                         error.setText("该用户名已存在！");
@@ -74,6 +75,7 @@ public class RegActivity extends AppCompatActivity {
                             error.setVisibility(view.VISIBLE);
                         }
                     }
+                    */
                 }
                 break;
             case R.id.login_textview:

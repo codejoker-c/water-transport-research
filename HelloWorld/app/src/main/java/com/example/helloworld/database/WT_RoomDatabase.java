@@ -14,9 +14,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class},version = 1,exportSchema = false)
+@Database(entities = {user_Boat.class,user_Cargo.class},version = 1,exportSchema = false)
 public abstract class WT_RoomDatabase extends RoomDatabase {
-    public abstract UserDao userDao();
+    //public abstract UserDao userDao();
+    public abstract user_BoatDao user_boatDao();
+    public abstract user_CargoDao user_cargoDao();
 
     private static volatile WT_RoomDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
@@ -46,11 +48,14 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
             databaseWriteExecutor.execute(() -> {
+                /*
                 UserDao dao = INSTANCE.userDao();
                 dao.deleteAll();
 
                 User user =new User("joker","123456");
                 dao.insert(user);
+                 */
+
             });
         }
     };
