@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".InfoList"
+            android:exported="false" />
+        <activity
             android:name=".ResultQuery"
             android:exported="false" />
         <activity

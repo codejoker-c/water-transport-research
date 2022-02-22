@@ -49,4 +49,17 @@
         android:onClick="onClick">
     </Button>
 
+    <Button
+        android:id="@+id/home_btn4"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/purple_200"
+        android:text="查看货物信息"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+
+        android:layout_marginTop="40dp"
+        android:onClick="onClick">
+    </Button>
+
 </LinearLayout>

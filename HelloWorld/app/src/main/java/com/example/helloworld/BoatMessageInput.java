@@ -79,7 +79,7 @@ public class BoatMessageInput extends AppCompatActivity {
 
                  */
 
-                //intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
+                intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
 
         }
 

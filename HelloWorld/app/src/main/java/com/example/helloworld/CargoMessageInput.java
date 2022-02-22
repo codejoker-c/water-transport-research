@@ -55,7 +55,7 @@ public class CargoMessageInput extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.submit_cargo:
-                intent.setClass(CargoMessageInput.this,HomeMenuActivity.class);
+                intent.setClass(CargoMessageInput.this,ResultQuery.class);
         }
 
         startActivity(intent);

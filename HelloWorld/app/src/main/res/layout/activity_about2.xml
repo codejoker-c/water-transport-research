@@ -25,25 +25,94 @@
         android:id="@+id/about_tv_version"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="当前版本:v1.0"
-        android:drawableLeft="@mipmap/imagine"
+        android:text="当前版本: v1.0"
+        android:drawableLeft="@mipmap/icon_door"
         android:gravity="center_vertical"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:drawablePadding="20dp"
         android:layout_marginTop="10dp"
         >
     </TextView>
 
+
     <TextView
-        android:id="@+id/test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-
-
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
         ></TextView>
+
+
+    <TextView
+        android:id="@+id/about_tv_tel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="联系电话: 95536"
+        android:drawableLeft="@mipmap/icon_phone"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:drawablePadding="20dp"
+        android:layout_marginTop="10dp"
+        >
+    </TextView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        ></TextView>
+
+
+    <TextView
+        android:id="@+id/about_tv_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="公司地址: 上海市杨浦区四平路1239号"
+        android:drawableLeft="@mipmap/icon_world"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:drawablePadding="20dp"
+        android:layout_marginTop="10dp"
+        >
+    </TextView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/icon_flash"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:drawablePadding="20dp"
+        android:layout_marginTop="10dp"
+
+        >
+    </TextView>
+
+    <EditText
+        android:id="@+id/about_tv_opinion"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/round_editstyle"
+        android:hint="对本软件有什么意见？欢迎提出！"
+
+        ></EditText>
+
+
+
+
+
+
 
 
 

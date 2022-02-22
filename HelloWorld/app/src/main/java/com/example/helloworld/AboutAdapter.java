@@ -18,7 +18,7 @@ public class AboutAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {   //返回的是页面的数目
-        return viewList.size();
+        return Integer.MAX_VALUE;
     }
 
     //判读这个view和生成的view是不是同一个对象
@@ -30,7 +30,7 @@ public class AboutAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View view = viewList.get(position);
+        View view = viewList.get(position % viewList.size());
         container.addView(view);  //添加到容器中，容器就是ViewPager
         return view;
     }
@@ -38,7 +38,7 @@ public class AboutAdapter extends PagerAdapter {
     //销毁指定位置的view
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        View view=viewList.get(position);
+        View view=viewList.get(position % viewList.size());
         container.removeView(view);
     }
 }

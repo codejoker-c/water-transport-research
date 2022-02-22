@@ -11,7 +11,7 @@ import com.example.helloworld.user.UserContext;
 
 public class HomeMenuActivity extends AppCompatActivity {
 
-    Button btn1,btn2,btn3;
+    Button btn1,btn2,btn3,btn4;
 
 
 
@@ -23,6 +23,7 @@ public class HomeMenuActivity extends AppCompatActivity {
         btn1=findViewById(R.id.home_btn1);
         btn2=findViewById(R.id.home_btn2);
         btn3=findViewById(R.id.home_btn3);
+        btn4=findViewById(R.id.home_btn4);
     }
 
     //添加一个属性就不需要添加点击事件了
@@ -37,6 +38,9 @@ public class HomeMenuActivity extends AppCompatActivity {
                 break;
             case R.id.home_btn3:
                 intent.setClass(HomeMenuActivity.this,AboutActivity2.class);
+                break;
+            case R.id.home_btn4:
+                intent.setClass(HomeMenuActivity.this,InfoList.class);
                 break;
             case R.id.ib_menu:
                 UserContext.user_center(intent,HomeMenuActivity.this);
