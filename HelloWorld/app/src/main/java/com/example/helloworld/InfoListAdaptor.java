@@ -3,16 +3,17 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+
 import com.example.helloworld.database.user_Cargo;
 import java.util.List;
 
-//ViewList适配器  基本套路化的写法
-
-public class InfoListAdaptor extends BaseAdapter {
-
+   public class InfoListAdaptor extends RecyclerView.Adapter<InfoListAdaptor.ViewHolder>
+{
     Context context;
     List<user_Cargo>CargoData;
 
@@ -22,42 +23,18 @@ public class InfoListAdaptor extends BaseAdapter {
     }
 
 
-    //决定了ListView展示的行数
+    @NonNull
     @Override
-    public int getCount() {
-        return CargoData.size();
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_infolist, parent, false);
+        ViewHolder viewHolder = new ViewHolder(itemView);
+        return viewHolder;
+
     }
 
-    //返回指定位置的数据
     @Override
-    public Object getItem(int position) {
-        return CargoData.get(position);
-    }
-
-    //返回这个位置对应的Id
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    //返回指定位置的View
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-        ViewHolder holder=null;
-        //判断是否有滑动出去的View，如果有则下面用滑出去的写
-        if (convertView ==null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_infolist,null);  //将布局转换为View对象
-            holder = new ViewHolder(convertView);
-            convertView.setTag(holder);
-
-        }
-        else{
-            holder = (ViewHolder) convertView.getTag();
-        }
-
-        //加载控件显示的内容
-        //获取集合指定位置的数据
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         user_Cargo user_cargo = CargoData.get(position);
         holder.cargo_name.setText(user_cargo.name);
         holder.cargo_phone.setText(user_cargo.phone);
@@ -65,16 +42,19 @@ public class InfoListAdaptor extends BaseAdapter {
         holder.cargo_site.setText(user_cargo.depart);
         holder.cargo_des.setText(user_cargo.destin);
         holder.cargo_arrow.setText("→");
+    }
 
-
-        return null;
+    @Override
+    public int getItemCount() {
+        return CargoData.size();
     }
 
     //内部类 ViewHolder
-    class ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
         TextView cargo_name,cargo_kind,cargo_weight,cargo_site,cargo_arrow,cargo_des,cargo_phone;
 
         public ViewHolder(View view){
+            super(view);
             cargo_name=view.findViewById(R.id.cargo_name);
             cargo_kind=view.findViewById(R.id.cargo_kind);
             cargo_weight=view.findViewById(R.id.cargo_weight);
@@ -87,6 +67,14 @@ public class InfoListAdaptor extends BaseAdapter {
 
 
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+

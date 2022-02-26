@@ -2,6 +2,8 @@ package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ListView;
@@ -14,7 +16,7 @@ import java.util.List;
 
 public class InfoList extends AppCompatActivity {
 
-    ListView cargo_list;
+    RecyclerView cargo_list;
     private WT_ViewModel mWT_ViewModel;
     //ListView内部数据源
     List<user_Cargo> CargoData;
@@ -29,10 +31,15 @@ public class InfoList extends AppCompatActivity {
         cargo_list=findViewById(R.id.cargo_info);
         CargoData=new ArrayList<>();
 
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        cargo_list.setLayoutManager(linearLayoutManager);
+
+
         //找到数据源
         //CargoData=mWT_ViewModel.getAlluserCargo().getValue();
         //创建适配器
-        infoListAdaptor = new InfoListAdaptor(this, CargoData);
+        infoListAdaptor = new InfoListAdaptor(this,CargoData);
         //设置适配器
         cargo_list.setAdapter(infoListAdaptor);
 
