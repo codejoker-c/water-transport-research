@@ -49,4 +49,12 @@ public class WT_ViewModel extends AndroidViewModel {
     public LiveData<List<user_Cargo>> getAlluserCargo(){
         return mRepository.getAlluserCargo();
     }
+
+    public void update(user_Cargo userCargo){
+        mRepository.update(userCargo);
+    }
+
+    public void update(user_Boat userBoat){
+        mRepository.update(userBoat);
+    }
 }

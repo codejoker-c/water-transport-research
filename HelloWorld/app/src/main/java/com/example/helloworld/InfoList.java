@@ -39,6 +39,8 @@ public class InfoList extends AppCompatActivity {
         //设置适配器
         cargo_list.setAdapter(infoListAdapter);
 
+
+        //添加观测，每当表单中信息发生改变时，就重新设置UI显示信息
         mWT_ViewModel.getAlluserCargo().observe(this,CargoData->{
             infoListAdapter.setCargoData(CargoData);
             infoListAdapter.notifyDataSetChanged();

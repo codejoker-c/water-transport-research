@@ -77,8 +77,10 @@ public class CargoMessageInput extends AppCompatActivity {
                 User user = UserContext.getUser();
                 user_Cargo userCargo = new user_Cargo(user.getUsername(), user.getPassword(), name, phone, weight, type, depart, destin, date);
                 userCargo.setId(user.getId());
-                mWT_ViewModel.insert(userCargo);
-                //intent.setClass(CargoMessageInput.this,ResultQuery.class);
+                mWT_ViewModel.update(userCargo);
+                intent.setClass(CargoMessageInput.this,HomeMenuActivity.class);
+                startActivity(intent);
+                break;
         }
 
         startActivity(intent);
