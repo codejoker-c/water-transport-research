@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner login_identity;
     WT_ViewModel mWT_ViewModel;
 
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
