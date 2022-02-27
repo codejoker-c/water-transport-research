@@ -10,28 +10,36 @@
 
     <include layout="@layout/main_titlebar"/>
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/menu_vp"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+
+        ></androidx.viewpager.widget.ViewPager>
+
+
     <Button
         android:id="@+id/home_btn1"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
 
         android:text="船主输入数据"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:background="@color/purple_200"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="20dp"
         android:onClick="onClick">
     </Button>
 
     <Button
         android:id="@+id/home_btn2"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:text="货主输入数据"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:background="@color/purple_200"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
 
         android:onClick="onClick">
     </Button>
@@ -39,26 +47,26 @@
     <Button
         android:id="@+id/home_btn3"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@color/purple_200"
         android:text="查询匹配结果"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
 
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:onClick="onClick">
     </Button>
 
     <Button
         android:id="@+id/home_btn4"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@color/purple_200"
         android:text="查看货物信息"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
 
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:onClick="onClick">
     </Button>
 

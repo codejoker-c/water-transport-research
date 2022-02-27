@@ -54,9 +54,9 @@ public class AboutActivity2 extends AppCompatActivity {
         aboutVp=findViewById(R.id.about_vp);
         //shareTv=findViewById(R.id.about)
         pointLayout=findViewById(R.id.about_layout_point);
+
+
         viewList=new ArrayList<>();
-
-
         //初始化ViewPager页面数据
         for (int i = 0; i < picIds.length; i++) {
             View view= LayoutInflater.from(this).inflate(R.layout.item_aboutvp,null);

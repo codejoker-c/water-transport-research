@@ -47,14 +47,14 @@
         android:layout_marginTop="200dp"
         ></TextView>
 
- <EditText
-     android:id="@+id/phone_ship"
-     android:layout_width="130dp"
-     android:layout_height="30dp"
-     android:layout_marginLeft="200dp"
-     android:layout_marginTop="195dp"
-     android:inputType="phone"
-     android:background="@drawable/round_editstyle"></EditText>
+    <EditText
+        android:id="@+id/phone_ship"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="195dp"
+        android:background="@drawable/round_editstyle"
+        android:inputType="phone"></EditText>
 
     <TextView
         android:layout_width="wrap_content"
@@ -126,8 +126,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="400dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:text="船所在地(实例：xx市):"></TextView>
+        android:text="船所在地(实例：xx市):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
         android:id="@+id/depart_ship"

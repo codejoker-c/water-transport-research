@@ -141,13 +141,51 @@
         android:text="期望到达日期(例 1.1):"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
-    <EditText
+<!--    <EditText
         android:id="@+id/date_cargo"
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:layout_marginLeft="182dp"
         android:layout_marginTop="445dp"
-        android:background="@drawable/round_editstyle"></EditText>
+        android:background="@drawable/round_editstyle"></EditText>-->
+
+    <Spinner
+        android:id="@+id/cargo_desmonth"
+        android:layout_width="65dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="182dp"
+        android:layout_marginTop="445dp"
+        android:autofillHints="creditCardExpirationMonth"
+        android:background="@drawable/round_editstyle"
+        android:entries="@array/cargo_desmonth"></Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cargo_desmonth"
+        android:layout_marginTop="448dp"
+        android:text="月"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        ></TextView>
+
+    <Spinner
+        android:id="@+id/cargo_desday"
+        android:layout_width="65dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="267dp"
+        android:layout_marginTop="445dp"
+        android:background="@drawable/round_editstyle"
+
+        ></Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/cargo_desday"
+        android:layout_marginTop="448dp"
+        android:text="日"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        ></TextView>
 
 
     <Button
