@@ -4,20 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CargoMessageInput"
     android:background="@mipmap/ocean"
-    >
+    tools:context=".CargoMessageInput">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:text="欢迎输入货物信息"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
         android:background="@color/white"
+        android:text="欢迎输入货物信息"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="40dp"
 
         ></TextView>
 
@@ -40,11 +39,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="货主联系方式:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="200dp"
-        ></TextView>
+        android:text="货主联系方式:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
         android:id="@+id/phone_cargo"
@@ -58,11 +56,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="货重(kg):"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="250dp"
-        ></TextView>
+        android:text="货重(kg):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
         android:id="@+id/weight_cargo"
@@ -78,19 +75,18 @@
         android:id="@+id/kind_txt_cargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="货物类型(可选择):"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="300dp"
-        ></TextView>
+        android:text="货物类型(可选择):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
 
     <Spinner
         android:id="@+id/spinner_cargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
         android:layout_marginLeft="185dp"
+        android:layout_marginTop="300dp"
         android:background="@drawable/round_editstyle"
         android:entries="@array/spinner_array"></Spinner>
 
@@ -98,20 +94,18 @@
         android:id="@+id/spin_info_cargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
         android:layout_marginLeft="50dp"
-        android:visibility="invisible"
-        ></TextView>
+        android:layout_marginTop="500dp"
+        android:visibility="invisible"></TextView>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="货所在地(示例：xx市):"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_marginTop="350dp"
         android:layout_marginLeft="10dp"
-        ></TextView>
+        android:layout_marginTop="350dp"
+        android:text="货所在地(示例：xx市):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
         android:id="@+id/depart_cargo"
@@ -124,11 +118,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="货目的地(示例：xx市):"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_marginTop="400dp"
         android:layout_marginLeft="10dp"
-        ></TextView>
+        android:layout_marginTop="400dp"
+        android:text="货目的地(示例：xx市):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
         android:id="@+id/destination_cargo"
@@ -142,12 +135,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="期望到达日期(例 1.1):"
-        android:inputType="date"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:layout_marginTop="450dp"
         android:layout_marginLeft="10dp"
-        ></TextView>
+        android:layout_marginTop="450dp"
+        android:inputType="date"
+        android:text="期望到达日期(例 1.1):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
         android:id="@+id/date_cargo"
@@ -168,7 +160,6 @@
         android:onClick="onClick"
         android:text="提交"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"></Button>
-
 
 
 </RelativeLayout>

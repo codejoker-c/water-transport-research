@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.widget.ListView;
 
 import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.viewmodel.WT_ViewModel;
@@ -20,7 +19,7 @@ public class InfoList extends AppCompatActivity {
     private WT_ViewModel mWT_ViewModel;
     //ListView内部数据源
     List<user_Cargo> CargoData;
-    private InfoListAdaptor infoListAdaptor;
+    private InfoListAdapter infoListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +28,20 @@ public class InfoList extends AppCompatActivity {
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         cargo_list=findViewById(R.id.cargo_info);
-        CargoData=new ArrayList<>();
+        //CargoData=new ArrayList<>();
 
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         cargo_list.setLayoutManager(linearLayoutManager);
 
-
-        //找到数据源
-        //CargoData=mWT_ViewModel.getAlluserCargo().getValue();
         //创建适配器
-        infoListAdaptor = new InfoListAdaptor(this,CargoData);
+        infoListAdapter = new InfoListAdapter(this,CargoData);
         //设置适配器
-        cargo_list.setAdapter(infoListAdaptor);
+        cargo_list.setAdapter(infoListAdapter);
 
-
+        mWT_ViewModel.getAlluserCargo().observe(this,CargoData->{
+            infoListAdapter.setCargoData(CargoData);
+            infoListAdapter.notifyDataSetChanged();
+        });
     }
 }

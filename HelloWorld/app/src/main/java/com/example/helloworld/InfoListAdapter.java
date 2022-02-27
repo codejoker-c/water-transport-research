@@ -12,13 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.helloworld.database.user_Cargo;
 import java.util.List;
 
-   public class InfoListAdaptor extends RecyclerView.Adapter<InfoListAdaptor.ViewHolder>
+public class InfoListAdapter extends RecyclerView.Adapter<InfoListAdapter.ViewHolder>
 {
     Context context;
     List<user_Cargo>CargoData;
 
-    public InfoListAdaptor(Context context, List<user_Cargo> cargoData) {
+    public InfoListAdapter(Context context, List<user_Cargo> cargoData) {
         this.context = context;
+        CargoData = cargoData;
+    }
+
+    public void setCargoData(List<user_Cargo> cargoData){
         CargoData = cargoData;
     }
 
@@ -26,11 +30,9 @@ import java.util.List;
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_infolist, parent, false);
         ViewHolder viewHolder = new ViewHolder(itemView);
         return viewHolder;
-
     }
 
     @Override
