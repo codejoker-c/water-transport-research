@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -52,6 +53,17 @@ public class BoatMessageInput extends AppCompatActivity {
 
 
     }
+    //把String转化为int
+    public static int convertToInt(String number, int defaultValue) {
+        if (TextUtils.isEmpty(number)) {
+            return defaultValue;
+        }
+        try {
+            return Integer.parseInt(number);
+        } catch (Exception e) {
+            return defaultValue;
+        }
+    }
 
     public void onClick(View view) {
         Intent intent=new Intent();
@@ -62,8 +74,8 @@ public class BoatMessageInput extends AppCompatActivity {
                 int weight,loadweight;
                 name = name_ship.getText().toString().trim();
                 phone = phone_ship.getText().toString().trim();
-                weight = Integer.parseInt(weight_ship.getText().toString().trim());
-                loadweight = Integer.parseInt(loadweight_ship.getText().toString().trim());
+                weight = convertToInt(weight_ship.getText().toString(),0);
+                loadweight = convertToInt(loadweight_ship.getText().toString(),0);
                 depart = depart_ship.getText().toString().trim();
                 loadtype = load_type.getSelectedItem().toString();
 
@@ -80,6 +92,7 @@ public class BoatMessageInput extends AppCompatActivity {
                  */
 
                 intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
+                break;
 
         }
 
