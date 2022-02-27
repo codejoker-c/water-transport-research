@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BoatMessageInput"
-    android:background="@mipmap/ocean"
     >
 
 
@@ -137,16 +136,16 @@
         android:layout_marginTop="395dp"
         android:background="@drawable/round_editstyle"></EditText>
 
-    <Button
-        android:id="@+id/submit_ship"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="450dp"
-        android:background="@color/teal_200"
-        android:onClick="onClick"
-        android:text="提交"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"></Button>
+ <Button
+     android:id="@+id/submit_ship"
+     android:layout_width="100dp"
+     android:layout_height="50dp"
+     android:layout_marginLeft="130dp"
+     android:layout_marginTop="450dp"
+     android:background="@color/blue"
+     android:onClick="onClick"
+     android:text="提交"
+     ></Button>
 
     <TextView
         android:layout_width="wrap_content"

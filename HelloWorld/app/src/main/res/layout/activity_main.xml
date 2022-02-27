@@ -9,19 +9,18 @@
 
     <include layout="@layout/main_titlebar"/>
 
+
     <Button
         android:id="@+id/login_btn"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="登录"
-        android:textColor="@color/white"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="380dp"
         android:backgroundTint="@color/blue"
         android:clickable="true"
-        android:onClick="onClick">
-    </Button>
-
+        android:onClick="onClick"
+        android:text="登录"
+        android:textColor="@color/white"></Button>
 
     <TextView
         android:id="@+id/reg_textView"

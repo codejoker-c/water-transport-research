@@ -17,9 +17,11 @@ public class user_Cargo extends User {
 
     public String destin;
 
-    public String date;
+    public int month;
 
-    public user_Cargo(String username, String password, String name, String phone, int cargo_weight, String cargo_type, String depart, String destin, String date) {
+    public int day;
+
+    public user_Cargo(String username, String password, String name, String phone, int cargo_weight, String cargo_type, String depart, String destin, int month, int day) {
         super(username, password);
         this.name = name;
         this.phone = phone;
@@ -27,7 +29,8 @@ public class user_Cargo extends User {
         this.cargo_weight = cargo_weight;
         this.destin = destin;
         this.depart = depart;
-        this.date = date;
+        this.month = month;
+        this.day = day;
     }
 
     @Ignore

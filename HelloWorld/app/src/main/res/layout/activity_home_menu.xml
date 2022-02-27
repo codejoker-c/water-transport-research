@@ -19,40 +19,28 @@
 
 
     <Button
-        android:id="@+id/home_btn1"
+        android:id="@+id/datainput_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
-        android:text="船主输入数据"
+        android:textColor="@color/white"
+        android:text="完善信息"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        android:background="@color/purple_200"
+        android:background="@color/blue"
         android:layout_marginTop="20dp"
         android:onClick="onClick">
     </Button>
 
-    <Button
-        android:id="@+id/home_btn2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="货主输入数据"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        android:background="@color/purple_200"
-        android:layout_marginTop="20dp"
-
-        android:onClick="onClick">
-    </Button>
 
     <Button
         android:id="@+id/home_btn3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/purple_200"
+        android:background="@color/blue"
         android:text="查询匹配结果"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:onClick="onClick">
     </Button>
@@ -61,11 +49,11 @@
         android:id="@+id/home_btn4"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/purple_200"
+        android:background="@color/blue"
         android:text="查看货物信息"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-
+        android:textColor="@color/white"
         android:layout_marginTop="20dp"
         android:onClick="onClick">
     </Button>

@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.example.helloworld.AboutActivity2;
 import com.example.helloworld.MainActivity;
+import com.example.helloworld.database.User;
 
 public class LogoutState implements UserState {
 
@@ -14,7 +15,7 @@ public class LogoutState implements UserState {
     }
 
     @Override
-    public void data_in(Intent intent, Activity activity){
+    public void data_in(Intent intent, Activity activity, User user){
         intent.setClass(activity, MainActivity.class);
     }
 

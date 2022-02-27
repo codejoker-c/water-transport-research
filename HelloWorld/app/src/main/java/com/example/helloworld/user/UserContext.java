@@ -17,7 +17,7 @@ public class UserContext {
 
 
     public static void data_in(Intent intent, Activity activity){
-        mState.data_in(intent, activity);
+        mState.data_in(intent, activity,user);
     }
 
     public static void data_query(Intent intent, Activity activity){
