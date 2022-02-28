@@ -11,17 +11,38 @@
         android:theme="@style/Theme.HelloWorld">
         <activity
             android:name=".InfoList"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".HomeMenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeMenuActivity" />
+        </activity>
         <activity
             android:name=".ResultQuery"
             android:exported="false" />
         <activity
             android:name=".CargoMessageInput"
-            android:exported="false" />
-        <activity android:name=".BoatMessageInput" />
+            android:exported="false"
+            android:parentActivityName=".HomeMenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeMenuActivity" />
+        </activity>
+        <activity
+            android:name=".BoatMessageInput"
+            android:parentActivityName=".HomeMenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeMenuActivity" />
+        </activity>
         <activity
             android:name=".UserActivity"
-            android:exported="false" />
+            android:parentActivityName=".HomeMenuActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeMenuActivity" />
+        </activity>
         <activity
             android:name=".RegActivity"
             android:exported="false" />
@@ -30,7 +51,13 @@
             android:exported="false" />
         <activity
             android:name=".AboutActivity2"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".HomeMenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeMenuActivity"
+                />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

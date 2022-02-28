@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,12 +16,14 @@ import android.widget.Toast;
 import com.example.helloworld.database.User;
 import com.example.helloworld.database.user_Boat;
 import com.example.helloworld.user.UserContext;
+import com.example.helloworld.viewmodel.WT_ViewModel;
 
 public class BoatMessageInput extends AppCompatActivity {
 
     TextView spin_info,error;
     EditText name_ship,phone_ship,weight_ship,loadweight_ship,depart_ship;
     Spinner load_type;
+    WT_ViewModel mWT_ViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,8 @@ public class BoatMessageInput extends AppCompatActivity {
         depart_ship=findViewById(R.id.depart_ship);
         load_type=findViewById(R.id.spinner_01);
         error = findViewById(R.id.boat_info_error);
+        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+
         /*
         load_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -79,19 +84,26 @@ public class BoatMessageInput extends AppCompatActivity {
                 depart = depart_ship.getText().toString().trim();
                 loadtype = load_type.getSelectedItem().toString();
 
-                /*
-                if(name.isEmpty()||phone.isEmpty()||weight.isEmpty()||loadweight.isEmpty()||depart.isEmpty()||loadtype.isEmpty()){
+
+                if(name.isEmpty()||phone.isEmpty()||weight==0||loadweight==0||depart.isEmpty()||loadtype.isEmpty()){
                     error.setText("信息填写不完整！");
                     error.setVisibility(view.VISIBLE);
                 }
                 else{
                     User user = UserContext.getUser();
-                    user_Boat userBoat = new user_Boat(user.getUsername(),user.getPassword(),name,phone,loadtype,depart);
+                    user_Boat userBoat = new user_Boat(user.getUsername(),user.getPassword(),name,phone,weight,loadweight,loadtype,depart);
+                    userBoat.setId(user.getId());
+                    mWT_ViewModel.update(userBoat);
+                    intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
+                    startActivity(intent);
                 }
 
-                 */
 
-                intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
+
+
+                break;
+            case R.id.ib_menu:
+                UserContext.user_center(intent, BoatMessageInput.this);
                 break;
 
         }

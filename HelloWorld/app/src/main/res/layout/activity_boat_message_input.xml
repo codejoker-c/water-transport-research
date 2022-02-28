@@ -8,6 +8,8 @@
     >
 
 
+    <include layout="@layout/main_titlebar"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="30dp"
@@ -136,25 +138,25 @@
         android:layout_marginTop="395dp"
         android:background="@drawable/round_editstyle"></EditText>
 
- <Button
-     android:id="@+id/submit_ship"
-     android:layout_width="100dp"
-     android:layout_height="50dp"
-     android:layout_marginLeft="130dp"
-     android:layout_marginTop="450dp"
-     android:background="@color/blue"
-     android:onClick="onClick"
-     android:text="提交"
-     ></Button>
+    <Button
+        android:id="@+id/submit_ship"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="450dp"
+        android:backgroundTint="@color/blue"
+        android:onClick="onClick"
+        android:text="提交" />
 
     <TextView
+        android:id="@+id/boat_info_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/boat_info_error"
-        android:visibility="invisible"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="430dp"
         android:text=""
         android:textColor="@color/red"
-    />
+        android:visibility="invisible" />
 
 
 

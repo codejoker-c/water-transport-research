@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CargoMessageInput">
-
+    
     <include layout="@layout/main_titlebar"/>
+
 
     <TextView
         android:layout_width="wrap_content"
