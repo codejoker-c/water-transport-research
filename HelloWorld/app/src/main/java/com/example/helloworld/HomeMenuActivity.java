@@ -81,14 +81,17 @@ public class HomeMenuActivity extends AppCompatActivity {
             case R.id.datainput_btn:
                 UserContext.data_in(intent,HomeMenuActivity.this);
                 break;
-            case R.id.home_btn3:
-                intent.setClass(HomeMenuActivity.this, AboutActivity2.class);
+            case R.id.home_btn2:
+                intent.setClass(HomeMenuActivity.this, ResultQuery.class);
                 break;
-            case R.id.home_btn4:
+            case R.id.home_btn3:
                 intent.setClass(HomeMenuActivity.this, InfoList.class);
                 break;
             case R.id.ib_menu:
                 UserContext.user_center(intent, HomeMenuActivity.this);
+                break;
+            case R.id.home_btn4:
+                intent.setClass(HomeMenuActivity.this, AboutActivity2.class);
                 break;
         }
         startActivity(intent);

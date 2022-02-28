@@ -33,7 +33,7 @@
 
 
     <Button
-        android:id="@+id/home_btn3"
+        android:id="@+id/home_btn2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/blue"
@@ -46,11 +46,24 @@
     </Button>
 
     <Button
-        android:id="@+id/home_btn4"
+        android:id="@+id/home_btn3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/blue"
         android:text="查看货物信息"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick">
+    </Button>
+
+    <Button
+        android:id="@+id/home_btn4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/blue"
+        android:text="关于本软件"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:textColor="@color/white"

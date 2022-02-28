@@ -11,9 +11,9 @@ public class user_Boat extends User{
 
     public String phone;
 
-    public int weight;
+    public int weight;  //船重
 
-    public int load_weight;
+    public int load_weight;//载重
 
     public String load_type;
 

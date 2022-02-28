@@ -45,6 +45,7 @@ public class InfoListAdapter extends RecyclerView.Adapter<InfoListAdapter.ViewHo
         holder.cargo_site.setText(user_cargo.depart);
         holder.cargo_des.setText(user_cargo.destin);
         holder.cargo_arrow.setText("→");
+        holder.cargo_weight.setText(String.valueOf(user_cargo.cargo_weight));
     }
 
     @Override
