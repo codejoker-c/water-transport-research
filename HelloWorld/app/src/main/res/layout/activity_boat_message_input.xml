@@ -138,15 +138,17 @@
         android:layout_marginTop="395dp"
         android:background="@drawable/round_editstyle"></EditText>
 
-    <Button
-        android:id="@+id/submit_ship"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="450dp"
-        android:backgroundTint="@color/blue"
-        android:onClick="onClick"
-        android:text="提交" />
+ <Button
+     android:id="@+id/submit_ship"
+     android:layout_width="100dp"
+     android:layout_height="50dp"
+     android:layout_marginStart="155dp"
+     android:layout_marginTop="450dp"
+     android:backgroundTint="@color/blue"
+     android:onClick="onClick"
+     android:text="提交"
+     android:textColor="@color/white"
+     />
 
     <TextView
         android:id="@+id/boat_info_error"

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AboutActivity2">
+    <include layout="@layout/main_titlebar"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/about_vp"

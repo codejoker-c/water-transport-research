@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".InfoList">
+
+    <include layout="@layout/main_titlebar"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"

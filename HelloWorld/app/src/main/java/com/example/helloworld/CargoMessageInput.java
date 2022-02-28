@@ -1,6 +1,8 @@
 package com.example.helloworld;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -37,6 +39,12 @@ public class CargoMessageInput extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cargo_message_input);
+        //设置任务栏
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        //获取任务栏，并且添加返回父activity的按钮
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
         name_cargo = findViewById(R.id.name_cargo);
 
