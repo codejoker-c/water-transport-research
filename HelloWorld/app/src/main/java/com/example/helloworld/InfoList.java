@@ -3,6 +3,7 @@ package com.example.helloworld;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,9 +48,21 @@ public class InfoList extends AppCompatActivity {
 
 
         //添加观测，每当表单中信息发生改变时，就重新设置UI显示信息
-        mWT_ViewModel.getAlluserCargo().observe(this,CargoData->{
-            infoListAdapter.setCargoData(CargoData);
+        /*
+        mWT_ViewModel.getAlluserCargo().observe(this,data->{
+            infoListAdapter.setCargoData(data);
             infoListAdapter.notifyDataSetChanged();
+            CargoData = data;
         });
+        */
+        mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
+            @Override
+            public void onChanged(List<user_Cargo> user_cargos) {
+                infoListAdapter.setCargoData(user_cargos);
+                infoListAdapter.notifyDataSetChanged();
+                CargoData=user_cargos;
+            }
+        });
+
     }
 }
