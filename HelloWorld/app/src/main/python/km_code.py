@@ -1,8 +1,7 @@
-from tkinter.tix import MAX
-import pandas as pd
+#import pandas as pd
 import numpy as np
-import db
-import csv
+#import db
+#import csv
 
 
 class KM:
@@ -181,40 +180,46 @@ def compute_km(datas, min=False):
         result.append((i, match[i] if match[i] < col else -1))  # 没有对应的值给-1
     return result   # 返回result二维数组，匹配的结果，，一个X，一个Y
 
-def final_func(Ship_info_array,Cargo_info_array):
+
+
+
+def final_func(Ship_info_array,Cargo_info_array,ship_length,cargo_length):
 
 
     Loc_Correspond={"Chongqing":15,"Dalian":20,"Dongguan":22,"Fuzhou":28,"Taixing":42,"Nantong":73,"Haian":56,"Yancheng":35,"Xuancheng":5}
 
     #Loc_Correspond={"重庆":15,"大连":20,"东莞":22,"福州":28,"泰兴":42,"南通":73,"海安":56,"盐城":35,"宣城":5}
 
+    #result = [[0 for i in range(Cargo_info_array.size())] for j in range(Ship_info_array.size())]
+    result = [[0 for i in range(cargo_length)] for j in range(ship_length)]
 
-    result = [[0 for i in range(len(Cargo_info_array))] for j in range(len(Ship_info_array))]
-
-    for i in range(len(Ship_info_array)):
-        for j in range(len(Cargo_info_array)):
-            M=Ship_info_array[i].weight
+    for i in range(Ship_info_array.size()):
+        for j in range(Cargo_info_array.size()):
+            M=Ship_info_array.get(i).weight
             #V=Ship_info_array[i]["V_ship"]
-            m=Cargo_info_array[j].cargo_weight
+            m=Cargo_info_array.get(j).cargo_weight
 
             # M=Ship_info_array[i]["M_ship"]
             # V=Ship_info_array[i]["V_ship"]
             # m=Cargo_info_array[j]["m_cargo"]
 
-            dis_ship_cargo = Loc_Correspond[Ship_info_array[i].depart]-Loc_Correspond[Cargo_info_array[j].depart]
+            dis_ship_cargo = Loc_Correspond[Ship_info_array.get(i).depart]-Loc_Correspond[Cargo_info_array.get(j).depart]
             if dis_ship_cargo < 0:
                 dis_ship_cargo=-dis_ship_cargo
 
-            dis_transport = Loc_Correspond[Cargo_info_array[j].depart]-Loc_Correspond[Cargo_info_array[j].destin]
+            dis_transport = Loc_Correspond[Cargo_info_array.get(j).depart]-Loc_Correspond[Cargo_info_array.get(j).destin]
             if dis_transport < 0:
                 dis_transport=-dis_transport
 
             #time = (dis_ship_cargo+dis_transport)/V
-            Cost=Ship_info_array[i]["Cost_trans"]*((M+m)*dis_transport + M*dis_ship_cargo)#+ Ship_info_array[i]["Cost_live"]*time
+            #Cost=Ship_info_array.get(i)["Cost_trans"]*((M+m)*dis_transport + M*dis_ship_cargo)#+ Ship_info_array[i]["Cost_live"]*time
+            Cost=197*((M+m)*dis_transport + M*dis_ship_cargo)
             #Profit=Cargo_info_array[j]["target_money"]-Cost
             Profit=-Cost
 
             result[i][j]=Profit
+
+
 
     graphlist = result
 
