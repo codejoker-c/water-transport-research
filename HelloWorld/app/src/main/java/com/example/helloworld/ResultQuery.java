@@ -74,8 +74,8 @@ public class ResultQuery extends AppCompatActivity {
         PyObject obj1 = py.getModule("km_code").callAttr("final_func", BoatData,CargoData);
         // 将Python返回值换为Java中的Integer类型
         //Integer sum = obj1.toJava(Integer.class);
-        List<List<Integer>> sum2 = obj1.toJava(List<List<Integer>>.class);
-        textView.setText(sum2[0][0].toString());
+        //List<List<Integer>> sum2 = obj1.toJava(List<List<Integer>>.class);
+        //textView.setText(sum2[0][0].toString());
 
     }
 

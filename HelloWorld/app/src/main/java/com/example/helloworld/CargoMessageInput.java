@@ -25,6 +25,9 @@ import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 public class CargoMessageInput extends AppCompatActivity {
 
     TextView spin_info2, error;
@@ -103,6 +106,33 @@ public class CargoMessageInput extends AppCompatActivity {
             }
         });
 
+        //进入页面时的信息处理
+        try {
+            user_Cargo userCargo = mWT_ViewModel.finduserCargoWithUsername(UserContext.getUser().getUsername()).get();
+            //只用判断一个即可，因为填入信息时要求所有必填
+            if (userCargo.name != null) {
+                name_cargo.setText(userCargo.name);
+                phone_cargo.setText(userCargo.phone);
+                weight_cargo.setText(userCargo.cargo_weight + "");
+                String[] str = getResources().getStringArray(R.array.spinner_array);
+                int position = 0;
+                for (String i : str) {
+                    if (i.equals(userCargo.cargo_type))
+                        break;
+                    position++;
+                }
+                type_cargo.setSelection(position, true);
+                depart_cargo.setText(userCargo.depart);
+                dest_cargo.setText(userCargo.destin);
+                desmonth_cargo.setSelection(userCargo.month - 1, true);
+                desday_cargo.setSelection(userCargo.day - 1, true);
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
@@ -142,7 +172,7 @@ public class CargoMessageInput extends AppCompatActivity {
                     user_Cargo userCargo = new user_Cargo(user.getUsername(), user.getPassword(), name, phone, loadweight, loadtype, depart, destin, desmonth, desday);
                     userCargo.setId(user.getId());
                     mWT_ViewModel.update(userCargo);
-                    intent.setClass(CargoMessageInput.this,HomeMenuActivity.class);
+                    intent.setClass(CargoMessageInput.this, HomeMenuActivity.class);
                     startActivity(intent);
                 }
                 break;

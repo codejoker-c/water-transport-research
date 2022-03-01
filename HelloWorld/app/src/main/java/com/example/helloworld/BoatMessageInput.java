@@ -20,6 +20,8 @@ import com.example.helloworld.database.user_Boat;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
+import java.util.concurrent.ExecutionException;
+
 public class BoatMessageInput extends AppCompatActivity {
 
     TextView spin_info,error;
@@ -60,7 +62,29 @@ public class BoatMessageInput extends AppCompatActivity {
         });
 
          */
-
+        //刚进入页面时的初始化
+        try {
+            user_Boat userBoat = mWT_ViewModel.finduserBoatWithUsername(UserContext.getUser().getUsername()).get();
+            if(userBoat.name!=null){
+                name_ship.setText(userBoat.name);
+                phone_ship.setText(userBoat.phone);
+                weight_ship.setText(userBoat.weight+"");
+                loadweight_ship.setText(userBoat.load_weight+"");
+                String[] str = getResources().getStringArray(R.array.spinner_array);
+                int position=0;
+                for(String i:str){
+                    if(i.equals(userBoat.load_type))
+                        break;
+                    position++;
+                }
+                load_type.setSelection(position,true);
+                depart_ship.setText(userBoat.depart);
+            }
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
     }
