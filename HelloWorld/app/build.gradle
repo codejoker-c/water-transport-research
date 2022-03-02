@@ -23,6 +23,12 @@ android {
         python {
             // 指定python路径
             buildPython "D:/Python/python.exe"
+
+            pip{
+                install "numpy"
+
+            }
+
         }
     }
 

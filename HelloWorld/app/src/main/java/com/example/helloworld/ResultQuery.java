@@ -63,6 +63,7 @@ public class ResultQuery extends AppCompatActivity {
                 }
             }
         });
+        //CargoData.get(5).depart;
 
         //List<user_Boat> BoatData;
 
@@ -73,7 +74,15 @@ public class ResultQuery extends AppCompatActivity {
                 BoatData=user_boats;
             }
         });
+
         */
+
+
+
+        //Integer BoatDataLength=CargoData.size();
+        //Integer CargoDatalength=CargoData.size();
+
+
         //initPython();
         //callPythonCode(BoatData,CargoData,text);
 
@@ -95,11 +104,23 @@ public class ResultQuery extends AppCompatActivity {
 
         //PyObject用来保存python函数的返回值，一个python类型
         //py.getModule("hello").get("km_code").call(BoatData,CargoData);
-        PyObject obj1 = py.getModule("km_code").callAttr("final_func", BoatData,CargoData);
+
+/*        List<PyObject> params1 = new ArrayList<PyObject>();
+        List<PyObject> params2 = new ArrayList<PyObject>();
+        params1.add(PyObject.fromJava(BoatData));
+        params2.add(PyObject.fromJava(CargoData));*/
+
+        //Integer BoatDataLength=BoatData.size();
+        //Integer BoatDataLength=CargoData.size();
+        //Integer CargoDatalength=CargoData.size();
+        //PyObject obj1 = py.getModule("km_code").callAttr("final_func",BoatData,CargoData,BoatDataLength,CargoDatalength);
         // 将Python返回值换为Java中的Integer类型
         //Integer sum = obj1.toJava(Integer.class);
-        //List<List<Integer>> sum2 = obj1.toJava(List<List<Integer>>.class);
-        //textView.setText(sum2[0][0].toString());
+        /*Integer[] sum2 = obj1.toJava(Integer[].class);
+        textView.setText(sum2[0].toString());*/
+
+        //Integer sum2 = obj1.toJava(Integer.class);
+        //textView.setText(sum2.toString());
 
     }
 
