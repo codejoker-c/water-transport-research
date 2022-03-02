@@ -142,7 +142,7 @@ public class ResultQuery extends AppCompatActivity {
 
     }
 
-    public class MyType{
+    public class MyType {
         public Integer first;
         public Integer second;
     }
