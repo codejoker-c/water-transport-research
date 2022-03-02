@@ -91,6 +91,8 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
+    implementation group: 'io.vavr', name: 'vavr', version: '0.10.2'
+
 }
 
 /

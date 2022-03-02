@@ -16,7 +16,11 @@ import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ExecutionException;
+
+import io.vavr.Tuple2;
+import kotlin.TuplesKt;
 
 public class ResultQuery extends AppCompatActivity {
 
@@ -33,7 +37,7 @@ public class ResultQuery extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_query);
 
-        text=findViewById(R.id.test);
+        text = findViewById(R.id.test);
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //拿到船和货的数据
@@ -54,8 +58,15 @@ public class ResultQuery extends AppCompatActivity {
 
                     //在此后调用python程序即可，BoatData为船主数据，CargoData为货主数据
 
+                    Integer ship_length, cargo_length;
+                    ship_length = BoatData.size();
+                    cargo_length = CargoData.size();
 
-                    
+
+                    initPython();
+                    callPythonCode(BoatData, CargoData, text, ship_length, cargo_length);
+
+
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
@@ -78,7 +89,6 @@ public class ResultQuery extends AppCompatActivity {
         */
 
 
-
         //Integer BoatDataLength=CargoData.size();
         //Integer CargoDatalength=CargoData.size();
 
@@ -90,13 +100,14 @@ public class ResultQuery extends AppCompatActivity {
     }
 
     // 初始化Python环境
-    void initPython(){
-        if (! Python.isStarted()) {
+    void initPython() {
+        if (!Python.isStarted()) {
             Python.start(new AndroidPlatform(this));
         }
     }
+
     // 调用python代码
-    void callPythonCode(List<user_Boat> BoatData,List<user_Cargo> CargoData,TextView textView){
+    void callPythonCode(List<user_Boat> BoatData, List<user_Cargo> CargoData, TextView textView, Integer ship_length, Integer cargo_length) {
 
         Python py = Python.getInstance();
         // 调用hello.py模块中的greet函数，并传一个参数
@@ -113,18 +124,29 @@ public class ResultQuery extends AppCompatActivity {
         //Integer BoatDataLength=BoatData.size();
         //Integer BoatDataLength=CargoData.size();
         //Integer CargoDatalength=CargoData.size();
-        //PyObject obj1 = py.getModule("km_code").callAttr("final_func",BoatData,CargoData,BoatDataLength,CargoDatalength);
+        PyObject obj1 = py.getModule("km_code").callAttr("final_func", BoatData, CargoData, ship_length, cargo_length);
         // 将Python返回值换为Java中的Integer类型
         //Integer sum = obj1.toJava(Integer.class);
-        /*Integer[] sum2 = obj1.toJava(Integer[].class);
-        textView.setText(sum2[0].toString());*/
 
-        //Integer sum2 = obj1.toJava(Integer.class);
-        //textView.setText(sum2.toString());
+/*        Tuple2<Integer,Integer> sum2 = obj1.toJava(Tuple2.class);
+        textView.setText(sum2.toString());*/
+
+        // 调用Python函数，将返回的Python中的list转为Java的list
+        List<PyObject> pyList = obj1.asList();
+        //Log.d(TAG,"get_list = "+pyList.toString());
+
+
+        //List<Tuple2<Integer,Integer>> sum2 = obj1.toJava(List.class);
+        //textView.setText(sum2.get(0).toString());
+        textView.setText(pyList.toString());
 
     }
 
-
+    public class MyType{
+        public Integer first;
+        public Integer second;
+    }
 
 }
+
 

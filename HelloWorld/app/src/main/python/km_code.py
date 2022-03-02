@@ -186,7 +186,7 @@ def compute_km(datas, min=False):
 def final_func(Ship_info_array,Cargo_info_array,ship_length,cargo_length):
 
 
-    Loc_Correspond={"Chongqing":15,"Dalian":20,"Dongguan":22,"Fuzhou":28,"Taixing":42,"Nantong":73,"Haian":56,"Yancheng":35,"Xuancheng":5}
+    Loc_Correspond={"Chongqing":15,"Dalian":20,"Dongguan":22,"Fuzhou":28,"Taixing":42,"Nantong":73,"Haian":56,"Yancheng":35,"Xuancheng":5,"Shanghai":63}
 
     #Loc_Correspond={"重庆":15,"大连":20,"东莞":22,"福州":28,"泰兴":42,"南通":73,"海安":56,"盐城":35,"宣城":5}
 
