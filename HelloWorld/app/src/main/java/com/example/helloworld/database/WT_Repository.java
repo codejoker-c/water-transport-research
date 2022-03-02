@@ -12,6 +12,8 @@ import java.util.List;
 public class WT_Repository {
     private user_BoatDao muser_boatDao;
     private user_CargoDao muser_cargoDao;
+    //private LiveData<List<user_Boat>> mAll_userBoat;
+    //private LiveData<List<user_Cargo>> mAll_userCargo;
 
 
     public WT_Repository(Application application){
@@ -52,7 +54,7 @@ public class WT_Repository {
         });
     }
 
-    public LiveData<List<user_Boat>> getAlluserBoat(){
+    public ListenableFuture<List<user_Boat>> getAlluserBoat(){
         return muser_boatDao.getAlluserBoat();
     }
 

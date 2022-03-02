@@ -16,6 +16,7 @@ import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class ResultQuery extends AppCompatActivity {
 
@@ -23,8 +24,8 @@ public class ResultQuery extends AppCompatActivity {
     TextView text;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
 
-    List<user_Boat> BoatData;
-    List<user_Cargo> CargoData;
+    //List<user_Boat> BoatData;
+    //List<user_Cargo> CargoData;
 
 
     @Override
@@ -38,20 +39,43 @@ public class ResultQuery extends AppCompatActivity {
         //拿到船和货的数据
         mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
             @Override
-            public void onChanged(List<user_Cargo> user_cargos) {
-                CargoData=user_cargos;
+            public void onChanged(List<user_Cargo> CargoData) {
+                try {
+                    List<user_Boat> BoatData = mWT_ViewModel.getAlluserBoat().get();
+                    /*
+                    测试，成功在result界面显示第一位船主与第一位货主的username
+                    if(BoatData==null || BoatData.isEmpty()){
+                        text.setText("查询失败");
+                    }
+                    else{
+                        text.setText(BoatData.get(0).getUsername()+" "+CargoData.get(0).getUsername());
+                   }
+                     */
+
+                    //在此后调用python程序即可，BoatData为船主数据，CargoData为货主数据
+
+
+                    
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
+        //List<user_Boat> BoatData;
+
+        /*
         mWT_ViewModel.getAlluserBoat().observe(this, new Observer<List<user_Boat>>() {
             @Override
             public void onChanged(List<user_Boat> user_boats) {
                 BoatData=user_boats;
             }
         });
-
-        initPython();
-        callPythonCode(BoatData,CargoData,text);
+        */
+        //initPython();
+        //callPythonCode(BoatData,CargoData,text);
 
 
     }

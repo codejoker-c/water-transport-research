@@ -25,6 +25,6 @@ public interface user_BoatDao {
     void update(user_Boat userBoat);
 
     @Query("SELECT * FROM USER_BOAT")
-    LiveData<List<user_Boat>> getAlluserBoat();
+    ListenableFuture<List<user_Boat>> getAlluserBoat();
 
 }

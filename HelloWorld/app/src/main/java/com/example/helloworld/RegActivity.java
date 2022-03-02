@@ -107,7 +107,7 @@ public class RegActivity extends AppCompatActivity {
                         intent.setClass(RegActivity.this,MainActivity.class);
                         startActivity(intent);
                     }
-                    List<user_Boat> u = mWT_ViewModel.getAlluserBoat().getValue();
+                    //List<user_Boat> u = mWT_ViewModel.getAlluserBoat().getValue();
                     /*
                     User muser = mWT_ViewModel.findUserWithUsername(username).get();
                     if(muser!=null){
