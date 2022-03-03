@@ -38,6 +38,14 @@ public class WT_Repository {
         return muser_boatDao.finduserBoatWithUsername(un);
     }
 
+    public ListenableFuture<user_Boat> finduserBoatWithId(Integer id){
+        return muser_boatDao.finduserBoatWithId(id);
+    }
+
+    public ListenableFuture<user_Cargo> finduserCargoWithId(Integer id){
+        return muser_cargoDao.finduserCargoWithId(id);
+    }
+
     public ListenableFuture<user_Cargo> finduserCargoWithUsername(String un){
         return muser_cargoDao.finduserCargoWithUsername(un);
     }

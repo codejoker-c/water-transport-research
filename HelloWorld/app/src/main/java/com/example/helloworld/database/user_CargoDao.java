@@ -18,6 +18,9 @@ public interface user_CargoDao {
     @Query("SELECT * FROM user_Cargo WHERE username = :username")
     ListenableFuture<user_Cargo> finduserCargoWithUsername(String username);
 
+    @Query("SELECT * FROM user_Cargo WHERE id = :userid")
+    ListenableFuture<user_Cargo> finduserCargoWithId(Integer userid);
+
     @Query("DELETE FROM user_Cargo WHERE username = :username")
     void deleteuserCargoWithUsername(String username);
 

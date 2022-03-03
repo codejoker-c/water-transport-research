@@ -6,14 +6,106 @@
     android:layout_height="match_parent"
     tools:context=".ResultQuery">
 
+    <include layout="@layout/main_titlebar"/>
+
+    <TextView
+        android:id="@+id/query_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:text="欢迎查看您的匹配结果!"
+        android:background="@color/yellow"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/query_cargo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="货主姓名"
+        android:textSize="20sp"
+        android:textStyle="bold"
+
+        ></TextView>
+
+    <TextView
+        android:id="@+id/query_cargo_kind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/query_cargo_name"
+        android:layout_marginLeft="35dp"
+        android:layout_toRightOf="@id/query_cargo_name"
+        android:text="货物种类"
+        android:textSize="20sp"
+        android:textStyle="bold"></TextView>
+
+
+    <TextView
+        android:id="@+id/query_cargo_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/query_cargo_kind"
+        android:layout_marginLeft="35dp"
+        android:layout_toRightOf="@id/query_cargo_kind"
+        android:text="货物重量"
+        android:textSize="20sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/query_cargo_site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/query_cargo_name"
+
+        android:layout_marginTop="155dp"
+        android:text="货物所在地"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/query_cargo_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="→"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/query_cargo_site"
+        android:layout_alignBottom="@id/query_cargo_site"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/query_cargo_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/query_cargo_arrow"
+        android:layout_alignBottom="@id/query_cargo_arrow"
+        android:text="货物目的地"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/query_cargo_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/query_cargo_des"
+        android:layout_alignBottom="@id/query_cargo_des"
+        android:layout_marginLeft="35dp"
+        android:text="货主手机号"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        ></TextView>
 
     <TextView
         android:id="@+id/test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="300dp"
         android:layout_marginLeft="50dp"
-        android:text=""
+
         ></TextView>
 
 

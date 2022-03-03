@@ -46,8 +46,16 @@ public class WT_ViewModel extends AndroidViewModel {
         return mRepository.finduserBoatWithUsername(un);
     }
 
+    public ListenableFuture<user_Boat> finduserBoatWithId(Integer id) {
+        return mRepository.finduserBoatWithId(id);
+    }
+
     public ListenableFuture<user_Cargo> finduserCargoWithUsername(String un) {
         return mRepository.finduserCargoWithUsername(un);
+    }
+
+    public ListenableFuture<user_Cargo> finduserCargoWithId(Integer id) {
+        return mRepository.finduserCargoWithId(id);
     }
 
     //Boat查询改为获取数据库中信息的快照，即使用ListenableFuture类
