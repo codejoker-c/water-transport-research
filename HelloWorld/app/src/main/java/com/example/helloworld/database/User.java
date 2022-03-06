@@ -20,6 +20,9 @@ public class User {
     @NonNull
     protected String password;
 
+    @NonNull
+    protected int isFillInfo;
+
     //将枚举类型忽略，不存入数据库中
     @Ignore
     public Status status=Status.logout;
@@ -28,6 +31,7 @@ public class User {
     public User(String username,String password){
         this.username = username;
         this.password = password;
+        isFillInfo = 0;
     }
 
     public void setId(@NonNull Integer id) {
@@ -46,6 +50,13 @@ public class User {
         return password;
     }
 
+    public void setIsFillInfo(){
+        isFillInfo = 1;
+    }
+
+    public int getIsFillInfo(){
+        return isFillInfo;
+    }
     /*public Status getStatus(){
         return status;
     }

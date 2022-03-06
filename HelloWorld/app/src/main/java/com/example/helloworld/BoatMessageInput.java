@@ -123,22 +123,17 @@ public class BoatMessageInput extends AppCompatActivity {
                     User user = UserContext.getUser();
                     user_Boat userBoat = new user_Boat(user.getUsername(),user.getPassword(),name,phone,weight,loadweight,loadtype,depart);
                     userBoat.setId(user.getId());
+                    userBoat.setIsFillInfo(); // 设置该用户已经完善信息
                     mWT_ViewModel.update(userBoat);
+
                     intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
                     startActivity(intent);
                 }
-
-
-
-
                 break;
             case R.id.ib_menu:
                 UserContext.user_center(intent, BoatMessageInput.this);
                 break;
-
         }
-
-        startActivity(intent);
     }
 
 }

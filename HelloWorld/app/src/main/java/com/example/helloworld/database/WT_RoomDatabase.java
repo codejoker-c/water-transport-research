@@ -14,7 +14,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {user_Boat.class,user_Cargo.class},version = 4,exportSchema = false)
+@Database(entities = {user_Boat.class,user_Cargo.class},version = 5,exportSchema = false)
 public abstract class WT_RoomDatabase extends RoomDatabase {
     //public abstract UserDao userDao();
     public abstract user_BoatDao user_boatDao();
