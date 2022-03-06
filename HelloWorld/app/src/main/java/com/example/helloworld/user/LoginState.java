@@ -1,12 +1,16 @@
 package com.example.helloworld.user;
 
 
+
 import android.app.Activity;
 import android.content.Intent;
+
+import androidx.activity.result.contract.ActivityResultContracts;
 
 import com.example.helloworld.AboutActivity2;
 import com.example.helloworld.BoatMessageInput;
 import com.example.helloworld.CargoMessageInput;
+import com.example.helloworld.ResultQuery;
 import com.example.helloworld.UserActivity;
 import com.example.helloworld.database.Status;
 import com.example.helloworld.database.User;
@@ -26,7 +30,7 @@ public class LoginState implements UserState {
 
     @Override
     public void data_query(Intent intent,Activity activity){
-        intent.setClass(activity,AboutActivity2.class);
+        intent.setClass(activity, ResultQuery.class);
     }
 
     @Override

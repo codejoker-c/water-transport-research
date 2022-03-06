@@ -10,7 +10,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.List;
 
-@Dao()
+@Dao
 public interface user_BoatDao {
     @Insert
     void insert(user_Boat userBoat);
