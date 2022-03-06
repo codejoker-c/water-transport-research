@@ -80,12 +80,11 @@
         android:id="@+id/query_cargo_des"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/query_cargo_arrow"
         android:layout_alignBottom="@id/query_cargo_arrow"
+        android:layout_toRightOf="@id/query_cargo_arrow"
         android:text="货物目的地"
         android:textSize="20sp"
-        android:textStyle="bold"
-        ></TextView>
+        android:textStyle="bold"></TextView>
 
     <TextView
         android:id="@+id/query_cargo_phone"
