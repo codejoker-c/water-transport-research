@@ -198,8 +198,8 @@ class port(object):
         self.route = route
 
 
-Loc_Correspond = {"Chongqing": 15, "Dalian": 20, "Dongguan": 22, "Fuzhou": 28, "Taixing": 42,
-                  "Nantong": 73, "Haian": 56, "Yancheng": 35, "Xuancheng": 5, "Shanghai": 63}
+Loc_Correspond = {"重庆": 15, "大连": 20, "东莞": 22, "福州": 28, "泰兴": 42,
+                  "南通": 73, "海安": 56, "盐城": 35, "宣城": 5, "上海": 63}
 
 pindex = {"Port A": 99999}
 
@@ -244,25 +244,27 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
                 dis_transport = -dis_transport
 
             time = (dis_transport + dis_ship_cargo) / speed_ship / 24
-            gate_num = 0
-            for i in range(pindex[Ship_info_array.get(i).depart],
-                           pindex[Cargo_info_array.get(j).depart]):
-                gate_num += gate[i]
-            for i in range(pindex[Cargo_info_array.get(j).depart],
-                           pindex[Cargo_info_array.get(j).destin]):
-                gate_num += gate[i]
+            #gate_num = 0
+            #for i in range(pindex[Ship_info_array.get(i).depart],
+            #               pindex[Cargo_info_array.get(j).depart]):
+            #    gate_num += gate[i]
+            #for i in range(pindex[Cargo_info_array.get(j).depart],
+            #               pindex[Cargo_info_array.get(j).destin]):
+            #    gate_num += gate[i]
 
             TransportFee1 = M_cargo * CargoType_Price[Cargo_info_array.get(j).cargo_type]
             TransportFee2 = 1. / 24 * alpha * dis_transport * speed_ship ** 2 * (
-                    beta + gama * M_cargo)
+                    beta + gama * M_cargo)*petrol_per
             TransportFee3 = const_oneday * time
             TransportFee4 = (construct_fee + inout_fee + insurance_fee) * M_cargo
             TransportFee5 = bill_fee * (M_cargo + M_ship)
-            TransportFee6 = gate_num * gate_fee
+            #TransportFee6 = gate_num * gate_fee
             # 还有一项时间窗没有写
 
+            #Weight = TransportFee1 - (
+            #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
             Weight = TransportFee1 - (
-                        TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
+                    TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5)
 
             result[i][j] = Weight
 

@@ -133,6 +133,7 @@ public class BoatMessageInput extends AppCompatActivity {
                     user_Boat userBoat = new user_Boat(user.getUsername(),user.getPassword(),name,phone,weight,loadweight,loadtype,depart);
                     userBoat.setId(user.getId());
                     userBoat.setIsFillInfo(); // 设置该用户已经完善信息
+                    UserContext.setLoginState(userBoat);
                     mWT_ViewModel.update(userBoat);
 
                     intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
