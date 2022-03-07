@@ -13,6 +13,17 @@
 
     </string-array>
 
+    <string-array name="port_list">
+        <item>上海</item>
+        <item>宜宾</item>
+        <item>乐山</item><item>重庆</item><item>武汉</item><item>宜昌</item><item>黄山</item><item>长沙</item>
+        <item>岳阳</item><item>湘潭</item><item>株洲</item><item>九江</item><item>南昌</item><item>上海</item>
+        <item>芜湖</item><item>合肥</item><item>蚌埠</item><item>苏州</item><item>镇江</item><item>南通</item>
+        <item>泰州</item><item>南京</item><item>江阴</item>
+
+    </string-array>
+
+
     <string-array name="cargo_desmonth">
         <item>1</item>
         <item>2</item>

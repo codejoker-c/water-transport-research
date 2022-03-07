@@ -25,7 +25,8 @@ import java.util.concurrent.ExecutionException;
 public class BoatMessageInput extends AppCompatActivity {
 
     TextView spin_info,error;
-    EditText name_ship,phone_ship,weight_ship,loadweight_ship,depart_ship;
+    EditText name_ship,phone_ship,weight_ship,loadweight_ship;
+    Spinner depart_ship;
     Spinner load_type;
     WT_ViewModel mWT_ViewModel;
     @Override
@@ -78,7 +79,14 @@ public class BoatMessageInput extends AppCompatActivity {
                     position++;
                 }
                 load_type.setSelection(position,true);
-                depart_ship.setText(userBoat.depart);
+                String[] str1 = getResources().getStringArray(R.array.port_list);
+                int position1=0;
+                for(String i:str1){
+                    if(i.equals(userBoat.depart))
+                        break;
+                    position1++;
+                }
+                depart_ship.setSelection(position1,true);
             }
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -111,7 +119,8 @@ public class BoatMessageInput extends AppCompatActivity {
                 phone = phone_ship.getText().toString().trim();
                 weight = convertToInt(weight_ship.getText().toString(),0);
                 loadweight = convertToInt(loadweight_ship.getText().toString(),0);
-                depart = depart_ship.getText().toString().trim();
+                //depart = depart_ship.getText().toString().trim();
+                depart = depart_ship.getSelectedItem().toString();
                 loadtype = load_type.getSelectedItem().toString();
 
 
