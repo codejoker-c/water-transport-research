@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.chaquo.python.PyObject;
@@ -96,6 +100,12 @@ public class ResultQuery extends AppCompatActivity {
             }
         });
 
+        ImageButton ib_menu = findViewById(R.id.ib_menu);
+        ib_menu.setOnClickListener((View view)->{
+            Intent intent = new Intent();
+            UserContext.user_center(intent,ResultQuery.this);
+            startActivity(intent);
+        });
 
     }
 
