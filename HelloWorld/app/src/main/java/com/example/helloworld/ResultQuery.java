@@ -127,7 +127,7 @@ public class ResultQuery extends AppCompatActivity {
         //pyList.get(0).getClass()=pyObject
 
         //Integer a=pyList.get(0).get(0).toJava(Integer.class);
-        Integer id=userboat.getId();
+        Integer id=userboat.getId()-1;
 
         List<PyObject> Inner=pyList.get(id).asList();
         String str=Inner.get(1).toString();

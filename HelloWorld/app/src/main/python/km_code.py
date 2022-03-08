@@ -196,13 +196,14 @@ class port(object):
         self.route = route
 
 
-Loc_Correspond = {"重庆": 15, "大连": 20, "东莞": 22, "福州": 28, "泰兴": 42,
-                  "南通": 73, "海安": 56, "盐城": 35, "宣城": 5, "上海": 63}
+Loc_Correspond = {"重庆": 15, "上海": 20, "武汉": 22, "合肥": 28, "株洲": 42,
+                  "南昌": 73, "蚌埠": 56, "苏州": 35, "宣城": 5, "南京": 63}
 
 pindex = {"Port A": 99999}
 
 gate = []
 
+# 目前py的问题是单位问题，初级匹配没有进行
 
 def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
     alpha = 7.55E-6
