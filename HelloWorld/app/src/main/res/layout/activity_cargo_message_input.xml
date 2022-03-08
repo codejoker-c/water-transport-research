@@ -108,13 +108,24 @@
         android:text="货所在地(示例：xx市):"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
-    <EditText
+<!--    <EditText
         android:id="@+id/depart_cargo"
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:layout_marginLeft="185dp"
         android:layout_marginTop="345dp"
-        android:background="@drawable/round_editstyle"></EditText>
+        android:background="@drawable/round_editstyle"></EditText>-->
+
+    <Spinner
+        android:id="@+id/depart_cargo"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="345dp"
+        android:background="@drawable/round_editstyle"
+        android:entries="@array/port_list"
+
+        ></Spinner>
 
     <TextView
         android:layout_width="wrap_content"
@@ -125,13 +136,24 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
 
-    <EditText
+<!--    <EditText
         android:id="@+id/destination_cargo"
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:layout_marginLeft="185dp"
         android:layout_marginTop="395dp"
-        android:background="@drawable/round_editstyle"></EditText>
+        android:background="@drawable/round_editstyle"></EditText>-->
+
+    <Spinner
+        android:id="@+id/destination_cargo"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="185dp"
+        android:layout_marginTop="395dp"
+        android:background="@drawable/round_editstyle"
+        android:entries="@array/port_list"
+
+        ></Spinner>
 
     <TextView
         android:layout_width="wrap_content"

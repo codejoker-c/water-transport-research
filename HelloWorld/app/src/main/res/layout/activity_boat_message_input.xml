@@ -127,16 +127,29 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="400dp"
-        android:text="船所在地(实例：xx市):"
+        android:text="船所在地(示例：xx市):"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
-    <EditText
+<!--    <EditText
         android:id="@+id/depart_ship"
         android:layout_width="130dp"
         android:layout_height="30dp"
         android:layout_marginLeft="200dp"
         android:layout_marginTop="395dp"
-        android:background="@drawable/round_editstyle"></EditText>
+        android:background="@drawable/round_editstyle"></EditText>-->
+
+    <Spinner
+        android:id="@+id/depart_ship"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="395dp"
+        android:background="@drawable/round_editstyle"
+        android:entries="@array/port_list"
+
+        ></Spinner>
+
+
 
  <Button
      android:id="@+id/submit_ship"

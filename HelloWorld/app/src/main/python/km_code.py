@@ -1,4 +1,7 @@
 # import pandas as pd
+from ipaddress import collapse_addresses
+from tkinter import E
+from unicodedata import name
 import numpy as np
 
 
@@ -188,24 +191,47 @@ def compute_km(datas, min=False):
     return result  # 返回result二维数组，匹配的结果，，一个X，一个Y
 
 
+class port(object):
+
+    def __init__(self, name, route):
+        self.name = name
+        self.route = route
+
+
+Loc_Correspond = {"重庆": 15, "大连": 20, "东莞": 22, "福州": 28, "泰兴": 42,
+                  "南通": 73, "海安": 56, "盐城": 35, "宣城": 5, "上海": 63}
+
+pindex = {"Port A": 99999}
+
+gate = []
+
+
 def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
-    Loc_Correspond = {"Chongqing": 15, "Dalian": 20, "Dongguan": 22, "Fuzhou": 28, "Taixing": 42,
-                      "Nantong": 73, "Haian": 56, "Yancheng": 35, "Xuancheng": 5, "Shanghai": 63}
+    alpha = 7.55E-6
+    beta = 1492.2
+    gama = 0.0145
+    petrol_per = 163  # 燃油单价（瞎编）
+    const_oneday = 200  # 每日固定开销（可能是瞎编的
+    gate_fee = 400  # 过闸费
+    bill_fee = 1.5  # 办单费（船舶总重）
+    inout_fee = 0.35  # 进出港费（按船舶净吨位）
+    construct_fee = 4  # 港口建设费
+    insurance_fee = 0.112  # 保险费
+    speed_ship = 22.2
 
-    # Loc_Correspond={"重庆":15,"大连":20,"东莞":22,"福州":28,"泰兴":42,"南通":73,"海安":56,"盐城":35,"宣城":5}
+    # 以下数据为瞎编
+    sand_fare = 15
+    coal_fare = 20
+    mineral_fare = 25
+    CargoType_Price = {"沙土石子": sand_fare, "煤炭": coal_fare, "矿石": mineral_fare}
 
-    # result = [[0 for i in range(Cargo_info_array.size())] for j in range(Ship_info_array.size())]
     result = [[0 for i in range(cargo_length)] for j in range(ship_length)]
 
     for i in range(Ship_info_array.size()):
         for j in range(Cargo_info_array.size()):
-            M = Ship_info_array.get(i).weight
+            M_ship = Ship_info_array.get(i).weight
             # V=Ship_info_array[i]["V_ship"]
-            m = Cargo_info_array.get(j).cargo_weight
-
-            # M=Ship_info_array[i]["M_ship"]
-            # V=Ship_info_array[i]["V_ship"]
-            # m=Cargo_info_array[j]["m_cargo"]
+            M_cargo = Cargo_info_array.get(j).cargo_weight
 
             dis_ship_cargo = Loc_Correspond[Ship_info_array.get(i).depart] - Loc_Correspond[
                 Cargo_info_array.get(j).depart]
@@ -217,13 +243,30 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             if dis_transport < 0:
                 dis_transport = -dis_transport
 
-            # time = (dis_ship_cargo+dis_transport)/V
-            # Cost=Ship_info_array.get(i)["Cost_trans"]*((M+m)*dis_transport + M*dis_ship_cargo)#+ Ship_info_array[i]["Cost_live"]*time
-            Cost = 197 * ((M + m) * dis_transport + M * dis_ship_cargo)
-            # Profit=Cargo_info_array[j]["target_money"]-Cost
-            Profit = -Cost
+            time = (dis_transport + dis_ship_cargo) / speed_ship / 24
+            #gate_num = 0
+            #for i in range(pindex[Ship_info_array.get(i).depart],
+            #               pindex[Cargo_info_array.get(j).depart]):
+            #    gate_num += gate[i]
+            #for i in range(pindex[Cargo_info_array.get(j).depart],
+            #               pindex[Cargo_info_array.get(j).destin]):
+            #    gate_num += gate[i]
 
-            result[i][j] = Profit
+            TransportFee1 = M_cargo * CargoType_Price[Cargo_info_array.get(j).cargo_type]
+            TransportFee2 = 1. / 24 * alpha * dis_transport * speed_ship ** 2 * (
+                    beta + gama * M_cargo)*petrol_per
+            TransportFee3 = const_oneday * time
+            TransportFee4 = (construct_fee + inout_fee + insurance_fee) * M_cargo
+            TransportFee5 = bill_fee * (M_cargo + M_ship)
+            #TransportFee6 = gate_num * gate_fee
+            # 还有一项时间窗没有写
+
+            #Weight = TransportFee1 - (
+            #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
+            Weight = TransportFee1 - (
+                    TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5)
+
+            result[i][j] = Weight
 
     graphlist = result
 

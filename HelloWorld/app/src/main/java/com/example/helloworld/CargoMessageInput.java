@@ -34,8 +34,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CargoMessageInput extends AppCompatActivity {
 
     TextView spin_info2, error;
-    EditText name_cargo, phone_cargo, weight_cargo, depart_cargo, dest_cargo;
-    Spinner type_cargo, desmonth_cargo, desday_cargo;
+    EditText name_cargo, phone_cargo, weight_cargo;
+    Spinner type_cargo, desmonth_cargo, desday_cargo,depart_cargo, dest_cargo;
     String str;
     WT_ViewModel mWT_ViewModel;
 
@@ -127,8 +127,21 @@ public class CargoMessageInput extends AppCompatActivity {
                     position++;
                 }
                 type_cargo.setSelection(position, true);
-                depart_cargo.setText(userCargo.depart);
-                dest_cargo.setText(userCargo.destin);
+
+                String[] str1 = getResources().getStringArray(R.array.port_list);
+                int position1=0,position2=0;
+                for(String i:str1){
+                    if(i.equals(userCargo.depart))
+                        break;
+                    position1++;
+                }
+                for(String j:str1){
+                    if(j.equals(userCargo.destin))
+                        break;
+                    position2++;
+                }
+                depart_cargo.setSelection(position1,true);
+                dest_cargo.setSelection(position2,true);
                 desmonth_cargo.setSelection(userCargo.month - 1, true);
                 desday_cargo.setSelection(userCargo.day - 1, true);
             }
@@ -162,8 +175,10 @@ public class CargoMessageInput extends AppCompatActivity {
                 phone = phone_cargo.getText().toString().trim();
                 //weight = convertToInt(weight_cargo.getText().toString(),0);
                 loadweight = convertToInt(weight_cargo.getText().toString(), 0);
-                depart = depart_cargo.getText().toString().trim();
-                destin = dest_cargo.getText().toString().trim();
+/*                depart = depart_cargo.getText().toString().trim();
+                destin = dest_cargo.getText().toString().trim();*/
+                depart = depart_cargo.getSelectedItem().toString();
+                destin = dest_cargo.getSelectedItem().toString();
                 loadtype = type_cargo.getSelectedItem().toString();
                 desmonth = convertToInt(desmonth_cargo.getSelectedItem().toString(), 0);
                 desday = convertToInt(desday_cargo.getSelectedItem().toString(), 0);
@@ -176,6 +191,7 @@ public class CargoMessageInput extends AppCompatActivity {
                     user_Cargo userCargo = new user_Cargo(user.getUsername(), user.getPassword(), name, phone, loadweight, loadtype, depart, destin, desmonth, desday);
                     userCargo.setId(user.getId());
                     userCargo.setIsFillInfo();
+                    UserContext.setLoginState(userCargo);
                     mWT_ViewModel.update(userCargo);
                     intent.setClass(CargoMessageInput.this, HomeMenuActivity.class);
                     startActivity(intent);
