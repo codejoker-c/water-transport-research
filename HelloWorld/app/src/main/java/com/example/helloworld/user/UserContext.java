@@ -25,7 +25,7 @@ public class UserContext {
             mState.data_query(intent, activity, user);
             activity.startActivity(intent);
         } else
-            Toast.makeText(activity, "请先完善信息", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "请先补充个人信息", Toast.LENGTH_SHORT).show();
     }
 
     public static void user_center(Intent intent, Activity activity) {

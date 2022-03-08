@@ -34,7 +34,7 @@ public class CargoQuery extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result_query);
+        setContentView(R.layout.activity_cargo_query);
 
         query_name = findViewById(R.id.cargo_query_cargo_name);
         query_kind = findViewById(R.id.cargo_query_cargo_kind);
@@ -101,7 +101,7 @@ public class CargoQuery extends AppCompatActivity {
         Integer id=userCargo.getId()-1;
 
         List<PyObject> Inner=pyList.get(id).asList();
-        String str=Inner.get(1).toString();
+        String str=Inner.get(0).toString();
         Integer cor_boat_id=convertToInt(str,0);
 
         return cor_boat_id;

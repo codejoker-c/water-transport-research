@@ -9,25 +9,24 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        app:title="App_name"
+        app:title="船货行"
         app:titleTextColor="@color/white"
 
         >
 
-    <ImageButton
-        android:id="@+id/ib_menu"
-        android:layout_width="18dp"
-        android:layout_height="18dp"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="50dp"
-        android:background="@android:color/transparent"
-        android:padding="1dp"
-        android:foregroundGravity="center"
-        android:scaleType="fitCenter"
-        android:src="@drawable/img_menu"
-        android:visibility="visible"
-        android:onClick="onClick"
-        />
+        <ImageButton
+            android:id="@+id/ib_menu"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="center"
+            android:onClick="onClick"
+            android:padding="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_menu"
+            android:visibility="visible" />
     </androidx.appcompat.widget.Toolbar>
     <!--
     <TextView
