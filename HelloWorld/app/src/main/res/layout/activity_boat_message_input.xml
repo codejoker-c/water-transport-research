@@ -60,11 +60,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="船重(kg):"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="250dp"
-        ></TextView>
+        android:text="船重(吨):"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
         android:id="@+id/weight_ship"
@@ -81,7 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="300dp"
-        android:text="船载重(kg):"
+        android:text="船载重(吨):"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText

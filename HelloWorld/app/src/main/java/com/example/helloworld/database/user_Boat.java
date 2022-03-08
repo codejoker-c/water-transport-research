@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 
+import java.io.Serializable;
+
 @Entity(tableName = "user_Boat")
-public class user_Boat extends User {
+public class user_Boat extends User implements Serializable {
     //后续这些数据都有可能更改，故使用public更方便
     public String name;
 

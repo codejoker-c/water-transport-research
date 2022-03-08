@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="250dp"
-        android:text="货重(kg):"
+        android:text="货重(吨):"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"></TextView>
 
     <EditText
