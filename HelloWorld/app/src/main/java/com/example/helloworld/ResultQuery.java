@@ -32,7 +32,6 @@ import kotlin.TuplesKt;
 public class ResultQuery extends AppCompatActivity {
 
     ArrayList ship_data;
-    TextView text;
     TextView query_name, query_kind, query_weight, query_site, query_des, query_phone;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
 
@@ -41,8 +40,6 @@ public class ResultQuery extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_query);
-
-        text = findViewById(R.id.test);
 
         query_name = findViewById(R.id.query_cargo_name);
         query_kind = findViewById(R.id.query_cargo_kind);
@@ -78,7 +75,7 @@ public class ResultQuery extends AppCompatActivity {
 
 
                     initPython();
-                    Integer cor_corgo=callPythonCode(BoatData, CargoData, text, ship_length, cargo_length,userBoat)+1;
+                    Integer cor_corgo=callPythonCode(BoatData, CargoData, ship_length, cargo_length,userBoat)+1;
 
                     //query_name.setText(cor_corgo.toString());
                     user_Cargo userCargo=mWT_ViewModel.finduserCargoWithId(cor_corgo).get();
@@ -117,7 +114,7 @@ public class ResultQuery extends AppCompatActivity {
     }
 
     // 调用python代码
-    Integer callPythonCode(List<user_Boat> BoatData, List<user_Cargo> CargoData, TextView textView, Integer ship_length, Integer cargo_length,user_Boat userboat) {
+    Integer callPythonCode(List<user_Boat> BoatData, List<user_Cargo> CargoData, Integer ship_length, Integer cargo_length,user_Boat userboat) {
 
         Python py = Python.getInstance();
         // 调用hello.py模块中的greet函数，并传一个参数

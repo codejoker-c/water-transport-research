@@ -9,7 +9,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.helloworld"
+        applicationId "com.example.water_transport_research"
         minSdk 21
         targetSdk 31
         versionCode 1
