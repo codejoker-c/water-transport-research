@@ -75,4 +75,12 @@ public class WT_ViewModel extends AndroidViewModel {
     public void update(user_Boat userBoat) {
         mRepository.update(userBoat);
     }
+
+    public void deleteAllBoat() {
+        mRepository.deleteAllBoat();
+    }
+
+    public void deleteAllCargo() {
+        mRepository.deleteAllCargo();
+    }
 }

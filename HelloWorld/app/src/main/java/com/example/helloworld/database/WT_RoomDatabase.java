@@ -49,14 +49,16 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
             databaseWriteExecutor.execute(() -> {
-                /*
-                UserDao dao = INSTANCE.userDao();
-                dao.deleteAll();
+                user_CargoDao user_cargoDao = INSTANCE.user_cargoDao();
+                user_BoatDao user_boatDao = INSTANCE.user_boatDao();
+                user_cargoDao.deleteAllCargo();
+                user_boatDao.deleteAllBoat();
 
-                User user =new User("joker","123456");
-                dao.insert(user);
-                 */
+                user_Boat userBoat = new user_Boat("liuzheng","123","刘铮","123456",1000,1000,"沙子","上海");
+                user_Cargo userCargo = new user_Cargo("lijianqiang","123","李建强","123456",1000,"沙子","上海","重庆",1,1);
 
+                user_cargoDao.insert(userCargo);
+                user_boatDao.insert(userBoat);
             });
         }
     };

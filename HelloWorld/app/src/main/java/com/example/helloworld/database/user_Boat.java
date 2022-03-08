@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 
 @Entity(tableName = "user_Boat")
-public class user_Boat extends User{
+public class user_Boat extends User {
     //后续这些数据都有可能更改，故使用public更方便
     public String name;
 
@@ -19,8 +19,8 @@ public class user_Boat extends User{
 
     public String depart;
 
-    public user_Boat(String username, String password,String name, String phone, int weight, int load_weight, String load_type, String depart){
-        super(username,password);
+    public user_Boat(String username, String password, String name, String phone, int weight, int load_weight, String load_type, String depart) {
+        super(username, password);
         this.name = name;
         this.phone = phone;
         this.weight = weight;
@@ -30,8 +30,8 @@ public class user_Boat extends User{
     }
 
     @Ignore
-    public user_Boat(String username,String password){
-        super(username,password);
+    public user_Boat(String username, String password) {
+        super(username, password);
     }
 
 

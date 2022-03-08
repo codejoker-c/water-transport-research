@@ -30,4 +30,7 @@ public interface user_BoatDao {
     @Query("SELECT * FROM USER_BOAT")
     ListenableFuture<List<user_Boat>> getAlluserBoat();
 
+    @Query("DELETE FROM user_Boat")
+    void deleteAllBoat();
+
 }

@@ -29,4 +29,7 @@ public interface user_CargoDao {
 
     @Query("SELECT * FROM user_Cargo")
     LiveData<List<user_Cargo>> getAlluserCargo();
+
+    @Query("DELETE FROM user_Cargo")
+    void deleteAllCargo();
 }

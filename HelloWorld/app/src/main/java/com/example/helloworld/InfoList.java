@@ -9,9 +9,13 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.example.helloworld.database.user_Cargo;
+import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.ArrayList;
@@ -25,6 +29,7 @@ public class InfoList extends AppCompatActivity {
     List<user_Cargo> CargoData;
     private InfoListAdapter infoListAdapter;
     DividerItemDecoration mDivider;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +64,13 @@ public class InfoList extends AppCompatActivity {
                 infoListAdapter.notifyDataSetChanged();
                 CargoData = user_cargos;
             }
+        });
+
+        ImageButton ib_menu = findViewById(R.id.ib_menu);
+        ib_menu.setOnClickListener((View view)->{
+            Intent intent = new Intent();
+            UserContext.user_center(intent,InfoList.this);
+            startActivity(intent);
         });
     }
 }

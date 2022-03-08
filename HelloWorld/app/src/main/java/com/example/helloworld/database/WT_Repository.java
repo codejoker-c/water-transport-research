@@ -69,4 +69,16 @@ public class WT_Repository {
     public LiveData<List<user_Cargo>> getAlluserCargo(){
         return muser_cargoDao.getAlluserCargo();
     }
+
+    public void deleteAllBoat(){
+        WT_RoomDatabase.databaseWriteExecutor.execute(()->{
+            muser_boatDao.deleteAllBoat();
+        });
+    }
+
+    public void deleteAllCargo(){
+        WT_RoomDatabase.databaseWriteExecutor.execute(()->{
+            muser_cargoDao.deleteAllCargo();
+        });
+    }
 }
