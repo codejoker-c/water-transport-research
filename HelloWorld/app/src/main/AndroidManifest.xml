@@ -30,7 +30,7 @@
                 android:value=".HomeMenuActivity" />
         </activity>
         <activity
-            android:name=".ResultQuery"
+            android:name=".BoatQuery"
             android:exported="false" />
         <activity
             android:name=".CargoMessageInput"

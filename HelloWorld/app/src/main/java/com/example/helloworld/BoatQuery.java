@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -22,14 +21,9 @@ import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 
-import io.vavr.Tuple;
-import io.vavr.Tuple2;
-import kotlin.TuplesKt;
-
-public class ResultQuery extends AppCompatActivity {
+public class BoatQuery extends AppCompatActivity {
 
     ArrayList ship_data;
     TextView query_name, query_kind, query_weight, query_site, query_des, query_phone;
@@ -100,7 +94,7 @@ public class ResultQuery extends AppCompatActivity {
         ImageButton ib_menu = findViewById(R.id.ib_menu);
         ib_menu.setOnClickListener((View view)->{
             Intent intent = new Intent();
-            UserContext.user_center(intent,ResultQuery.this);
+            UserContext.user_center(intent, BoatQuery.this);
             startActivity(intent);
         });
 

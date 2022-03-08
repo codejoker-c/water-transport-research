@@ -21,11 +21,10 @@ public class UserContext {
     }
 
     public static void data_query(Intent intent, Activity activity) {
-        if(user.getIsFillInfo()==1) {
-            mState.data_query(intent, activity);
+        if (user.getIsFillInfo() == 1) {
+            mState.data_query(intent, activity, user);
             activity.startActivity(intent);
-        }
-        else
+        } else
             Toast.makeText(activity, "请先完善信息", Toast.LENGTH_SHORT).show();
     }
 
@@ -52,7 +51,5 @@ public class UserContext {
     public static User getUser() {
         return user;
     }
-
-
 
 }

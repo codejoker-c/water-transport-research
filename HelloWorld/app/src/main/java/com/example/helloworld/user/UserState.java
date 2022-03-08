@@ -9,7 +9,7 @@ public interface UserState {
 
     public void data_in(Intent intent, Activity activity, User user);
 
-    public void data_query(Intent intent,Activity activity);
+    public void data_query(Intent intent,Activity activity,User user);
 
     public void user_center(Intent intent,Activity activity);
 

@@ -20,7 +20,7 @@ public class LogoutState implements UserState {
     }
 
     @Override
-    public void data_query(Intent intent,Activity activity){
+    public void data_query(Intent intent,Activity activity,User user){
         intent.setClass(activity, MainActivity.class);
     }
 
