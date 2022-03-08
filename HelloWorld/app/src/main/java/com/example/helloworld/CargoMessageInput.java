@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.helloworld.database.Status;
 import com.example.helloworld.database.User;
 import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.user.UserContext;
@@ -191,6 +192,7 @@ public class CargoMessageInput extends AppCompatActivity {
                     user_Cargo userCargo = new user_Cargo(user.getUsername(), user.getPassword(), name, phone, loadweight, loadtype, depart, destin, desmonth, desday);
                     userCargo.setId(user.getId());
                     userCargo.setIsFillInfo();
+                    userCargo.status = Status.cargo;
                     UserContext.setLoginState(userCargo);
                     mWT_ViewModel.update(userCargo);
                     intent.setClass(CargoMessageInput.this, HomeMenuActivity.class);
