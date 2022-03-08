@@ -54,9 +54,10 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
                 user_cargoDao.deleteAllCargo();
                 user_boatDao.deleteAllBoat();
 
-                user_Boat userBoat = new user_Boat("liuzheng","123","刘铮","123456",1000,1000,"沙子","上海");
-                user_Cargo userCargo = new user_Cargo("lijianqiang","123","李建强","123456",1000,"沙子","上海","重庆",1,1);
-
+                user_Boat userBoat = new user_Boat("liuzheng","123","刘铮","123456",1000,1000,"沙土石子","上海");
+                userBoat.setIsFillInfo();
+                user_Cargo userCargo = new user_Cargo("lijianqiang","123","李建强","123456",1000,"沙土石子","上海","重庆",1,1);
+                userCargo.setIsFillInfo();
                 user_cargoDao.insert(userCargo);
                 user_boatDao.insert(userBoat);
             });
