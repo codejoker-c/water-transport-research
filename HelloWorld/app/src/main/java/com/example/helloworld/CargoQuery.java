@@ -31,7 +31,7 @@ public class CargoQuery extends AppCompatActivity {
 
     TextView query_name, query_kind,query_weight, query_site, query_phone;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
-
+    TextView test01;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class CargoQuery extends AppCompatActivity {
         query_weight = findViewById(R.id.cargo_query_cargo_weight);
         query_site = findViewById(R.id.cargo_query_cargo_site);
         query_phone = findViewById(R.id.cargo_query_cargo_phone);
+        test01=findViewById(R.id.test01);
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
@@ -67,7 +68,7 @@ public class CargoQuery extends AppCompatActivity {
 
 
                     initPython();
-                    Integer cor_boat=callPythonCode(BoatData, CargoData, ship_length, cargo_length,userCargo)+1;
+                    Integer cor_boat=callPythonCode(BoatData, CargoData, ship_length, cargo_length,userCargo,test01)+1;
 
                     user_Boat userBoat=mWT_ViewModel.finduserBoatWithId(cor_boat).get();
 
@@ -98,12 +99,14 @@ public class CargoQuery extends AppCompatActivity {
     }
 
     // 调用python代码
-    Integer callPythonCode(List<user_Boat> BoatData, List<user_Cargo> CargoData, Integer ship_length, Integer cargo_length,user_Cargo userCargo) {
+    Integer callPythonCode(List<user_Boat> BoatData, List<user_Cargo> CargoData, Integer ship_length, Integer cargo_length,user_Cargo userCargo,TextView test01) {
 
         Python py = Python.getInstance();
 
         PyObject obj1 = py.getModule("km_code").callAttr("final_func", BoatData, CargoData, ship_length, cargo_length);
         List<PyObject> pyList = obj1.asList();
+
+        test01.setText(pyList.toString());
 
         Integer id=userCargo.getId()-1;
 
