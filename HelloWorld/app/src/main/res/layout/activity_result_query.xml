@@ -60,10 +60,9 @@
         android:layout_alignLeft="@id/query_cargo_name"
 
         android:layout_marginTop="155dp"
-        android:text="货物所在地"
+        android:text="所在"
         android:textSize="20sp"
-        android:textStyle="bold"
-        ></TextView>
+        android:textStyle="bold"></TextView>
 
     <TextView
         android:id="@+id/query_cargo_arrow"
@@ -82,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/query_cargo_arrow"
         android:layout_toRightOf="@id/query_cargo_arrow"
-        android:text="货物目的地"
+        android:text="目的"
         android:textSize="20sp"
         android:textStyle="bold"></TextView>
 
@@ -90,19 +89,18 @@
         android:id="@+id/sticker"
         android:layout_width="20dp"
         android:layout_height="24dp"
-        android:background="@mipmap/phone"
-        android:layout_toRightOf="@id/query_cargo_des"
         android:layout_alignBottom="@id/query_cargo_des"
-        android:layout_marginLeft="10dp"
-        ></ImageView>
+        android:layout_marginLeft="60dp"
+        android:layout_toRightOf="@id/query_cargo_des"
+        android:background="@mipmap/phone"></ImageView>
 
     <TextView
         android:id="@+id/query_cargo_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/sticker"
-        android:layout_marginLeft="35dp"
-        android:layout_toRightOf="@id/query_cargo_des"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/sticker"
         android:text="货主手机号"
         android:textSize="20sp"
         android:textStyle="bold"></TextView>

@@ -48,6 +48,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<InfoListAdapter.ViewHo
         holder.cargo_des.setText(user_cargo.destin);
         //holder.cargo_arrow.setText("→");
         holder.cargo_weight.setText(String.valueOf(user_cargo.cargo_weight));
+        holder.cargo_month.setText(String.valueOf(user_cargo.month));
+        holder.cargo_day.setText(String.valueOf(user_cargo.day));
     }
 
     @Override
@@ -61,13 +63,15 @@ public class InfoListAdapter extends RecyclerView.Adapter<InfoListAdapter.ViewHo
     //内部类 ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView cargo_name, cargo_kind, cargo_weight, cargo_site, cargo_arrow, cargo_des, cargo_phone;
-
+        TextView cargo_month,cargo_day;
         public ViewHolder(View view) {
             super(view);
             //cargo_name = view.findViewById(R.id.cargo_name);
             cargo_kind = view.findViewById(R.id.cargo_kind);
             cargo_weight = view.findViewById(R.id.cargo_weight);
             cargo_site = view.findViewById(R.id.cargo_site);
+            cargo_month = view.findViewById(R.id.cargo_month);
+            cargo_day = view.findViewById(R.id.cargo_day);
             //cargo_arrow = view.findViewById(R.id.cargo_arrow);
             cargo_des = view.findViewById(R.id.cargo_des);
             //cargo_phone = view.findViewById(R.id.cargo_phone);

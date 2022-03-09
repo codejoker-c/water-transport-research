@@ -199,7 +199,9 @@ class port(object):
 
 
 Loc_Correspond = {"重庆": 15, "上海": 20, "武汉": 22, "合肥": 28, "株洲": 42,
-                  "南昌": 73, "蚌埠": 56, "苏州": 35, "宣城": 5, "南京": 63}
+                  "南昌": 73, "蚌埠": 56, "苏州": 35, "宣城": 52, "南京": 63,
+                  "乐山": 15, "黄山": 15, "岳阳": 15, "宜宾": 15, "江阴": 15,
+                  "宜昌": 15, "镇江": 15, "泰兴": 15, "芜湖": 15, "长沙": 15, }
 
 pindex = {"Port A": 99999}
 
@@ -250,15 +252,27 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             #               pindex[Cargo_info_array.get(j).destin]):
             #    gate_num += gate[i]
 
-            TransportFee1 = M_cargo * CargoType_Price[Cargo_info_array.get(j).cargo_type]
+            TransportFee1 = M_cargo * CargoType_Price[
+                Cargo_info_array.get(j).cargo_type] * dis_transport
             TransportFee2 = 1. / 24 * alpha * dis_transport * speed_ship ** 2 * (
                     beta + gama * M_cargo) * petrol_per
             TransportFee3 = const_oneday * time
             TransportFee4 = (construct_fee + inout_fee + insurance_fee) * M_cargo
             TransportFee5 = bill_fee * (M_cargo + M_ship)
             # TransportFee6 = gate_num * gate_fee
+            TransportFee7 = 0
+            if (Ship_info_array.get(i).load_weight < Cargo_info_array.get(j).cargo_weight):
+                TransportFee7 = -100000
+            else:
+                TransportFee7 = 0
+            if ((Ship_info_array.get(i).load_type == Cargo_info_array.get(j).cargo_type)):
+                TransportFee7 = 0
+            else:
+                TransportFee7 = -100000
+
             # 还有一项时间窗没有写
-            date_arrival = str(Cargo_info_array.get(j).month) + '-' + str(Cargo_info_array.get(j).day)
+            date_arrival = str(Cargo_info_array.get(j).month) + '-' + str(
+                Cargo_info_array.get(j).day)
             date_now = datetime.datetime.now().strftime('%m-%d')
 
             da = datetime.datetime.strptime(date_arrival, '%m-%d')
@@ -270,11 +284,11 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
                 satisfaction = 1
 
             interests = TransportFee1 - (
-                    TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5)
+                    TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee7)
 
             # Weight = TransportFee1 - (
             #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
-            Weight = interests + satisfaction*interests
+            Weight = interests + satisfaction * interests  # 没有加上alpha系数
 
             result[i][j] = Weight
 

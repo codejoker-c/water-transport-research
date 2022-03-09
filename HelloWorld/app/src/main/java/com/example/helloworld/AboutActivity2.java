@@ -38,7 +38,7 @@ public class AboutActivity2 extends AppCompatActivity {
     Button button;
     List<View>viewList;    //ViewPager的数据源
     //<ImageView>pointList;  //存放显示器小点点的集合
-    int[]picIds={R.mipmap.test,R.mipmap.dragon,R.mipmap.mercury,R.mipmap.joker};
+    int[] picIds = { R.mipmap.slide_3,R.mipmap.slide_5,R.mipmap.slide_2, R.mipmap.slide_4};
     private AboutAdapter adapter;
 
     Handler handler = new Handler(){
