@@ -54,7 +54,7 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
                 user_cargoDao.deleteAllCargo();
                 user_boatDao.deleteAllBoat();
 
-                //user_Boat[] userBoat = new user_Boat[10];// = new user_Boat("liuzheng","123","刘铮","123456",1000,1000,"沙土石子","上海");
+                user_Boat[] userBoat = new user_Boat[10];// = new user_Boat("liuzheng","123","刘铮","123456",1000,1000,"沙土石子","上海");
                 //userBoat.setIsFillInfo();
                 user_Cargo[] userCargo = new user_Cargo[10];//new user_Cargo("lijianqiang","123","李建强","123456",1000,"沙土石子","上海","重庆",1,1);
 
@@ -65,7 +65,7 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
                 userCargo[2] = new
                         user_Cargo("wm","123","吴敏","10086",2000,"沙土石子","巫山","南京",4,6);
                 userCargo[3] = new
-                        user_Cargo("lhf","123","刘航帆","10086",600,"煤矿","江阴","岳阳",4,3);
+                        user_Cargo("lhf","123","刘航帆","10086",600,"煤炭","江阴","岳阳",4,3);
                 userCargo[4] = new
                         user_Cargo("lhp","123","李和平","10086",1100,"矿石","重庆","南通",3,25);
                 userCargo[5] = new
@@ -81,8 +81,33 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
 
 
 
+
+
+                userBoat[0] = new
+                        user_Boat("xxs","123","许先生","95566",600,1300,"沙土石子", "重庆");
+                userBoat[1] = new
+                        user_Boat("wxs","123","吴先生","95566",500,1500,"矿石", "上海");
+                userBoat[2] = new
+                        user_Boat("wxs","123","王先生","95566",800,3000,"矿石", "江阴");
+                userBoat[3] = new
+                        user_Boat("hns","123","何女士","95566",1200,2000,"沙土石子", "南通");
+                userBoat[4] = new
+                        user_Boat("yxs","123","闫先生","95566",1500,1000,"煤炭", "铜陵");
+                userBoat[5] = new
+                        user_Boat("lxs","123","刘先生","95566",1600,1500,"煤炭", "镇江");
+                userBoat[6] = new
+                        user_Boat("cns","123","陈女士","95566",3200,2000,"沙土石子", "黄石");
+                userBoat[7] = new
+                        user_Boat("lxs","123","李先生","95566",1300,1800,"沙土石子", "芜湖");
+                userBoat[8] = new
+                        user_Boat("dxs","123","董先生","95566",1400,1900,"煤炭", "岳阳");
+                userBoat[9] = new
+                        user_Boat("zxs","123","张先生","95566",1500,2300,"矿石", "巫山");
+
                 for(int i=0;i<10;i++){
                     userCargo[i].setIsFillInfo();
+                    userBoat[i].setIsFillInfo();
+                    user_boatDao.insert(userBoat[i]);
                     user_cargoDao.insert(userCargo[i]);
                 }
 
