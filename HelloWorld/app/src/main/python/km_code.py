@@ -198,10 +198,10 @@ class port(object):
         self.route = route
 
 
-Loc_Correspond = {"重庆": 15, "上海": 20, "武汉": 22, "合肥": 28, "株洲": 42,
-                  "南昌": 73, "蚌埠": 56, "苏州": 35, "宣城": 52, "南京": 63,
-                  "乐山": 15, "黄山": 15, "岳阳": 15, "宜宾": 15, "江阴": 15,
-                  "宜昌": 15, "镇江": 15, "泰兴": 15, "芜湖": 15, "长沙": 15, }
+Loc_Correspond = {"重庆": 0, "万州": 300, "巫山": 474, "宜昌": 674, "江陵": 854,
+                  "岳阳": 1020, "武汉": 1234, "黄石": 1354, "九江": 1494, "铜陵": 1774,
+                  "芜湖": 1904, "南京": 2047, "镇江": 2107, "江阴": 2193,
+                  "南通": 2293, "上海": 2409 }
 
 pindex = {"Port A": 99999}
 
@@ -220,9 +220,9 @@ insurance_fee = 0.112  # 保险费
 speed_ship = 22.2
 
 # 以下数据为瞎编
-sand_fare = 15
-coal_fare = 20
-mineral_fare = 25
+sand_fare = 0.022142
+coal_fare = 0.03506
+mineral_fare = 0.03042
 CargoType_Price = {"沙土石子": sand_fare, "煤炭": coal_fare, "矿石": mineral_fare}
 
 
@@ -230,6 +230,7 @@ CargoType_Price = {"沙土石子": sand_fare, "煤炭": coal_fare, "矿石": min
 
 def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
     result = [[0 for i in range(cargo_length)] for j in range(ship_length)]
+    result1 = [[0 for i in range(cargo_length)] for j in range(ship_length)]
 
     for i in range(Ship_info_array.size()):
         for j in range(Cargo_info_array.size()):
@@ -289,7 +290,7 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             # Weight = TransportFee1 - (
             #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
             Weight = interests + satisfaction * interests  # 没有加上alpha系数
-
+            result1[i][j] = interests
             result[i][j] = Weight
 
     graphlist = result
