@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:textColor="@color/white"
-        android:text="完善信息"
+        android:text="补充个人信息"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         android:background="@color/blue"

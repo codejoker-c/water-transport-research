@@ -109,7 +109,19 @@
 
         ></EditText>
 
+    <Button
+        android:id="@+id/advice_submit"
+        android:layout_width="45dp"
+        android:layout_height="30dp"
+        android:background="@color/blue"
+        android:text="提交"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="340dp"
 
+
+        ></Button>
 
 
 

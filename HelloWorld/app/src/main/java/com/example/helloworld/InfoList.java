@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -66,12 +68,25 @@ public class InfoList extends AppCompatActivity {
             }
         });
 
+        infoListAdapter.setOnItemClickListener(new InfoListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(RecyclerView parent, View view, int position, user_Cargo data) {
+                Intent intent=new Intent();
+                intent.setClass(InfoList.this,InfoDesc.class);
+                intent.putExtra("data",data);
+                startActivity(intent);
+            }
+
+        });
+
         ImageButton ib_menu = findViewById(R.id.ib_menu);
         ib_menu.setOnClickListener((View view)->{
             Intent intent = new Intent();
             UserContext.user_center(intent,InfoList.this);
             startActivity(intent);
         });
+
     }
+
 }
 

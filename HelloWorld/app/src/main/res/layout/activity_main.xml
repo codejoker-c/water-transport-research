@@ -42,10 +42,10 @@
         android:layout_marginStart="275dp"
         android:layout_marginTop="395dp"
         android:clickable="true"
-        android:text="创建账户"
-        android:textColor="@color/blue"
         android:onClick="onClick"
-        />
+        android:text="创建账户"
+        android:textStyle="italic"
+        android:textColor="@color/blue" />
 
     <TextView
         android:layout_width="wrap_content"

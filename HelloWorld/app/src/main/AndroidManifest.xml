@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".InfoDesc"
+            android:exported="false" />
+        <activity
             android:name=".CargoQuery"
             android:exported="false"
             android:parentActivityName=".HomeMenuActivity">
@@ -81,7 +84,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>

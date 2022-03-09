@@ -7,8 +7,8 @@
         android:id="@+id/item_aboutvp_iv"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        android:src="@mipmap/test"
-        android:scaleType="centerCrop"
+        android:src="@mipmap/slide_1"
+        android:scaleType="fitXY"
 
         ></ImageView>
 

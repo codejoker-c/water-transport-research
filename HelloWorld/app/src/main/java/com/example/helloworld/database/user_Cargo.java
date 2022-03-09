@@ -3,8 +3,10 @@ package com.example.helloworld.database;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 
+import java.io.Serializable;
+
 @Entity(tableName = "user_Cargo")
-public class user_Cargo extends User {
+public class user_Cargo extends User implements Serializable {    //你这个是可以序列化的
     public String name;
 
     public String phone;

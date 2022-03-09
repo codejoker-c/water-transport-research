@@ -82,7 +82,7 @@
         android:layout_alignBottom="@id/cargo_sticker"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@id/cargo_sticker"
-        android:text="货主手机号"
+        android:text="船主手机号"
         android:textSize="20sp"
         android:textStyle="bold"></TextView>
 
