@@ -16,15 +16,15 @@
 
         <ImageButton
             android:id="@+id/ib_menu"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="300dp"
             android:background="@android:color/transparent"
             android:foregroundGravity="center"
             android:onClick="onClick"
             android:padding="1dp"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
             android:src="@drawable/img_menu"
             android:visibility="visible" />
     </androidx.appcompat.widget.Toolbar>

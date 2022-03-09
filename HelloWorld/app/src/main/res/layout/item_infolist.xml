@@ -76,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/const_kind"
         android:layout_toRightOf="@+id/const_kind"
+        android:layout_marginLeft="2dp"
         android:text="货物种类"
         android:textSize="15sp"
         android:textStyle="bold"></TextView>
@@ -87,6 +88,7 @@
         android:layout_marginLeft="110dp"
         android:layout_marginTop="10dp"
         android:text="望"
+        android:textStyle="bold"
         android:textSize="15sp"></TextView>
 
 
@@ -135,6 +137,8 @@
         android:layout_alignBottom="@id/cargo_month"
         android:layout_marginLeft="2dp"
         ></TextView>
+
+
 
 
 </RelativeLayout>

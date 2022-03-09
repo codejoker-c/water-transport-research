@@ -123,13 +123,49 @@
         android:textColor="@color/divider"
         android:textSize="15sp"
         android:textStyle="bold"></TextView>
+
     <TextView
         android:id="@+id/cargo_qiwangriqi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/const_qiwangriqi"
         android:layout_marginLeft="135dp"
-        android:text="期望日期"
+        android:text="期"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/const_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/const_qiwangriqi"
+        android:layout_toRightOf="@id/cargo_qiwangriqi"
+        android:layout_marginLeft="1dp"
+        android:text="月"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/cargo_day2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/const_qiwangriqi"
+        android:layout_toRightOf="@id/const_month"
+        android:layout_marginLeft="1dp"
+        android:text="望"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+    <TextView
+        android:id="@+id/const_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/const_qiwangriqi"
+        android:layout_toRightOf="@id/cargo_day2"
+        android:layout_marginLeft="1dp"
+        android:text="日"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"></TextView>

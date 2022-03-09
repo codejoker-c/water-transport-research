@@ -11,6 +11,7 @@ import com.example.helloworld.database.user_Cargo;
 public class InfoDesc extends AppCompatActivity {
 
     TextView huoming,dunwei,dangqiandi,mudidi,qiwangriqi,huozhuxingming,huozhudianhua;
+    TextView cargo_day2;
 
 
 
@@ -30,7 +31,7 @@ public class InfoDesc extends AppCompatActivity {
         qiwangriqi.setText(String.valueOf(userCargo.month));
         huozhuxingming.setText(userCargo.name);
         huozhudianhua.setText(userCargo.phone);
-
+        cargo_day2.setText(String.valueOf(userCargo.day));
     }
 
     public void initView(){
@@ -41,6 +42,7 @@ public class InfoDesc extends AppCompatActivity {
         qiwangriqi=findViewById(R.id.cargo_qiwangriqi);
         huozhuxingming=findViewById(R.id.cargo_huozhuxingming);
         huozhudianhua=findViewById(R.id.cargo_huozhudianhua);
+        cargo_day2=findViewById(R.id.cargo_day2);
     }
 
 
