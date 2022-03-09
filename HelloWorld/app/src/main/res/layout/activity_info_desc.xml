@@ -7,6 +7,7 @@
     tools:context=".InfoDesc">
 
     <include layout="@layout/main_titlebar"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

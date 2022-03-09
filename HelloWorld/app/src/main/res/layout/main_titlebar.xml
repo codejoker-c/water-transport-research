@@ -9,17 +9,21 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        app:title="船货行"
-        app:titleTextColor="@color/white"
-
+        app:title=" "
         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="船货行"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <ImageButton
             android:id="@+id/ib_menu"
             android:layout_width="23dp"
             android:layout_height="23dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="300dp"
             android:background="@android:color/transparent"
             android:foregroundGravity="center"
             android:onClick="onClick"
@@ -27,6 +31,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/img_menu"
             android:visibility="visible" />
+
     </androidx.appcompat.widget.Toolbar>
     <!--
     <TextView

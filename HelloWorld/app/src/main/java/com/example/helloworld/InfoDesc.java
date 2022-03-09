@@ -1,6 +1,8 @@
 package com.example.helloworld;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,6 +34,15 @@ public class InfoDesc extends AppCompatActivity {
         huozhuxingming.setText(userCargo.name);
         huozhudianhua.setText(userCargo.phone);
         cargo_day2.setText(String.valueOf(userCargo.day));
+
+
+
+        //设置任务栏
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        //获取任务栏，并且添加返回父activity的按钮
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
     }
 
     public void initView(){

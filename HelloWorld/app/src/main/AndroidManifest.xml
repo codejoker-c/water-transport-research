@@ -11,7 +11,12 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".InfoDesc"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".InfoList">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".InfoList" />
+        </activity>
         <activity
             android:name=".CargoQuery"
             android:exported="false"
