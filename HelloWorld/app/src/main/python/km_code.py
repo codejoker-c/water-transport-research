@@ -261,6 +261,7 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             TransportFee4 = (construct_fee + inout_fee + insurance_fee) * M_cargo
             TransportFee5 = bill_fee * (M_cargo + M_ship)
             # TransportFee6 = gate_num * gate_fee
+
             TransportFee7 = 0
             if (Ship_info_array.get(i).load_weight < Cargo_info_array.get(j).cargo_weight):
                 TransportFee7 = -100000
@@ -285,7 +286,7 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
                 satisfaction = 1
 
             interests = TransportFee1 - (
-                    TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee7)
+                    TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5) + TransportFee7
 
             # Weight = TransportFee1 - (
             #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
