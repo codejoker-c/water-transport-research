@@ -69,11 +69,10 @@
         android:id="@+id/cargo_sticker"
         android:layout_width="20dp"
         android:layout_height="24dp"
-        android:background="@mipmap/phone"
-        android:layout_toRightOf="@id/cargo_query_cargo_site"
         android:layout_alignBottom="@id/cargo_query_cargo_site"
         android:layout_marginLeft="70dp"
-        ></ImageView>
+        android:layout_toRightOf="@id/cargo_query_cargo_site"
+        android:background="@mipmap/phone"></ImageView>
 
     <TextView
         android:id="@+id/cargo_query_cargo_phone"

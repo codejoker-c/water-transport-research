@@ -29,7 +29,7 @@ public class HomeMenuActivity extends AppCompatActivity {
 
     List<View> viewList;    //ViewPager的数据源
     //<ImageView>pointList;  //存放显示器小点点的集
-    int[] picIds = {R.mipmap.slide_1,R.mipmap.test, R.mipmap.dragon, R.mipmap.mercury};
+    int[] picIds = { R.mipmap.slide_3,R.mipmap.slide_5,R.mipmap.slide_2, R.mipmap.slide_4};
     private AboutAdapter adapter;
 
     Handler handler = new Handler() {
