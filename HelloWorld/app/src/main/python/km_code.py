@@ -1,6 +1,8 @@
 # import pandas as pd
 
 import numpy as np
+from math import exp
+import datetime
 
 
 # import db
@@ -203,27 +205,28 @@ pindex = {"Port A": 99999}
 
 gate = []
 
+alpha = 7.55E-6
+beta = 1492.2
+gama = 0.0145
+petrol_per = 163  # 燃油单价（瞎编）
+const_oneday = 200  # 每日固定开销（可能是瞎编的
+gate_fee = 400  # 过闸费
+bill_fee = 1.5  # 办单费（船舶总重）
+inout_fee = 0.35  # 进出港费（按船舶净吨位）
+construct_fee = 4  # 港口建设费
+insurance_fee = 0.112  # 保险费
+speed_ship = 22.2
+
+# 以下数据为瞎编
+sand_fare = 15
+coal_fare = 20
+mineral_fare = 25
+CargoType_Price = {"沙土石子": sand_fare, "煤炭": coal_fare, "矿石": mineral_fare}
+
+
 # 目前py的问题是单位问题，初级匹配没有进行
 
 def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
-    alpha = 7.55E-6
-    beta = 1492.2
-    gama = 0.0145
-    petrol_per = 163  # 燃油单价（瞎编）
-    const_oneday = 200  # 每日固定开销（可能是瞎编的
-    gate_fee = 400  # 过闸费
-    bill_fee = 1.5  # 办单费（船舶总重）
-    inout_fee = 0.35  # 进出港费（按船舶净吨位）
-    construct_fee = 4  # 港口建设费
-    insurance_fee = 0.112  # 保险费
-    speed_ship = 22.2
-
-    # 以下数据为瞎编
-    sand_fare = 15
-    coal_fare = 20
-    mineral_fare = 25
-    CargoType_Price = {"沙土石子": sand_fare, "煤炭": coal_fare, "矿石": mineral_fare}
-
     result = [[0 for i in range(cargo_length)] for j in range(ship_length)]
 
     for i in range(Ship_info_array.size()):
@@ -232,38 +235,46 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             # V=Ship_info_array[i]["V_ship"]
             M_cargo = Cargo_info_array.get(j).cargo_weight
 
-            dis_ship_cargo = Loc_Correspond[Ship_info_array.get(i).depart] - Loc_Correspond[
-                Cargo_info_array.get(j).depart]
-            if dis_ship_cargo < 0:
-                dis_ship_cargo = -dis_ship_cargo
+            dis_ship_cargo = abs(Loc_Correspond[Ship_info_array.get(i).depart] - Loc_Correspond[
+                Cargo_info_array.get(j).depart])
 
-            dis_transport = Loc_Correspond[Cargo_info_array.get(j).depart] - Loc_Correspond[
-                Cargo_info_array.get(j).destin]
-            if dis_transport < 0:
-                dis_transport = -dis_transport
+            dis_transport = abs(Loc_Correspond[Cargo_info_array.get(j).depart] - Loc_Correspond[
+                Cargo_info_array.get(j).destin])
 
             time = (dis_transport + dis_ship_cargo) / speed_ship / 24
-            #gate_num = 0
-            #for i in range(pindex[Ship_info_array.get(i).depart],
+            # gate_num = 0
+            # for i in range(pindex[Ship_info_array.get(i).depart],
             #               pindex[Cargo_info_array.get(j).depart]):
             #    gate_num += gate[i]
-            #for i in range(pindex[Cargo_info_array.get(j).depart],
+            # for i in range(pindex[Cargo_info_array.get(j).depart],
             #               pindex[Cargo_info_array.get(j).destin]):
             #    gate_num += gate[i]
 
             TransportFee1 = M_cargo * CargoType_Price[Cargo_info_array.get(j).cargo_type]
             TransportFee2 = 1. / 24 * alpha * dis_transport * speed_ship ** 2 * (
-                    beta + gama * M_cargo)*petrol_per
+                    beta + gama * M_cargo) * petrol_per
             TransportFee3 = const_oneday * time
             TransportFee4 = (construct_fee + inout_fee + insurance_fee) * M_cargo
             TransportFee5 = bill_fee * (M_cargo + M_ship)
-            #TransportFee6 = gate_num * gate_fee
+            # TransportFee6 = gate_num * gate_fee
             # 还有一项时间窗没有写
+            date_arrival = str(Cargo_info_array.get(j).month) + '-' + str(Cargo_info_array.get(j).day)
+            date_now = datetime.datetime.now().strftime('%m-%d')
 
-            #Weight = TransportFee1 - (
-            #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
-            Weight = TransportFee1 - (
+            da = datetime.datetime.strptime(date_arrival, '%m-%d')
+            dn = datetime.datetime.strptime(date_now, '%m-%d')
+            A = da - dn
+
+            satisfaction = exp(-(time - A.days) / A.days)
+            if satisfaction >= 1:
+                satisfaction = 1
+
+            interests = TransportFee1 - (
                     TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5)
+
+            # Weight = TransportFee1 - (
+            #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
+            Weight = interests + satisfaction*interests
 
             result[i][j] = Weight
 

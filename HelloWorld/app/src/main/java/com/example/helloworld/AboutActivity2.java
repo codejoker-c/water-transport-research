@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -13,6 +14,7 @@ import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,6 +23,7 @@ import com.chaquo.python.Kwarg;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+import com.example.helloworld.user.UserContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +84,14 @@ public class AboutActivity2 extends AppCompatActivity {
 
 /*        initPython();
         callPythonCode(Test);*/
+
+        ImageButton ib_menu = findViewById(R.id.ib_menu);
+        ib_menu.setOnClickListener((View view)->{
+            Intent intent = new Intent();
+            UserContext.user_center(intent,AboutActivity2.this);
+            startActivity(intent);
+        });
+
 
 
 

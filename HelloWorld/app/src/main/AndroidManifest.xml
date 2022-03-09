@@ -11,7 +11,12 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".CargoQuery"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".HomeMenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeMenuActivity" />
+        </activity>
         <activity
             android:name=".InitialInterface"
             android:exported="true">
@@ -31,7 +36,12 @@
         </activity>
         <activity
             android:name=".BoatQuery"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".HomeMenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeMenuActivity" />
+        </activity>
         <activity
             android:name=".CargoMessageInput"
             android:exported="false"
