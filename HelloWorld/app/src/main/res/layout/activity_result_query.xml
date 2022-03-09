@@ -9,110 +9,133 @@
     <include layout="@layout/main_titlebar"/>
 
     <TextView
-        android:id="@+id/query_welcome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:text="欢迎查看您的匹配结果!"
-        android:background="@color/yellow"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-
-        ></TextView>
-
-    <TextView
-        android:id="@+id/query_cargo_name"
+        android:id="@+id/cargo_site01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="货主姓名"
-        android:textSize="20sp"
-        android:textStyle="bold"
-
-        ></TextView>
-
-    <TextView
-        android:id="@+id/query_cargo_kind"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/query_cargo_name"
-        android:layout_marginLeft="35dp"
-        android:layout_toRightOf="@id/query_cargo_name"
-        android:text="货物种类"
-        android:textSize="20sp"
-        android:textStyle="bold"></TextView>
-
-
-    <TextView
-        android:id="@+id/query_cargo_weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/query_cargo_kind"
-        android:layout_marginLeft="35dp"
-        android:layout_toRightOf="@id/query_cargo_kind"
-        android:text="货物重量"
-        android:textSize="20sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/query_cargo_site"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/query_cargo_name"
-
-        android:layout_marginTop="155dp"
-        android:text="所在"
-        android:textSize="20sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/query_cargo_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="→"
-        android:textSize="20sp"
-        android:layout_toRightOf="@id/query_cargo_site"
-        android:layout_alignBottom="@id/query_cargo_site"
-        ></TextView>
-
-    <TextView
-        android:id="@+id/query_cargo_des"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/query_cargo_arrow"
-        android:layout_toRightOf="@id/query_cargo_arrow"
-        android:text="目的"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="80dp"
+        android:text="出发"
         android:textSize="20sp"
         android:textStyle="bold"></TextView>
 
     <ImageView
-        android:id="@+id/sticker"
-        android:layout_width="20dp"
-        android:layout_height="24dp"
-        android:layout_alignBottom="@id/query_cargo_des"
-        android:layout_marginLeft="60dp"
-        android:layout_toRightOf="@id/query_cargo_des"
-        android:background="@mipmap/phone"></ImageView>
-
-    <TextView
-        android:id="@+id/query_cargo_phone"
+        android:id="@+id/cargo_arrow01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/sticker"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@id/sticker"
-        android:text="货主手机号"
+        android:layout_alignBottom="@id/cargo_site01"
+        android:layout_toRightOf="@id/cargo_site01"
+        android:background="@mipmap/arrow"></ImageView>
+
+
+    <TextView
+        android:id="@+id/cargo_des01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cargo_arrow01"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/cargo_arrow01"
+        android:text="目的"
         android:textSize="20sp"
         android:textStyle="bold"></TextView>
 
     <TextView
-        android:id="@+id/test"
+        android:id="@+id/const_weight01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="120dp"
+        android:text="货物吨位："
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
 
-        ></TextView>
+    <TextView
+        android:id="@+id/cargo_weight01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/const_weight01"
+        android:layout_marginLeft="2dp"
+        android:layout_toRightOf="@id/const_weight01"
+        android:text="货物重量"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/const_kind01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cargo_weight01"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/cargo_weight01"
+        android:text="货物种类:"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/cargo_kind01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/const_kind01"
+        android:layout_toRightOf="@+id/const_kind01"
+        android:layout_marginLeft="2dp"
+        android:text="货物种类"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/const_hope01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="70dp"
+        android:text="望"
+        android:textStyle="bold"
+        android:textSize="15sp"></TextView>
+
+
+    <TextView
+        android:id="@+id/cargo_month01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/const_hope01"
+        android:layout_alignBottom="@id/const_hope01"
+        android:layout_marginLeft="2dp"
+        android:text="9"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/const_month01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cargo_month01"
+        android:layout_marginLeft="2dp"
+        android:layout_toRightOf="@id/cargo_month01"
+        android:text="月"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/cargo_day01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/const_month01"
+        android:layout_alignBottom="@id/const_month01"
+        android:layout_marginLeft="2dp"
+        android:text="41"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
+
+    <TextView
+        android:id="@+id/const_day01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/cargo_month01"
+        android:layout_marginLeft="2dp"
+        android:layout_toRightOf="@id/cargo_day01"
+        android:text="日到达"
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
 
     <TextView
         android:id="@+id/test01"
@@ -121,6 +144,43 @@
         android:layout_marginTop="300dp"
         android:layout_marginLeft="20dp"
         ></TextView>
+
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="145dp"
+        android:background="@mipmap/phone"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="货主："
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="147sp"/>
+
+    <TextView
+        android:id="@+id/name01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="147sp"
+        android:text="货主姓名"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/phone01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="182dp"
+        android:layout_marginTop="147dp"
+        android:text="电话号码"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        />
 
 
 </RelativeLayout>

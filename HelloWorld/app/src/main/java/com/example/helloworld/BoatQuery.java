@@ -29,6 +29,7 @@ public class BoatQuery extends AppCompatActivity {
 
     ArrayList ship_data;
     TextView query_name, query_kind, query_weight, query_site, query_des, query_phone;
+    TextView mon,day;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
     TextView test01;
 
@@ -43,13 +44,15 @@ public class BoatQuery extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 
 
-        query_name = findViewById(R.id.query_cargo_name);
-        query_kind = findViewById(R.id.query_cargo_kind);
-        query_weight = findViewById(R.id.query_cargo_weight);
-        query_site = findViewById(R.id.query_cargo_site);
-        query_des = findViewById(R.id.query_cargo_des);
-        query_phone = findViewById(R.id.query_cargo_phone);
+        query_name = findViewById(R.id.name01);
+        query_kind = findViewById(R.id.cargo_kind01);
+        query_weight = findViewById(R.id.cargo_weight01);
+        query_site = findViewById(R.id.cargo_site01);
+        query_des = findViewById(R.id.cargo_des01);
+        query_phone = findViewById(R.id.phone01);
         test01 = findViewById(R.id.test01);
+        mon = findViewById(R.id.cargo_month01);
+        day = findViewById(R.id.cargo_day01);
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //拿到船和货的数据
@@ -88,7 +91,8 @@ public class BoatQuery extends AppCompatActivity {
                     query_site.setText(userCargo.depart);
                     query_des.setText(userCargo.destin);
                     query_phone.setText(userCargo.phone);
-
+                    mon.setText(String.valueOf(userCargo.month));
+                    day.setText(String.valueOf(userCargo.day));
 
 
                 } catch (ExecutionException e) {
