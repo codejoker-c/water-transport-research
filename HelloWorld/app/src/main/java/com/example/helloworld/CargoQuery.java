@@ -1,6 +1,8 @@
 package com.example.helloworld;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -41,6 +43,11 @@ public class CargoQuery extends AppCompatActivity {
         query_weight = findViewById(R.id.cargo_query_cargo_weight);
         query_site = findViewById(R.id.cargo_query_cargo_site);
         query_phone = findViewById(R.id.cargo_query_cargo_phone);
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+
 
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
