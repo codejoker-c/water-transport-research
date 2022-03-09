@@ -30,6 +30,7 @@ public class BoatQuery extends AppCompatActivity {
     ArrayList ship_data;
     TextView query_name, query_kind, query_weight, query_site, query_des, query_phone;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
+    TextView test01;
 
 
     @Override
@@ -48,7 +49,7 @@ public class BoatQuery extends AppCompatActivity {
         query_site = findViewById(R.id.query_cargo_site);
         query_des = findViewById(R.id.query_cargo_des);
         query_phone = findViewById(R.id.query_cargo_phone);
-
+        test01 = findViewById(R.id.test01);
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //拿到船和货的数据
@@ -76,7 +77,7 @@ public class BoatQuery extends AppCompatActivity {
 
 
                     initPython();
-                    Integer cor_corgo=callPythonCode(BoatData, CargoData, ship_length, cargo_length,userBoat)+1;
+                    Integer cor_corgo=callPythonCode(BoatData, CargoData, ship_length, cargo_length,userBoat,test01)+1;
 
                     //query_name.setText(cor_corgo.toString());
                     user_Cargo userCargo=mWT_ViewModel.finduserCargoWithId(cor_corgo).get();
@@ -115,7 +116,7 @@ public class BoatQuery extends AppCompatActivity {
     }
 
     // 调用python代码
-    Integer callPythonCode(List<user_Boat> BoatData, List<user_Cargo> CargoData, Integer ship_length, Integer cargo_length,user_Boat userboat) {
+    Integer callPythonCode(List<user_Boat> BoatData, List<user_Cargo> CargoData, Integer ship_length, Integer cargo_length,user_Boat userboat,TextView test01) {
 
         Python py = Python.getInstance();
         // 调用hello.py模块中的greet函数，并传一个参数
@@ -131,7 +132,7 @@ public class BoatQuery extends AppCompatActivity {
         // 调用Python函数，将返回的Python中的list转为Java的list
         List<PyObject> pyList = obj1.asList();
         //textView.setText(pyList.toString());
-
+        test01.setText(pyList.toString());
         //pyList.get(0).getClass()=pyObject
 
         //Integer a=pyList.get(0).get(0).toJava(Integer.class);
