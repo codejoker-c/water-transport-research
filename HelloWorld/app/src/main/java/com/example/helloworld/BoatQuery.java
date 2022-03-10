@@ -134,9 +134,12 @@ public class BoatQuery extends AppCompatActivity {
         //Integer sum = obj1.toJava(Integer.class);
 
         // 调用Python函数，将返回的Python中的list转为Java的list
+
         List<PyObject> pyList = obj1.asList();
+
+
         //textView.setText(pyList.toString());
-        test01.setText(pyList.toString());
+        //test01.setText(pyList.toString());
         //pyList.get(0).getClass()=pyObject
 
         //Integer a=pyList.get(0).get(0).toJava(Integer.class);

@@ -217,7 +217,8 @@ bill_fee = 1.5  # 办单费（船舶总重）
 inout_fee = 0.35  # 进出港费（按船舶净吨位）
 construct_fee = 4  # 港口建设费
 insurance_fee = 0.112  # 保险费
-speed_ship = 22.2
+#speed_ship = 22.2
+speed_ship = 0.5
 
 # 以下数据为瞎编
 sand_fare = 0.022142
@@ -226,9 +227,9 @@ mineral_fare = 0.03042
 CargoType_Price = {"沙土石子": sand_fare, "煤炭": coal_fare, "矿石": mineral_fare}
 
 
-# 目前py的问题是单位问题，初级匹配没有进行
 
 def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
+
     result = [[0 for i in range(cargo_length)] for j in range(ship_length)]
     result1 = [[0 for i in range(cargo_length)] for j in range(ship_length)]
 
@@ -290,7 +291,7 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
 
             # Weight = TransportFee1 - (
             #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
-            Weight = interests + satisfaction * interests  # 没有加上alpha系数
+            Weight = interests*0.9 + 0.1* satisfaction * interests  # 没有加上alpha系数
             result1[i][j] = interests
             result[i][j] = Weight
 

@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
-        android:text="欢迎查看您的匹配结果!"
         android:background="@color/yellow"
+        android:text="欢迎查看您的系统匹配结果!"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
         ></TextView>
@@ -30,6 +30,12 @@
 
         ></TextView>
 
+    <TextView
+        android:id="@+id/const_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        ></TextView>
     <TextView
         android:id="@+id/cargo_query_cargo_kind"
         android:layout_width="wrap_content"
