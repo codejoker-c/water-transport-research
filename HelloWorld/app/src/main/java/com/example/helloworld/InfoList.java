@@ -64,7 +64,6 @@ public class InfoList extends AppCompatActivity {
             public void onChanged(List<user_Cargo> user_cargos) {
                 infoListAdapter.setCargoData(user_cargos);
                 infoListAdapter.notifyDataSetChanged();
-                CargoData = user_cargos;
             }
         });
 
