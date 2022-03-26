@@ -22,8 +22,8 @@ android {
         }
         python {
             // 指定python路径
-            //buildPython "D:/Python/python.exe" //lz
-            buildPython "E:\\python39\\python.exe" //cym
+            buildPython "D:/Python/python.exe" //lz
+            //buildPython "E:\\python39\\python.exe" //cym
 
             pip{
                 install "numpy"

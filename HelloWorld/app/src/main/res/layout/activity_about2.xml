@@ -118,7 +118,7 @@
         android:textSize="18sp"
         android:textColor="@color/white"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="340dp"
+        android:layout_marginLeft="310dp"
 
 
         ></Button>

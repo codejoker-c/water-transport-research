@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/cargo_site"
         android:layout_toRightOf="@id/cargo_site"
+        android:layout_marginLeft="10dp"
         android:background="@mipmap/arrow"></ImageView>
 
 
@@ -84,11 +85,11 @@
         android:id="@+id/const_hope"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="110dp"
+        android:layout_marginLeft="120dp"
         android:layout_marginTop="10dp"
         android:text="望"
-        android:textStyle="bold"
-        android:textSize="15sp"></TextView>
+        android:textSize="15sp"
+        android:textStyle="bold"></TextView>
 
 
     <TextView
