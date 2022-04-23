@@ -3,7 +3,10 @@
 plugins {
     id 'com.android.application'
     id 'com.chaquo.python'
+    id 'maven-publish'
 }
+
+
 
 android {
     compileSdk 31
@@ -95,7 +98,8 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     implementation group: 'io.vavr', name: 'vavr', version: '0.10.2'
-
+    implementation 'log4j:log4j:1.2.17'
+    implementation 'com.ejlchina:okhttps-fastjson:2.3.0'
 }
 
 /

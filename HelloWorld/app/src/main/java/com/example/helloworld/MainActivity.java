@@ -27,6 +27,10 @@ import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Logger;
+
+import com.example.helloworld.API.API;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     EditText login_password;
     Spinner login_identity;
     WT_ViewModel mWT_ViewModel;
+    private static final Logger logger = Logger.getGlobal();
 
     //
     @Override
@@ -53,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
         login_identity=findViewById(R.id.login_identity);
         error = findViewById(R.id.login_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+        //logger.info(API.getHarbour());
+
+        Thread t = new Thread(()->{
+            logger.info(API.getHarbour());
+        });
+        t.start();
 
         /*
         login_identity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
