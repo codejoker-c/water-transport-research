@@ -87,11 +87,11 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
 
 
                 userBoat[0] = new
-                        user_Boat("xxs","123","许先生","95566",600,1300,"沙土石子", "重庆");
+                        user_Boat("刘峥","123","刘峥","95566",600,1300,"沙土石子", "重庆");
                 userBoat[1] = new
-                        user_Boat("wxs","123","吴先生","95566",500,1500,"沙土石子", "上海");
+                        user_Boat("陈一鸣","123","陈一鸣","95566",500,1500,"沙土石子", "上海");
                 userBoat[2] = new
-                        user_Boat("wxs","123","王先生","95566",800,3000,"沙土石子", "江阴");
+                        user_Boat("sxs","123","苏先生","95566",800,3000,"沙土石子", "江阴");
                 userBoat[3] = new
                         user_Boat("hns","123","何女士","95566",1200,2000,"沙土石子", "南通");
                 userBoat[4] = new
