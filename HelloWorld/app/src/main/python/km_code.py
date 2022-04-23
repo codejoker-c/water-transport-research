@@ -201,29 +201,29 @@ class port(object):
 Loc_Correspond = {"重庆": 0, "万州": 300, "巫山": 474, "宜昌": 674, "江陵": 854,
                   "岳阳": 1020, "武汉": 1234, "黄石": 1354, "九江": 1494, "铜陵": 1774,
                   "芜湖": 1904, "南京": 2047, "镇江": 2107, "江阴": 2193,
-                  "南通": 2293, "上海": 2409 }
+                  "南通": 2293, "上海": 2409}
 
 pindex = {"Port A": 99999}
 
 gate = []
 
 alpha = 7.55E-6
-beta = 1492.2
+beta = 1482.2
 gama = 0.0145
-petrol_per = 163  # 燃油单价（瞎编）
-const_oneday = 200  # 每日固定开销（可能是瞎编的
+petrol_per = 2000  # 燃油单价（瞎编）
+const_oneday = 200  # 每日固定开销
 gate_fee = 400  # 过闸费
 bill_fee = 1.5  # 办单费（船舶总重）
 inout_fee = 0.35  # 进出港费（按船舶净吨位）
 construct_fee = 4  # 港口建设费
 insurance_fee = 0.112  # 保险费
-#speed_ship = 22.2
-speed_ship = 0.5
 
-# 以下数据为瞎编
-sand_fare = 0.022142
-coal_fare = 0.03506
-mineral_fare = 0.03042
+speed_ship = 20
+
+
+sand_fare = 0.022142 * 5
+coal_fare = 0.03506 * 5
+mineral_fare = 0.03042 * 5
 CargoType_Price = {"沙土石子": sand_fare, "煤炭": coal_fare, "矿石": mineral_fare}
 
 
@@ -245,7 +245,7 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             dis_transport = abs(Loc_Correspond[Cargo_info_array.get(j).depart] - Loc_Correspond[
                 Cargo_info_array.get(j).destin])
 
-            time = (dis_transport + dis_ship_cargo) / speed_ship / 24
+            time = (dis_transport + dis_ship_cargo) / speed_ship / 24 * 2 + 1
             # gate_num = 0
             # for i in range(pindex[Ship_info_array.get(i).depart],
             #               pindex[Cargo_info_array.get(j).depart]):
@@ -256,7 +256,7 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
 
             TransportFee1 = M_cargo * CargoType_Price[
                 Cargo_info_array.get(j).cargo_type] * dis_transport
-            TransportFee2 = 1. / 24 * alpha * dis_transport * speed_ship ** 2 * (
+            TransportFee2 = 1. / 24 * alpha * dis_transport / 1.852 * (speed_ship / 1.852) ** 2 * (
                     beta + gama * M_cargo) * petrol_per
             TransportFee3 = const_oneday * time
             TransportFee4 = (construct_fee + inout_fee + insurance_fee) * M_cargo
@@ -273,7 +273,6 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             else:
                 TransportFee7 = -100000
 
-            # 还有一项时间窗没有写
             date_arrival = str(Cargo_info_array.get(j).month) + '-' + str(
                 Cargo_info_array.get(j).day)
             date_now = datetime.datetime.now().strftime('%m-%d')
@@ -286,12 +285,14 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             if satisfaction >= 1:
                 satisfaction = 1
 
-            interests = TransportFee1 - (
-                    TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5) + TransportFee7
+            interests = (TransportFee1 - (
+                    TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5) + TransportFee7) / time
 
             # Weight = TransportFee1 - (
             #            TransportFee2 + TransportFee3 + TransportFee4 + TransportFee5 + TransportFee6)
+
             Weight = interests*0.9 + 0.1* satisfaction * interests  # 没有加上alpha系数
+
             result1[i][j] = interests
             result[i][j] = Weight
 
