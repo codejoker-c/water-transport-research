@@ -60,10 +60,10 @@ public class MainActivity extends AppCompatActivity {
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //logger.info(API.getHarbour());
 
-        Thread t = new Thread(()->{
-            logger.info(API.getHarbour());
-        });
-        t.start();
+        //Thread t = new Thread(()->{
+          //  logger.info(API.getHarbour());
+        //});
+        //t.start();
 
         /*
         login_identity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
