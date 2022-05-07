@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import java.util.HashMap;
 import java.util.Map;
 
+// 调用易航海企业的接口，获取一些用于计算权值的数据，如两港口之间的水路距离等
 public class API {
     private static HTTP http = HTTP.builder().baseUrl("http://dataserver.ehanghai.cn").build();
     private static String appKey = "7bsb3c3ub2ugb17h";
@@ -36,4 +37,5 @@ public class API {
         map.put("timestamp", timestamp);
         return http.sync("/route/find").addUrlPara(map).get().getBody().toString();
     }
+
 }

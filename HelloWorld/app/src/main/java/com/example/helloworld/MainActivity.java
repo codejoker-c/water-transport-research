@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     EditText login_username;
     EditText login_password;
     Spinner login_identity;
-    WT_ViewModel mWT_ViewModel;
+    WT_ViewModel mWT_ViewModel; // 对数据库的操作
     private static final Logger logger = Logger.getGlobal();
 
     //
