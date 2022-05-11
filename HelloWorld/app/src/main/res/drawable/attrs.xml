@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--圆角矩形图片-->
+    <declare-styleable android:name="CircleImageView">
+        <attr android:name="circle" android:format="boolean" />
+        <attr android:name="radius" android:format="dimension" />
+        <attr android:name="border_width" />
+        <attr android:name="border_color" />
+    </declare-styleable>
+
+</selector>
