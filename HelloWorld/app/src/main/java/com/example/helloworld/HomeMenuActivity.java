@@ -90,7 +90,8 @@ public class HomeMenuActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.ib_menu:
-                UserContext.user_center(intent, HomeMenuActivity.this);
+                intent.setClass(HomeMenuActivity.this, UserActivity.class);
+                //UserContext.user_center(intent, UserActivity.class);
                 startActivity(intent);
                 break;
             case R.id.home_btn4:
