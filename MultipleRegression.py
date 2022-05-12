@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # Training Set
 
 #datafile = '.\data\ex1data1.txt'
-datafile = 'D:\TransportCompetition\Competition\结项论文\data_train(1).txt'
+datafile = 'data_train(1).txt'
 
 
 cols=np.loadtxt(datafile,delimiter=',',usecols=(0,1),unpack=True) #使用‘，’作为分隔符，读取第一列和第二列，UNpack=True将分列读取

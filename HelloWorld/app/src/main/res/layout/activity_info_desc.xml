@@ -82,6 +82,7 @@
         android:textColor="@color/divider"
         android:textSize="15sp"
         android:textStyle="bold"></TextView>
+
     <TextView
         android:id="@+id/cargo_dangqiandi"
         android:layout_width="wrap_content"

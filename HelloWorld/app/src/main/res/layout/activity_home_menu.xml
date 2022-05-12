@@ -22,15 +22,13 @@
         android:id="@+id/datainput_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:background="@color/blue"
+        android:onClick="onClick"
         android:text="补充个人信息"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        android:background="@color/blue"
-        android:layout_marginTop="20dp"
-        android:onClick="onClick">
-    </Button>
-
+        android:textColor="@color/white"
+        android:textStyle="bold"></Button>
 
     <Button
         android:id="@+id/home_btn2"
