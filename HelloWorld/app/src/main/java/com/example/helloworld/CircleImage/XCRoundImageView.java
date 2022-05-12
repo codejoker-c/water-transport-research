@@ -66,7 +66,7 @@ public class XCRoundImageView extends androidx.appcompat.widget.AppCompatImageVi
         paint.setColor(color);
         int x = bitmap.getWidth();
 
-        canvas.drawCircle(0, x / 2, x / 2, paint);
+        canvas.drawCircle(x/2, x / 2, x / 2, paint);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         canvas.drawBitmap(bitmap, rect, rect, paint);
         return output;

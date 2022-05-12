@@ -21,35 +21,39 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@drawable/module_background">
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:text="个人中心"
+                android:textColor="@color/black"
+                android:textSize="9pt"
+                android:textStyle="bold" />
             <LinearLayout
                 android:id="@+id/ll_portrait"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="30"
-                android:background="@color/white"
-                android:paddingTop="30dp"
+                android:paddingTop="10dp"
                 android:paddingBottom="10dp">
 
-                <com.example.helloworld.CircleImage.XCRoundImageView
-                    android:layout_width="90dip"
-                    android:layout_height="90dip"
 
+
+                <com.example.helloworld.CircleImage.XCRoundImageView
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="15dp"
                     android:src="@drawable/touxiang"
 
                     />
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
 
-                android:layout_height="wrap_content"
-                android:text="个人中心"
-                android:textColor="@color/black"
-                android:textSize="6pt" />
         </LinearLayout>
         <!-->
 这是便捷功能
@@ -68,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:text="便捷功能"
                 android:textColor="@color/black"
-                android:textSize="10pt"
+                android:textSize="9pt"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -164,15 +168,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="vertical"
-            android:background="@drawable/module_background">
+            android:background="@drawable/module_background"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="帮助"
                 android:textColor="@color/black"
-                android:textSize="10pt"
+                android:textSize="9pt"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -256,7 +260,7 @@
                 android:layout_height="wrap_content"
                 android:text="优惠活动"
                 android:textColor="@color/black"
-                android:textSize="10pt"
+                android:textSize="9pt"
                 android:textStyle="bold" />
 
             <LinearLayout
