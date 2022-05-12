@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">船货行</string>
     <string name="reg"><u>注册</u></string>
+    <string name="title_activity_footbar">FootbarActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

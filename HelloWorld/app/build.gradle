@@ -26,8 +26,8 @@ android {
         }
         python {
             // 指定python路径
-            buildPython "D:/Python/python.exe" //lz
-            //buildPython "E:\\python39\\python.exe" //cym
+            //buildPython "D:/Python/python.exe" //lz
+            buildPython "E:\\python39\\python.exe" //cym
 
             pip{
                 install "numpy"
@@ -57,12 +57,19 @@ android {
         exclude 'META-INF/LICENSE.txt'
         exclude 'META-INF/NOTICE.txt'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 
 dependencies {
     implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.7.1'
     implementation 'com.google.firebase:firebase-firestore:24.0.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
     def room_version = "2.4.1"
     implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
 
@@ -83,7 +90,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
 
     // UI
-    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0"
     implementation "com.google.android.material:material:$rootProject.materialVersion"
 
     // Testing
@@ -101,6 +109,10 @@ dependencies {
     implementation group: 'io.vavr', name: 'vavr', version: '0.10.2'
     implementation 'log4j:log4j:1.2.17'
     implementation 'com.ejlchina:okhttps-fastjson:2.3.0'
+
+    //fragment 依赖
+    def fragment_version = "1.4.1"
+    implementation "androidx.fragment:fragment:$fragment_version"
 }
 
 /

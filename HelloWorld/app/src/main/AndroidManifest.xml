@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".FootbarActivity"
+            android:exported="false" />
+        <activity
             android:name=".InfoDesc"
             android:exported="false"
             android:parentActivityName=".InfoList">
