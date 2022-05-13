@@ -13,10 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.example.helloworld.database.User;
+import com.example.helloworld.ui.user.UserFragment;
 import com.example.helloworld.user.UserContext;
 
 import java.util.ArrayList;
@@ -90,7 +88,7 @@ public class HomeMenuActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.ib_menu:
-                intent.setClass(HomeMenuActivity.this, UserActivity.class);
+                intent.setClass(HomeMenuActivity.this, UserFragment.class);
                 //UserContext.user_center(intent, UserActivity.class);
                 startActivity(intent);
                 break;

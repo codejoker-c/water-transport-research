@@ -11,7 +11,13 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".FootbarActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".InfoDesc"
             android:exported="false"
@@ -28,14 +34,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeMenuActivity" />
         </activity>
+        <!-- 这里本来是原始界面 -->
         <activity
             android:name=".InitialInterface"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".InfoList"
@@ -68,14 +70,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeMenuActivity" />
         </activity>
-        <activity
-            android:name=".UserActivity"
-            android:exported="false"
-            android:parentActivityName=".HomeMenuActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".HomeMenuActivity" />
-        </activity>
+        <!--
+                <activity
+                    android:name=".ui.user.UserFragment"
+                    android:exported="false"
+                    android:parentActivityName=".HomeMenuActivity">
+                    <meta-data
+                        android:name="android.support.PARENT_ACTIVITY"
+                        android:value=".HomeMenuActivity" />
+                </activity>
+        -->
         <activity
             android:name=".RegActivity"
             android:exported="false" />

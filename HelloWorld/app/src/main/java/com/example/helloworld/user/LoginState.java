@@ -8,7 +8,7 @@ import com.example.helloworld.BoatMessageInput;
 import com.example.helloworld.CargoMessageInput;
 import com.example.helloworld.BoatQuery;
 import com.example.helloworld.CargoQuery;
-import com.example.helloworld.UserActivity;
+import com.example.helloworld.ui.user.UserFragment;
 import com.example.helloworld.database.Status;
 import com.example.helloworld.database.User;
 
@@ -35,6 +35,6 @@ public class LoginState implements UserState {
 
     @Override
     public void user_center(Intent intent, Activity activity) {
-        intent.setClass(activity, UserActivity.class);
+        intent.setClass(activity, UserFragment.class);
     }
 }
