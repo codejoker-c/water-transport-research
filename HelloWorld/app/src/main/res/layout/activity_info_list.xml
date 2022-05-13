@@ -11,15 +11,25 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:background="@drawable/new_user_back_ground">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/yellow"
-            android:text="欢迎查看货主信息"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:text="欢迎查看货主信息"
+                android:textColor="#3366FF"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
     </RelativeLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/huoyuan_under_line"
+                  android:textSize="20dp"
+                  android:textColor="#3366FF" android:text="普通货源"
+                  android:layout_marginLeft="10dp"></TextView>
+    </LinearLayout>
 
 <!--    <ListView
         android:id="@+id/cargo_info"
@@ -31,12 +41,12 @@
 
         ></ListView>-->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cargo_info"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_infolist"
-        ></androidx.recyclerview.widget.RecyclerView>
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/cargo_info"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:listitem="@layout/item_infolist"-->
+<!--        ></androidx.recyclerview.widget.RecyclerView>-->
 
 
 </LinearLayout>

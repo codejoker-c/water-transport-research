@@ -1,5 +1,7 @@
 package com.example.helloworld;
 
+import android.graphics.Paint;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,6 +43,11 @@ public class InfoList extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+        TextView text_underline=findViewById(R.id.huoyuan_under_line);
+        text_underline.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
+        text_underline.getPaint().setAntiAlias(true);//抗锯齿
+
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         cargo_list=findViewById(R.id.cargo_info);
