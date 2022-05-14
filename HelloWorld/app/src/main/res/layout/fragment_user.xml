@@ -398,12 +398,13 @@
                         android:orientation="vertical">
 
                         <ImageView
+                            android:id="@+id/about_us"
                             android:layout_width="35dp"
                             android:layout_height="40dp"
                             android:layout_marginLeft="10dp"
                             android:background="@mipmap/about"
                             android:scaleType="fitCenter"
-
+                            android:onClick="onClick"
                             ></ImageView>
 
                         <TextView

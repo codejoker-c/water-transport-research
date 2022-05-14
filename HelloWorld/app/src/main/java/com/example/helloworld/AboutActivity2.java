@@ -66,7 +66,7 @@ public class AboutActivity2 extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
         aboutVp=findViewById(R.id.about_vp);
         button=findViewById(R.id.advice_submit);
-        pointLayout=findViewById(R.id.about_layout_point);
+        //pointLayout=findViewById(R.id.about_layout_point);
 
 
         viewList=new ArrayList<>();
