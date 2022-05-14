@@ -13,7 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fadingEdge="vertical"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.392">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,7 +29,7 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/about_vp"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="200dp"
 
                 ></androidx.viewpager.widget.ViewPager>
 
@@ -31,7 +37,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
 
                 <ImageView
                     android:layout_width="25dp"
@@ -49,6 +56,7 @@
                     android:textStyle="bold"></TextView>
 
             </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
@@ -57,9 +65,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                >
+                android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="25dp"
@@ -73,12 +80,42 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="联系电话: 95536"
+                    android:layout_marginLeft="10dp"
+                    android:text="联系电话: 18964669945"
                     android:textSize="15sp"
-                    android:textStyle="bold"
+
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/location"></ImageView>
+
+
+                <TextView
+                    android:id="@+id/about_tv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
 
                     android:layout_marginLeft="10dp"
-                    ></TextView>
+                    android:text="地址: 上海市嘉定区曹安公路4800号"
+                    android:textSize="15sp"
+                    android:textStyle="bold"></TextView>
 
             </LinearLayout>
 
@@ -89,40 +126,35 @@
                 android:background="@color/black"></TextView>
 
 
-            <TextView
-                android:id="@+id/about_tv_address"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:drawableLeft="@mipmap/icon_world"
-                android:drawablePadding="20dp"
-                android:gravity="center_vertical"
-                android:text="地址: 上海市嘉定区曹安公路4800号"
-                android:textSize="15sp"
-                android:textStyle="bold"></TextView>
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/comment"></ImageView>
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="@color/black"></TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="意见栏"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:drawableLeft="@mipmap/icon_flash"
-                android:drawablePadding="20dp"
-                android:gravity="center_vertical"
-                android:textSize="20sp"
-                android:textStyle="bold"
+                    ></TextView>
 
-                ></TextView>
+            </LinearLayout>
+
 
             <EditText
                 android:id="@+id/about_tv_opinion"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="180dp"
                 android:background="@drawable/round_editstyle"
                 android:hint="对本软件有什么意见？欢迎提出！"
 
