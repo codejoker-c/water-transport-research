@@ -1,16 +1,16 @@
-package com.example.cbg_cargo.ui.dashboard;
+package com.example.cbg_cargo.ui.notification;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class NotificationViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public NotificationViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is Notification fragment");
     }
 
     public LiveData<String> getText() {

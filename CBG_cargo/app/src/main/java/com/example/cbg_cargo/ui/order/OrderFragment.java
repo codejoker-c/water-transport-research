@@ -1,4 +1,4 @@
-package com.example.cbg_cargo.ui.dashboard;
+package com.example.cbg_cargo.ui.order;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.cbg_cargo.databinding.FragmentDashboardBinding;
+import com.example.cbg_cargo.databinding.FragmentOrderBinding;
 
-public class DashboardFragment extends Fragment {
+public class OrderFragment extends Fragment {
 
-    private FragmentDashboardBinding binding;
+    private FragmentOrderBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
+        OrderViewModel orderViewModel =
+                new ViewModelProvider(this).get(OrderViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentOrderBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textOrder;
+        orderViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 

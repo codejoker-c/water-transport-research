@@ -12,14 +12,21 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.cbg_cargo.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_notification"
+        android:name="com.example.cbg_cargo.ui.notification.NotificationFragment"
+        android:label="@string/title_notification"
+        tools:layout="@layout/fragment_notification" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.cbg_cargo.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_order"
+        android:name="com.example.cbg_cargo.ui.order.OrderFragment"
+        android:label="@string/title_order"
+        tools:layout="@layout/fragment_order" />
+
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="com.example.cbg_cargo.ui.user.UserFragment"
+        android:label="@string/title_user"
+        tools:layout="@layout/fragment_user"
+        />
 </navigation>

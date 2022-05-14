@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">CBG_cargo</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">船货行货主</string>
+    <string name="title_home">主页</string>
+    <string name="title_order">订单</string>
+    <string name="title_notification">消息</string>
+    <string name="title_user">我的</string>
 </resources>
