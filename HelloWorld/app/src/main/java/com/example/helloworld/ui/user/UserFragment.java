@@ -13,8 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.helloworld.AboutActivity2;
+import com.example.helloworld.HomeMenuActivity;
+import com.example.helloworld.InfoList;
 import com.example.helloworld.R;
 import com.example.helloworld.database.User;
 import com.example.helloworld.databinding.FragmentUserBinding;
@@ -27,7 +32,7 @@ public class UserFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    ImageView img;
     public UserFragment(){
 
     }
@@ -71,8 +76,32 @@ public class UserFragment extends Fragment {
         binding = FragmentUserBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
 
-        TextView name_set = binding.getUserName;
+        img=root.findViewById(R.id.about_us);
+
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AboutActivity2.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         return root;
     }
+
+    //不能用Onclick方法！！！！！！！！！
+//    public void onClick(View view) {
+//
+//        //switch (view.getId()) {
+//          //  case R.id.about_us:
+//                Intent intent = new Intent(getActivity(), AboutActivity2.class);
+//                startActivity(intent);
+//          //      break;
+//        //}
+//
+//    }
+
 
 }
