@@ -214,7 +214,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginLeft="10dp"
-                            android:background="@mipmap/setting2"
+                            android:background="@mipmap/setting"
                             android:scaleType="fitCenter"
 
                             ></ImageView>
