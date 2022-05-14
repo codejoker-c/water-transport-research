@@ -75,6 +75,7 @@ public class UserFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentUserBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
+
         img=root.findViewById(R.id.about_us);
 
         img.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +85,7 @@ public class UserFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
 
 
         return root;

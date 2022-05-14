@@ -59,9 +59,5 @@ public class User implements Serializable {
     public int getIsFillInfo(){
         return isFillInfo;
     }
-    /*public Status getStatus(){
-        return status;
-    }
 
-     */
 }
