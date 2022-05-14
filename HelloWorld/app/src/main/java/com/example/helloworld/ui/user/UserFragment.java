@@ -70,6 +70,8 @@ public class UserFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentUserBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
+
+        TextView name_set = binding.getUserName;
         return root;
     }
 
