@@ -6,7 +6,7 @@ import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Order", foreignKeys = @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"))
+@Entity(tableName = "order", foreignKeys = @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"))
 public class Order {
     @PrimaryKey(autoGenerate = true)
     private Integer id;

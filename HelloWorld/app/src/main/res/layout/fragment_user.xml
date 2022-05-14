@@ -3,11 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+
+    >
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="556dp"
+        android:background="@mipmap/bg"
         android:fadingEdge="vertical"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,12 +23,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="556dp"
-            android:background="@drawable/new_user_back_ground"
+            android:layout_marginTop="40dp"
+
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center_horizontal"
+            android:paddingHorizontal="20dp"
+            >
             <!-->
         这是个人中心
         </!-->
@@ -36,14 +43,24 @@
                 android:orientation="vertical">
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:text="个人中心"
-                    android:textColor="@color/black"
-                    android:textSize="9pt"
-                    android:textStyle="bold" />
+                <!--                <TextView-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginStart="10dp"-->
+                <!--                    android:text="个人中心"-->
+                <!--                    android:textColor="@color/black"-->
+                <!--                    android:textSize="9pt"-->
+                <!--                    android:textStyle="bold" />-->
+
+                <!--                <Button-->
+                <!--                    android:layout_width="25dp"-->
+                <!--                    android:layout_height="25dp"-->
+                <!--                    android:background="@mipmap/setting"-->
+                <!--                    android:layout_gravity="right"-->
+                <!--                    android:layout_marginRight="20dp"-->
+
+                <!--                    ></Button>-->
+
 
                 <LinearLayout
                     android:id="@+id/ll_portrait"
@@ -58,7 +75,7 @@
 
                         android:layout_height="80dip"
                         android:layout_gravity="center"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="10dp"
                         android:src="@drawable/touxiang"
 
                         />
@@ -70,6 +87,14 @@
                         android:layout_weight="70"
                         android:textSize="9pt" />
 
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@mipmap/right_point2"
+
+                        ></ImageView>
+
                 </LinearLayout>
 
 
@@ -80,7 +105,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/module_background"
                 android:orientation="vertical"
 
@@ -91,13 +116,13 @@
                     android:layout_height="wrap_content"
                     android:text="便捷功能"
                     android:textColor="@color/black"
-                    android:textSize="9pt"
+                    android:textSize="7pt"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:background="@color/white"
                     android:orientation="horizontal">
 
@@ -109,7 +134,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="10dp"
                             android:background="@mipmap/order"
                             android:scaleType="fitCenter"
 
@@ -118,11 +143,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
-                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
                             android:text="我的订单"
                             android:textColor="@color/black"
-                            android:textSize="8pt" />
+                            android:textSize="5pt" />
 
 
                     </LinearLayout>
@@ -136,7 +161,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="10dp"
                             android:background="@mipmap/history"
                             android:scaleType="fitCenter"
 
@@ -145,10 +170,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
                             android:text="历史记录"
                             android:textColor="@color/black"
-                            android:textSize="8pt" />
+                            android:textSize="5pt" />
 
                     </LinearLayout>
 
@@ -161,7 +187,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="10dp"
                             android:background="@mipmap/print"
                             android:scaleType="fitCenter"
 
@@ -170,63 +196,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
                             android:text="发票报销"
                             android:textColor="@color/black"
-                            android:textSize="8pt" />
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-            </LinearLayout>
-            <!-->
-    这是帮助
-    </!-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/module_background"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="帮助"
-                    android:textColor="@color/black"
-                    android:textSize="9pt"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-
-                        >
-
-                        <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="15dp"
-                            android:background="@mipmap/service"
-                            android:scaleType="fitCenter"
-
-                            ></ImageView>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:text="客服服务"
-                            android:textColor="@color/black"
-                            android:textSize="8pt" />
+                            android:textSize="5pt" />
 
                     </LinearLayout>
 
@@ -237,10 +211,10 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="35dp"
+                            android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginLeft="20dp"
-                            android:background="@mipmap/feedback"
+                            android:layout_marginLeft="10dp"
+                            android:background="@mipmap/setting2"
                             android:scaleType="fitCenter"
 
                             ></ImageView>
@@ -248,22 +222,17 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-
-                            android:layout_marginTop="10dp"
-                            android:text="意见反馈"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="信息修改"
                             android:textColor="@color/black"
-                            android:textSize="8pt" />
-
+                            android:textSize="5pt" />
 
                     </LinearLayout>
-                    android:layout_width="0dp"
-                    android:layout_weight="30"
-                    android:layout_height="wrap_content"
-                    android:text="用车调研"
-                    android:textColor="@color/black"
-                    android:textSize="10pt"/>
+
                 </LinearLayout>
             </LinearLayout>
+
             <!-->
     这是优惠活动
     </!-->
@@ -279,13 +248,13 @@
                     android:layout_height="wrap_content"
                     android:text="优惠活动"
                     android:textColor="@color/black"
-                    android:textSize="9pt"
+                    android:textSize="7pt"
                     android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="15dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -296,8 +265,8 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginLeft="15dp"
-                            android:background="@mipmap/shop"
+                            android:layout_marginLeft="10dp"
+                            android:background="@mipmap/shopping"
                             android:scaleType="fitCenter"
 
                             ></ImageView>
@@ -305,10 +274,11 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
                             android:text="秒杀商城"
                             android:textColor="@color/black"
-                            android:textSize="8pt" />
+                            android:textSize="5pt" />
 
                     </LinearLayout>
 
@@ -321,7 +291,7 @@
                         <ImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_marginLeft="15dp"
+                            android:layout_marginLeft="10dp"
                             android:background="@mipmap/gift"
                             android:scaleType="fitCenter"
 
@@ -330,45 +300,174 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
                             android:text="用户福利"
                             android:textColor="@color/black"
-                            android:textSize="8pt" />
+                            android:textSize="5pt" />
 
                     </LinearLayout>
 
+
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <!-->
+   这是帮助
+   </!-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/module_background"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="帮助"
+                    android:textColor="@color/black"
+                    android:textSize="7pt"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="30"
-                        android:text="特惠充电"
-                        android:textColor="@color/black"
-                        android:textSize="10pt" />
+                        android:orientation="vertical"
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="30"
-                        android:text="招募司机"
-                        android:textColor="@color/black"
-                        android:textSize="10pt" />
+                        >
 
-                    <TextView
-                        android:layout_width="0dp"
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@mipmap/service"
+                            android:scaleType="fitCenter"
+
+                            ></ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="客服服务"
+                            android:textColor="@color/black"
+                            android:textSize="5pt" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="30"
-                        android:text="保障服务"
-                        android:textColor="@color/black"
-                        android:textSize="10pt" />
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@mipmap/feedback"
+                            android:scaleType="fitCenter"
+
+                            ></ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="意见反馈"
+                            android:textColor="@color/black"
+                            android:textSize="5pt" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/about_us"
+                            android:layout_width="35dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@mipmap/about"
+                            android:scaleType="fitCenter"
+                            android:onClick="onClick"
+                            ></ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="关于我们"
+                            android:textColor="@color/black"
+                            android:textSize="5pt" />
+
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
             </LinearLayout>
+
+
+            <!-->
+这是退出登录
+</!-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@color/light_blue"
+                    android:text="退出登录"
+                    android:textSize="7pt"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+
+                    ></Button>
+
+
+
+            </LinearLayout>
+
+
+            <!-->
+130 197 235这是空白格
+90 116 177
+</!-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+
+                android:background="@color/white"
+
+                ></LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
 

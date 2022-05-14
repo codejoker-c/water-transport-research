@@ -8,7 +8,7 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 
-@Entity(tableName = "User",indices = {@Index(value={"phone"},unique = true)})
+@Entity(tableName = "user",indices = {@Index(value={"phone"},unique = true)})
 public class User {
     @PrimaryKey(autoGenerate = true)
     private Integer id;

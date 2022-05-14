@@ -12,6 +12,6 @@ public interface UserDao {
     @Insert
     void insert(User user);
 
-    @Query("SELECT * FROM user WHERE id=:userid")
+    @Query("SELECT * FROM `user` WHERE id=:userid")
     ListenableFuture<User> findUserWithId(Integer userid);
 }
