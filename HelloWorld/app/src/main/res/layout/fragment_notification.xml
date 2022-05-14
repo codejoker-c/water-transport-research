@@ -32,14 +32,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:padding="10dp"
-                android:background="@drawable/new_user_back_ground">
+                android:background="@drawable/new_user_back_ground"
+                android:gravity="center">
 
             <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="100dp"
                     android:layout_height="match_parent"
 
-                    android:text="欢迎查看货主信息"
-                    android:textColor="#3366FF"
+                    android:text="货主信息"
+                    android:textColor="#FF6600"
+                    android:background="@drawable/TextViewShapeSet"
+
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
         </RelativeLayout>
