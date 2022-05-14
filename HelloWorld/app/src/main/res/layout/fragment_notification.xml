@@ -41,7 +41,7 @@
 
                     android:text="货主信息"
                     android:textColor="#FF6600"
-                    android:background="@drawable/TextViewShapeSet"
+                    android:background="@drawable/text_view_shape_set"
 
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
 
@@ -71,7 +71,13 @@
                 tools:listitem="@layout/item_infolist"
         ></androidx.recyclerview.widget.RecyclerView>
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
 
+                android:background="@color/white"
+
+        ></LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

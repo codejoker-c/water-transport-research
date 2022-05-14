@@ -125,16 +125,16 @@ public class NotificationFragment extends Fragment {
             }
         });
 
-//        infoListAdapter.setOnItemClickListener(new InfoListAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(RecyclerView parent, View view, int position, user_Cargo data) {
-//                Intent intent=new Intent();
-//                intent.setClass(InfoList.this, InfoDesc.class);
-//                intent.putExtra("data",data);
-//                startActivity(intent);
-//            }
-//
-//        });
+        infoListAdapter.setOnItemClickListener(new InfoListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(RecyclerView parent, View view, int position, user_Cargo data) {
+                Intent intent=new Intent();
+                intent.setClass(getActivity(), InfoDesc.class);
+                intent.putExtra("data",data);
+                startActivity(intent);
+            }
+
+        });
         TextView textView = binding.textNotification;
 
         return root;
