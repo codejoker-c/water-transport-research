@@ -6,128 +6,178 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AboutActivity2">
-    <include layout="@layout/main_titlebar"/>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/about_vp"
+    <include layout="@layout/main_titlebar" />
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="230dp"
-
-        ></androidx.viewpager.widget.ViewPager>
+        android:layout_height="wrap_content"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.392">
 
         <LinearLayout
-            android:id="@+id/about_layout_point"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"></LinearLayout>
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/about_tv_version"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="当前版本: v1.0"
-        android:drawableLeft="@mipmap/icon_door"
-        android:gravity="center_vertical"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:drawablePadding="20dp"
-        android:layout_marginTop="10dp"
-        >
-    </TextView>
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/about_vp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+
+                ></androidx.viewpager.widget.ViewPager>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/black"
-        ></TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/version"></ImageView>
+
+                <TextView
+                    android:id="@+id/about_tv_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="当前版本: v1.0"
+                    android:textSize="15sp"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/phone"></ImageView>
 
 
-    <TextView
-        android:id="@+id/about_tv_tel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="联系电话: 95536"
-        android:drawableLeft="@mipmap/icon_phone"
-        android:gravity="center_vertical"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:drawablePadding="20dp"
-        android:layout_marginTop="10dp"
-        >
-    </TextView>
+                <TextView
+                    android:id="@+id/about_tv_tel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="10dp"
+                    android:text="联系电话: 18964669945"
+                    android:textSize="15sp"
+
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/black"
-        ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/location"></ImageView>
 
 
-    <TextView
-        android:id="@+id/about_tv_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="地址: 上海市嘉定区曹安公路4800号"
-        android:drawableLeft="@mipmap/icon_world"
-        android:gravity="center_vertical"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:drawablePadding="20dp"
-        android:layout_marginTop="10dp"
-        >
-    </TextView>
+                <TextView
+                    android:id="@+id/about_tv_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="10dp"
+                    android:text="地址: 上海市嘉定区曹安公路4800号"
+                    android:textSize="15sp"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/black"
-        ></TextView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@mipmap/icon_flash"
-        android:gravity="center_vertical"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:drawablePadding="20dp"
-        android:layout_marginTop="10dp"
-
-        >
-    </TextView>
-
-    <EditText
-        android:id="@+id/about_tv_opinion"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/round_editstyle"
-        android:hint="对本软件有什么意见？欢迎提出！"
-
-        ></EditText>
-
-    <Button
-        android:id="@+id/advice_submit"
-        android:layout_width="45dp"
-        android:layout_height="30dp"
-        android:background="@color/blue"
-        android:text="提交"
-        android:textSize="18sp"
-        android:textColor="@color/white"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="310dp"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black"></TextView>
 
 
-        ></Button>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/comment"></ImageView>
 
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="意见栏"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
 
 
+            <EditText
+                android:id="@+id/about_tv_opinion"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/round_editstyle"
+                android:hint="对本软件有什么意见？欢迎提出！"
+
+                ></EditText>
+
+            <Button
+                android:id="@+id/advice_submit"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="310dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/blue"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="18sp"
 
 
+                ></Button>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
 
 
 </LinearLayout>

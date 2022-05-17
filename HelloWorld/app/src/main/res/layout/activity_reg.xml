@@ -7,132 +7,169 @@
     tools:context=".MainActivity"
     >
 
-    <include layout="@layout/main_titlebar"/>
-
-    <Button
-        android:id="@+id/reg_button"
-        android:layout_width="100dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="425dp"
-        android:backgroundTint="@color/blue"
-        android:onClick="onClick"
-        android:text="注册"
-        android:textColor="@color/white" />
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+        <include layout="@layout/main_titlebar"/>
 
-    <TextView
-        android:id="@+id/login_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="登陆现有账户"
-        android:textColor="@color/blue"
-        android:layout_marginTop="440dp"
-        android:layout_marginStart="275dp"
-        android:clickable="true"
-        android:onClick="onClick"
-        />
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="60dp"
+            android:padding="5dp"
+            android:rotationX="0"
+            android:text="欢迎注册"
+            android:textSize="10pt"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="30dp"
+                android:src="@mipmap/phone_login"/>
+
+            <EditText
+                android:id="@+id/reg_username"
+                android:layout_width="305dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/round_editstyle"
+                android:ems="10"
+                android:hint="请输入手机号"
+                android:textSize="7pt"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="30dp"
+                android:src="@mipmap/password_login"/>
+
+
+            <EditText
+                android:id="@+id/reg_password"
+                android:layout_width="305dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="2dp"
+                android:textSize="7pt"
+                android:background="@drawable/round_editstyle"
+                android:ems="10"
+                android:hint="请输入密码"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="30dp"
+                android:src="@mipmap/re_password"/>
+
+
+            <EditText
+                android:id="@+id/reg_password_confirm"
+                android:layout_width="305dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="2dp"
+                android:textSize="7pt"
+                android:background="@drawable/round_editstyle"
+                android:ems="10"
+                android:hint="再次输入密码"
+                android:inputType="textPassword" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/reg_button"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="25dp"
+            android:backgroundTint="@color/blue"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:text="注册"
+            android:textSize="7pt"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/login_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:text="登录现有账户"
+            android:textSize="6pt"
+            android:textColor="@color/blue"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/reg_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="425dp"
         android:text=""
         android:textColor="@color/red"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="405dp"
-        android:visibility="invisible"
-        />
+        android:visibility="invisible" />
 
 
-    <TextView
 
-        android:layout_width="277dp"
-        android:layout_height="44dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="70dp"
-        android:padding="5dp"
-        android:rotationX="0"
-        android:text="欢迎注册"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        android:visibility="visible" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="270dp"
-        android:text="用户名:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="320dp"
-        android:text="密码:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    <!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="13dp"-->
+<!--        android:layout_marginTop="220dp"-->
+<!--        android:text="身份选择:"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />-->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="370dp"
-        android:text="确认密码:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+<!--    <Spinner-->
+<!--        android:id="@+id/reg_identity"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginLeft="90dp"-->
+<!--        android:layout_marginTop="220dp"-->
+<!--        android:background="@drawable/round_editstyle"-->
+<!--        android:entries="@array/spinner_login"-->
 
-    <!--        android:hint="用户名:"
-            android:textColorHint="#95A1AA"-->
-    <EditText
-        android:id="@+id/reg_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="270dp"
-        android:background="@drawable/round_editstyle"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/reg_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="320dp"
-        android:background="@drawable/round_editstyle"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:visibility="visible" />
-
-    <EditText
-        android:id="@+id/reg_password_confirm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="370dp"
-        android:background="@drawable/round_editstyle"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:visibility="visible" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
-        android:layout_marginTop="220dp"
-        android:text="身份选择:"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-    <Spinner
-        android:id="@+id/reg_identity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="220dp"
-        android:background="@drawable/round_editstyle"
-        android:entries="@array/spinner_login"
-
-        ></Spinner>
+<!--        ></Spinner>-->
 
 
 
