@@ -38,7 +38,7 @@ public class RegActivity extends AppCompatActivity {
         reg_username=findViewById(R.id.reg_username);
         reg_password=findViewById(R.id.reg_password);
         reg_password_confirm=findViewById(R.id.reg_password_confirm);
-        reg_indentity=findViewById(R.id.reg_identity);
+        //reg_indentity=findViewById(R.id.reg_identity);
         //显示错误信息
         error=findViewById(R.id.reg_error);
 
@@ -69,7 +69,7 @@ public class RegActivity extends AppCompatActivity {
                 String psd=reg_password.getText().toString().trim();
                 String psd_confirm=reg_password_confirm.getText().toString().trim();
                 String username = reg_username.getText().toString().trim();
-                String str = reg_indentity.getSelectedItem().toString();
+                //String str = reg_indentity.getSelectedItem().toString();
                 if(username.isEmpty()){
                     error.setText("用户名不能为空！");
                     error.setVisibility(view.VISIBLE);
@@ -89,20 +89,20 @@ public class RegActivity extends AppCompatActivity {
                 else{
                     User muser = null;
 
-                    if(str.equals("船主"))
+                    //if(str.equals("船主"))
                         muser = mWT_ViewModel.finduserBoatWithUsername(username).get();
-                    else
-                        muser = mWT_ViewModel.finduserCargoWithUsername(username).get();
+                    //else
+                     //   muser = mWT_ViewModel.finduserCargoWithUsername(username).get();
 
                     if(muser!=null){
                         error.setText("该用户名已存在！");
                         error.setVisibility(view.VISIBLE);
                     }
                     else{
-                        if(str.equals("船主"))
+                        //if(str.equals("船主"))
                             mWT_ViewModel.insert(new user_Boat(username,psd));
-                        else
-                            mWT_ViewModel.insert(new user_Cargo(username,psd));
+                        //else
+                        //    mWT_ViewModel.insert(new user_Cargo(username,psd));
 
                         intent.setClass(RegActivity.this,MainActivity.class);
                         startActivity(intent);

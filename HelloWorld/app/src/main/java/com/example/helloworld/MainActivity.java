@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView,error;
     EditText login_username;
     EditText login_password;
-    Spinner login_identity;
+    //Spinner login_identity;
     WT_ViewModel mWT_ViewModel; // 对数据库的操作
     private static final Logger logger = Logger.getGlobal();
 
@@ -52,10 +52,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         login_btn = findViewById(R.id.login_btn);
         //imageview=findViewById(R.id.login_pic);
-        textView = findViewById(R.id.reg_textView);
+        //textView = findViewById(R.id.reg_textView);
         login_username = findViewById(R.id.login_username);
         login_password = findViewById(R.id.login_password);
-        login_identity=findViewById(R.id.login_identity);
+        //login_identity=findViewById(R.id.login_identity);
         error = findViewById(R.id.login_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //logger.info(API.getHarbour());
@@ -99,25 +99,25 @@ public class MainActivity extends AppCompatActivity {
                     error.setVisibility(view.VISIBLE);
                 }
                 else{
-                    String str = login_identity.getSelectedItem().toString();
+                    //String str = login_identity.getSelectedItem().toString();
                     User user;
-                    if(str.equals("船主")) {
+                    //if(str.equals("船主")) {
                         user = mWT_ViewModel.finduserBoatWithUsername(username).get();
                         if(user != null)
                             user.status = Status.boat;
-                    }
-                    else {
-                        user = mWT_ViewModel.finduserCargoWithUsername(username).get();
-                        if(user != null)
-                            user.status = Status.cargo;
-                    }
+                    //}
+                    //else {
+                    //    user = mWT_ViewModel.finduserCargoWithUsername(username).get();
+                    //    if(user != null)
+                    //        user.status = Status.cargo;
+                    //}
                     if(user==null){
                         error.setText("该用户名不存在");
                         error.setVisibility(view.VISIBLE);
                     }
                     else{
                         if(psd.equals(user.getPassword())){
-                            intent.setClass(MainActivity.this,HomeMenuActivity.class);
+                            intent.setClass(MainActivity.this,FootbarActivity.class);
                             UserContext.setLoginState(user);
                             startActivity(intent);
                         }
