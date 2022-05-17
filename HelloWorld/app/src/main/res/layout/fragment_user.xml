@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     >
 
     <ScrollView
@@ -441,10 +440,10 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:background="@color/light_blue"
+                    android:background="@color/blue"
                     android:text="退出登录"
                     android:textSize="7pt"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
 
                     ></Button>
