@@ -5,222 +5,293 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InfoDesc">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".resultQuery">
+        <include layout="@layout/main_titlebar"/>
 
-    <include layout="@layout/main_titlebar"/>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:padding="10dp"
+                android:background="@drawable/new_user_back_ground"
+                android:gravity="center">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:text="欢迎查看具体信息!"
-        android:background="@color/yellow"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+
+                    android:text="具体结果"
+                    android:textColor="#FF6600"
+                    android:background="@drawable/text_view_shape_set"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        </RelativeLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/const_info"
+                      android:textSize="20dp"
+                      android:textColor="#3366CC"
+                      android:text="货物信息"
+                      android:layout_marginLeft="10dp"></TextView>
+        </LinearLayout>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+
+                android:background="@color/divider"
         ></TextView>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/const_huoming"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/const_info"
 
-    <TextView
-        android:id="@+id/const_info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="货物信息"
-        android:layout_marginTop="105dp"
-        android:layout_marginLeft="15dp"
-        android:textSize="25sp"
-        android:textStyle="bold"
+                    android:text="货名:"
+                    android:textColor="@color/divider"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+            <TextView
+                    android:id="@+id/cargo_huoming"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_huoming"
+
+                    android:text="货名"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/const_dunwei"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/const_info"
+
+                    android:text="吨位:"
+                    android:textColor="@color/divider"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+            <TextView
+                    android:id="@+id/cargo_dunwei"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_dunwei"
+
+                    android:text="吨位"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/const_dangqiandi"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/const_info"
+
+                    android:text="当前地:"
+                    android:textColor="@color/divider"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+            <TextView
+                    android:id="@+id/cargo_dangqiandi"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_dangqiandi"
+
+                    android:text="当前地"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/const_mudidi"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/const_info"
+
+                    android:text="目的地:"
+                    android:textColor="@color/divider"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+            <TextView
+                    android:id="@+id/cargo_mudidi"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_mudidi"
+
+                    android:text="目的地"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/const_qiwangriqi"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/const_info"
+
+                    android:text="期望日期:"
+                    android:textColor="@color/divider"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+            <TextView
+                    android:id="@+id/cargo_qiwangriqi"
+                    android:layout_width="0dp"
+                    android:layout_weight="12"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_qiwangriqi"
+                    android:text="期"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+            <TextView
+                    android:id="@+id/const_month"
+                    android:layout_width="0dp"
+                    android:layout_weight="12"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_qiwangriqi"
+                    android:layout_toRightOf="@id/cargo_qiwangriqi"
+                    android:layout_marginLeft="1dp"
+                    android:text="月"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+            <TextView
+                    android:id="@+id/cargo_day2"
+                    android:layout_width="0dp"
+                    android:layout_weight="12"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_qiwangriqi"
+                    android:layout_toRightOf="@id/const_month"
+                    android:layout_marginLeft="1dp"
+                    android:text="望"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+            <TextView
+                    android:id="@+id/const_day"
+                    android:layout_width="0dp"
+                    android:layout_weight="14"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_qiwangriqi"
+                    android:layout_toRightOf="@id/cargo_day2"
+                    android:layout_marginLeft="1dp"
+                    android:text="日"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+
+
+        </LinearLayout>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+
+                android:background="@color/divider"
         ></TextView>
+        <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/const_huozhuxingming"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/const_info"
 
-    <TextView
-        android:id="@+id/const_huoming"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/const_info"
-        android:layout_marginTop="140dp"
-        android:text="货名"
-        android:textColor="@color/divider"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
+                    android:text="货主姓名:"
+                    android:textColor="@color/divider"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+            <TextView
+                    android:id="@+id/cargo_huozhuxingming"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_huozhuxingming"
 
-    <TextView
-        android:id="@+id/cargo_huoming"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_huoming"
-        android:layout_marginLeft="135dp"
-        android:text="货名"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
+                    android:text="货主姓名"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+            <TextView
+                    android:id="@+id/const_huozhudianhua"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:text="货主电话:"
+                    android:layout_alignLeft="@id/const_info"
 
-    <TextView
-        android:id="@+id/const_dunwei"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/const_info"
-        android:layout_marginTop="175dp"
-        android:text="吨位"
-        android:textColor="@color/divider"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-    <TextView
-        android:id="@+id/cargo_dunwei"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_dunwei"
-        android:layout_marginLeft="135dp"
-        android:text="吨位"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
+                    android:textColor="@color/divider"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+            ></TextView>
+            <TextView
+                    android:id="@+id/cargo_huozhudianhua"
+                    android:layout_width="0dp"
+                    android:layout_weight="50"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/const_huozhudianhua"
 
+                    android:text="货主电话"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"></TextView>
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/const_dangqiandi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/const_info"
-        android:layout_marginTop="210dp"
-        android:text="当前地"
-        android:textColor="@color/divider"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/cargo_dangqiandi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_dangqiandi"
-        android:layout_marginLeft="135dp"
-        android:text="当前地"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/const_mudidi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/const_info"
-        android:layout_marginTop="245dp"
-        android:text="目的地"
-        android:textColor="@color/divider"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-    <TextView
-        android:id="@+id/cargo_mudidi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_mudidi"
-        android:layout_marginLeft="135dp"
-        android:text="目的地"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/const_qiwangriqi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/const_info"
-        android:layout_marginTop="280dp"
-        android:text="期望日期"
-        android:textColor="@color/divider"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/cargo_qiwangriqi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_qiwangriqi"
-        android:layout_marginLeft="135dp"
-        android:text="期"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/const_month"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_qiwangriqi"
-        android:layout_toRightOf="@id/cargo_qiwangriqi"
-        android:layout_marginLeft="1dp"
-        android:text="月"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/cargo_day2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_qiwangriqi"
-        android:layout_toRightOf="@id/const_month"
-        android:layout_marginLeft="1dp"
-        android:text="望"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-    <TextView
-        android:id="@+id/const_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_qiwangriqi"
-        android:layout_toRightOf="@id/cargo_day2"
-        android:layout_marginLeft="1dp"
-        android:text="日"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="325dp"
-        android:background="@color/divider"
-        ></TextView>
-
-    <TextView
-        android:id="@+id/const_huozhuxingming"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/const_info"
-        android:layout_marginTop="345dp"
-        android:text="货主姓名"
-        android:textColor="@color/divider"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-    <TextView
-        android:id="@+id/cargo_huozhuxingming"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_huozhuxingming"
-        android:layout_marginLeft="135dp"
-        android:text="货主姓名"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-    <TextView
-        android:id="@+id/const_huozhudianhua"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="货主电话"
-        android:layout_alignLeft="@id/const_info"
-        android:layout_marginTop="380dp"
-        android:textColor="@color/divider"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        ></TextView>
-    <TextView
-        android:id="@+id/cargo_huozhudianhua"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/const_huozhudianhua"
-        android:layout_marginLeft="135dp"
-        android:text="货主电话"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"></TextView>
-
-
+    </LinearLayout>
 </RelativeLayout>
