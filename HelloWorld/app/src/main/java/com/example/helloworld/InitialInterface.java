@@ -3,6 +3,7 @@ package com.example.helloworld;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,8 +14,9 @@ import android.widget.TextView;
 public class InitialInterface extends AppCompatActivity {
 
     TextView textView,skip;
-    int time=5;
+    int time=2;
     int control=0;
+    @SuppressLint("HandlerLeak")
     Handler handler=new Handler(){
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -32,7 +34,7 @@ public class InitialInterface extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else{
-                        textView.setText(time+"");//加上一个空字符串，使int变为String
+                        //textView.setText(time+"");//加上一个空字符串，使int变为String
                         handler.sendEmptyMessageDelayed(1,1000);
                     }
 
@@ -46,7 +48,7 @@ public class InitialInterface extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial_interface);
-        textView=findViewById(R.id.count_down);
+        //textView=findViewById(R.id.count_down);
         skip=findViewById(R.id.skip);
         handler.sendEmptyMessageDelayed(1,1000);
 
