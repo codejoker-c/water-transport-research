@@ -2,7 +2,7 @@ package com.example.helloworld;
 
 import android.graphics.Paint;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -14,19 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class InfoList extends AppCompatActivity {
 
+}
+/*
     RecyclerView cargo_list;
     private WT_ViewModel mWT_ViewModel;
     //ListView内部数据源
@@ -95,4 +94,4 @@ public class InfoList extends AppCompatActivity {
     }
 
 }
-
+*/

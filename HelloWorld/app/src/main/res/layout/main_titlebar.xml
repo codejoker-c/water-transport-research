@@ -28,7 +28,7 @@
             android:onClick="onClick"
             android:padding="1dp"
             android:scaleType="fitXY"
-            android:src="@drawable/img_menu"
+            android:src="@mipmap/img_menu"
             android:visibility="visible" />
 
     </androidx.appcompat.widget.Toolbar>

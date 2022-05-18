@@ -44,7 +44,7 @@
                 android:src="@mipmap/phone_login"/>
 
             <EditText
-                android:id="@+id/login_username"
+                android:id="@+id/login_phone"
                 android:layout_width="305dp"
                 android:layout_height="35dp"
                 android:layout_marginLeft="2dp"

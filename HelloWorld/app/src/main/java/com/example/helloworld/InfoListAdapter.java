@@ -15,6 +15,7 @@ import com.example.helloworld.database.user_Cargo;
 import java.util.List;
 
 public class InfoListAdapter extends RecyclerView.Adapter<InfoListAdapter.ViewHolder>  implements View.OnClickListener{
+
     Context context;
     List<user_Cargo> CargoData;
     private RecyclerView recyclerView;

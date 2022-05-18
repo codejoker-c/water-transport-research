@@ -8,14 +8,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.helloworld.database.user_Cargo;
-
 public class InfoDesc extends AppCompatActivity {
 
     TextView huoming,dunwei,dangqiandi,mudidi,qiwangriqi,huozhuxingming,huozhudianhua;
     TextView cargo_day2;
 
-
+/*
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +53,6 @@ public class InfoDesc extends AppCompatActivity {
         huozhudianhua=findViewById(R.id.cargo_huozhudianhua);
         cargo_day2=findViewById(R.id.cargo_day2);
     }
-
+*/
 
 }

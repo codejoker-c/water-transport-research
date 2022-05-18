@@ -3,29 +3,11 @@ package com.example.helloworld;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.widget.TextView;
 
-import com.chaquo.python.PyObject;
-import com.chaquo.python.Python;
-import com.chaquo.python.android.AndroidPlatform;
-import com.example.helloworld.database.user_Boat;
-import com.example.helloworld.database.user_Cargo;
-import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.ExecutionException;
-
-import io.vavr.Tuple;
-import io.vavr.Tuple2;
-import kotlin.TuplesKt;
 
 public class CargoQuery extends AppCompatActivity {
 
@@ -46,7 +28,8 @@ public class CargoQuery extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-
+    }
+        /*
 
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
@@ -126,7 +109,7 @@ public class CargoQuery extends AppCompatActivity {
             return defaultValue;
         }
     }
-
+*/
 }
 
 

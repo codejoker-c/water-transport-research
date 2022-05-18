@@ -5,23 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.helloworld.database.Status;
-import com.example.helloworld.database.User;
-import com.example.helloworld.database.user_Boat;
-import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
-
-import java.util.concurrent.ExecutionException;
 
 public class BoatMessageInput extends AppCompatActivity {
 
@@ -39,15 +28,16 @@ public class BoatMessageInput extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        spin_info=findViewById(R.id.spin_info_ship);
-        name_ship=findViewById(R.id.name_ship);
-        phone_ship=findViewById(R.id.phone_ship);
-        weight_ship=findViewById(R.id.weight_ship);
-        loadweight_ship=findViewById(R.id.loadweight_ship);
-        depart_ship=findViewById(R.id.depart_ship);
-        load_type=findViewById(R.id.spinner_01);
+        spin_info = findViewById(R.id.spin_info_ship);
+        name_ship = findViewById(R.id.name_ship);
+        phone_ship = findViewById(R.id.phone_ship);
+        weight_ship = findViewById(R.id.weight_ship);
+        loadweight_ship = findViewById(R.id.loadweight_ship);
+        depart_ship = findViewById(R.id.depart_ship);
+        load_type = findViewById(R.id.spinner_01);
         error = findViewById(R.id.boat_info_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+    }
 
         /*
         load_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -65,6 +55,7 @@ public class BoatMessageInput extends AppCompatActivity {
 
          */
         //刚进入页面时的初始化
+        /*
         try {
             user_Boat userBoat = mWT_ViewModel.finduserBoatWithUsername(UserContext.getUser().getUsername()).get();
             if(userBoat.name!=null){
@@ -134,7 +125,7 @@ public class BoatMessageInput extends AppCompatActivity {
                     user_Boat userBoat = new user_Boat(user.getUsername(),user.getPassword(),name,phone,weight,loadweight,loadtype,depart);
                     userBoat.setId(user.getId());
                     userBoat.setIsFillInfo(); // 设置该用户已经完善信息
-                    userBoat.status = Status.boat;
+                    userBoat.userStatus = UserStatus.boat;
                     UserContext.setLoginState(userBoat);
                     mWT_ViewModel.update(userBoat);
 
@@ -147,5 +138,5 @@ public class BoatMessageInput extends AppCompatActivity {
                 break;
         }
     }
-
+*/
 }

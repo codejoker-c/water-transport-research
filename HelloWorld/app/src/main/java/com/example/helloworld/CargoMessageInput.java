@@ -1,36 +1,14 @@
 package com.example.helloworld;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.helloworld.database.Status;
-import com.example.helloworld.database.User;
-import com.example.helloworld.database.user_Cargo;
-import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class CargoMessageInput extends AppCompatActivity {
 
@@ -41,8 +19,8 @@ public class CargoMessageInput extends AppCompatActivity {
     WT_ViewModel mWT_ViewModel;
 
     //测试
-    List<user_Cargo> userCargoList;
-
+    //List<user_Cargo> userCargoList;
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -165,7 +143,8 @@ public class CargoMessageInput extends AppCompatActivity {
             return defaultValue;
         }
     }
-
+*/
+    /*
     public void onClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -176,8 +155,8 @@ public class CargoMessageInput extends AppCompatActivity {
                 phone = phone_cargo.getText().toString().trim();
                 //weight = convertToInt(weight_cargo.getText().toString(),0);
                 loadweight = convertToInt(weight_cargo.getText().toString(), 0);
-/*                depart = depart_cargo.getText().toString().trim();
-                destin = dest_cargo.getText().toString().trim();*/
+                depart = depart_cargo.getText().toString().trim();
+                destin = dest_cargo.getText().toString().trim();
                 depart = depart_cargo.getSelectedItem().toString();
                 destin = dest_cargo.getSelectedItem().toString();
                 loadtype = type_cargo.getSelectedItem().toString();
@@ -192,7 +171,7 @@ public class CargoMessageInput extends AppCompatActivity {
                     user_Cargo userCargo = new user_Cargo(user.getUsername(), user.getPassword(), name, phone, loadweight, loadtype, depart, destin, desmonth, desday);
                     userCargo.setId(user.getId());
                     userCargo.setIsFillInfo();
-                    userCargo.status = Status.cargo;
+                    userCargo.userStatus = UserStatus.cargo;
                     UserContext.setLoginState(userCargo);
                     mWT_ViewModel.update(userCargo);
                     intent.setClass(CargoMessageInput.this, HomeMenuActivity.class);
@@ -204,5 +183,5 @@ public class CargoMessageInput extends AppCompatActivity {
                 break;
         }
     }
-
+*/
 }

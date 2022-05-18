@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="username">
+
+        <item name="android:textSize">
+            18sp
+        </item>
+
+        <item name="android:textColor">
+            #E6000000
+        </item>
+
+        <item name="android:fontFamily">
+           "Noto Sans SC"
+        </item>
+    </style>
+
+    <style name="phone">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #CC000000
+        </item>
+
+        <item name="android:fontFamily">
+            "Noto Sans SC"
+        </item>
+    </style>
+
+    <style name="func">
+
+        <item name="android:textSize">
+            15sp
+        </item>
+
+        <item name="android:textColor">
+            #CC000000
+        </item>
+
+        <item name="android:fontFamily">
+            "Noto Sans SC"
+        </item>
+
+    </style>
+</resources>

@@ -14,10 +14,13 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {user_Boat.class,user_Cargo.class},version = 5,exportSchema = false)
+@Database(entities = {User.class,Order.class,user_Cargo.class},version = 6,exportSchema = false)
 public abstract class WT_RoomDatabase extends RoomDatabase {
     //public abstract UserDao userDao();
-    public abstract user_BoatDao user_boatDao();
+    public abstract UserDao UserDao();
+    public abstract OrderDao orderDao();
+
+    // 调试用
     public abstract user_CargoDao user_cargoDao();
 
     private static volatile WT_RoomDatabase INSTANCE;
@@ -50,41 +53,39 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
             super.onCreate(db);
             databaseWriteExecutor.execute(() -> {
                 user_CargoDao user_cargoDao = INSTANCE.user_cargoDao();
-                user_BoatDao user_boatDao = INSTANCE.user_boatDao();
-                user_cargoDao.deleteAllCargo();
-                user_boatDao.deleteAllBoat();
 
-                user_Boat[] userBoat = new user_Boat[10];// = new user_Boat("liuzheng","123","刘铮","123456",1000,1000,"沙土石子","上海");
+                user_cargoDao.deleteAllCargo();
+
                 //userBoat.setIsFillInfo();
                 user_Cargo[] userCargo = new user_Cargo[10];//new user_Cargo("lijianqiang","123","李建强","123456",1000,"沙土石子","上海","重庆",1,1);
 
                 userCargo[0] = new
-                        user_Cargo("mql","123","马千里","10086",800,"沙土石子","重庆","上海",3, 13);
+                        user_Cargo("mql","123","马千里",800,"沙土石子","重庆","上海",3, 13);
                 userCargo[1] = new
-                        user_Cargo("cj","123","陈静","10086",1000,"煤炭","镇江","上海",3, 12);
+                        user_Cargo("cj","123","陈静",1000,"煤炭","镇江","上海",3, 12);
 
                 userCargo[2] = new
-                        user_Cargo("wm","123","吴敏","10086",2000,"沙土石子","巫山","南京",3, 12);
+                        user_Cargo("wm","123","吴敏",2000,"沙土石子","巫山","南京",3, 12);
                 userCargo[3] = new
 
-                        user_Cargo("lhf","123","刘航帆","10086",600,"煤炭","江阴","岳阳",3, 15);
+                        user_Cargo("lhf","123","刘航帆",600,"煤炭","江阴","岳阳",3, 15);
                 userCargo[4] = new
-                        user_Cargo("lhp","123","李和平","10086",1100,"矿石","重庆","南通", 3, 11);
+                        user_Cargo("lhp","123","李和平",1100,"矿石","重庆","南通", 3, 11);
                 userCargo[5] = new
-                        user_Cargo("cjn","123","程敬南","10086",2800,"矿石","黄石","铜陵",3, 11);
+                        user_Cargo("cjn","123","程敬南",2800,"矿石","黄石","铜陵",3, 11);
 
                 userCargo[6] = new
-                        user_Cargo("hy","123","华勇","10086",1200,"沙土石子","芜湖","上海",3, 12);
+                        user_Cargo("hy","123","华勇",1200,"沙土石子","芜湖","上海",3, 12);
                 userCargo[7] = new
-                        user_Cargo("wj","123","王军","10086",1800,"沙土石子","江陵","南京",3, 13);
+                        user_Cargo("wj","123","王军",1800,"沙土石子","江陵","南京",3, 13);
                 userCargo[8] = new
-                        user_Cargo("zzw","123","张中文","10086",1250,"煤炭","黄石","镇江",3, 14);
+                        user_Cargo("zzw","123","张中文",1250,"煤炭","黄石","镇江",3, 14);
                 userCargo[9] = new
-                        user_Cargo("zsm","123","赵生明","10086",1400,"矿石","岳阳","江阴",3, 11);
+                        user_Cargo("zsm","123","赵生明",1400,"矿石","岳阳","江阴",3, 11);
 
 
 
-
+/*
 
                 userBoat[0] = new
                         user_Boat("刘峥","123","刘峥","95566",600,1300,"沙土石子", "重庆");
@@ -113,7 +114,7 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
                     user_boatDao.insert(userBoat[i]);
                     user_cargoDao.insert(userCargo[i]);
                 }
-
+*/
                 //userCargo.setIsFillInfo();
                 //user_cargoDao.insert(userCargo);
                 //user_boatDao.insert(userBoat);

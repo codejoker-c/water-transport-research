@@ -9,7 +9,7 @@ import com.example.helloworld.CargoMessageInput;
 import com.example.helloworld.BoatQuery;
 import com.example.helloworld.CargoQuery;
 import com.example.helloworld.ui.user.UserFragment;
-import com.example.helloworld.database.Status;
+import com.example.helloworld.database.UserStatus;
 import com.example.helloworld.database.User;
 
 public class LoginState implements UserState {
@@ -19,18 +19,12 @@ public class LoginState implements UserState {
 
     @Override
     public void data_in(Intent intent, Activity activity, User user) {
-        if (user.status == Status.boat)
-            intent.setClass(activity, BoatMessageInput.class);
-        else
-            intent.setClass(activity, CargoMessageInput.class);
+        intent.setClass(activity, BoatMessageInput.class);
     }
 
     @Override
     public void data_query(Intent intent, Activity activity, User user) {
-        if (user.status == Status.boat)
-            intent.setClass(activity, BoatQuery.class);
-        else
-            intent.setClass(activity, CargoQuery.class);
+        intent.setClass(activity, BoatQuery.class);
     }
 
     @Override

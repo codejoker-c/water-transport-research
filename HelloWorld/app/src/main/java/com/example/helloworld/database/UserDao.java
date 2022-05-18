@@ -21,6 +21,6 @@ public interface UserDao {
     @Query("SELECT * FROM User")
     LiveData<List<User>> getAllUser();
 
-    @Query("SELECT * FROM User WHERE username = :un")
-    ListenableFuture<User> findUserWithUsername(String un);
+    @Query("SELECT * FROM User WHERE phone = :phone")
+    ListenableFuture<User> findUserWithPhone(String phone);
 }

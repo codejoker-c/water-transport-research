@@ -15,14 +15,14 @@ public interface user_CargoDao {
     @Insert
     void insert(user_Cargo userCargo);
 
-    @Query("SELECT * FROM user_Cargo WHERE username = :username")
-    ListenableFuture<user_Cargo> finduserCargoWithUsername(String username);
+    @Query("SELECT * FROM user_Cargo WHERE phone = :phone")
+    ListenableFuture<user_Cargo> finduserCargoWithPhone(String phone);
 
     @Query("SELECT * FROM user_Cargo WHERE id = :userid")
     ListenableFuture<user_Cargo> finduserCargoWithId(Integer userid);
 
-    @Query("DELETE FROM user_Cargo WHERE username = :username")
-    void deleteuserCargoWithUsername(String username);
+    @Query("DELETE FROM user_Cargo WHERE phone = :phone")
+    void deleteuserCargoWithPhone(String phone);
 
     @Update
     void updata(user_Cargo userCargo);

@@ -7,21 +7,11 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import android.util.Log;
-import com.chaquo.python.Kwarg;
-import com.chaquo.python.PyObject;
-import com.chaquo.python.android.AndroidPlatform;
-import com.chaquo.python.Python;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.example.helloworld.database.Status;
+import com.example.helloworld.database.UserStatus;
 import com.example.helloworld.database.User;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
@@ -29,21 +19,16 @@ import com.example.helloworld.viewmodel.WT_ViewModel;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
-import com.example.helloworld.API.API;
-
 
 public class MainActivity extends AppCompatActivity {
 
     Button login_btn;
-    //ImageView imageview;
-    TextView textView,error;
-    EditText login_username;
+    TextView error;
+    EditText login_phone;
     EditText login_password;
-    //Spinner login_identity;
     WT_ViewModel mWT_ViewModel; // 对数据库的操作
-    private static final Logger logger = Logger.getGlobal();
+    //private static final Logger logger = Logger.getGlobal();
 
-    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,36 +36,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         login_btn = findViewById(R.id.login_btn);
-        //imageview=findViewById(R.id.login_pic);
-        //textView = findViewById(R.id.reg_textView);
-        login_username = findViewById(R.id.login_username);
+        login_phone = findViewById(R.id.login_phone);
         login_password = findViewById(R.id.login_password);
-        //login_identity=findViewById(R.id.login_identity);
         error = findViewById(R.id.login_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //logger.info(API.getHarbour());
-
-        //Thread t = new Thread(()->{
-          //  logger.info(API.getHarbour());
-        //});
-        //t.start();
-
-        /*
-        login_identity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String str=((TextView) view).toString();   //str 用来存放船主或货主的身份信息
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        */
-
     }
 
 
@@ -88,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent=new Intent();
         switch (view.getId()) {
             case R.id.login_btn:
-                String username = login_username.getText().toString().trim();
+                String phone = login_phone.getText().toString().trim();
                 String psd = login_password.getText().toString().trim();
-                if(username.isEmpty()){
-                    error.setText("用户名不能为空！");
+                if(phone.isEmpty()){
+                    error.setText("电话不能为空！");
                     error.setVisibility(view.VISIBLE);
                 }
                 else if(psd.isEmpty()){
@@ -99,18 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     error.setVisibility(view.VISIBLE);
                 }
                 else{
-                    //String str = login_identity.getSelectedItem().toString();
-                    User user;
-                    //if(str.equals("船主")) {
-                        user = mWT_ViewModel.finduserBoatWithUsername(username).get();
-                        if(user != null)
-                            user.status = Status.boat;
-                    //}
-                    //else {
-                    //    user = mWT_ViewModel.finduserCargoWithUsername(username).get();
-                    //    if(user != null)
-                    //        user.status = Status.cargo;
-                    //}
+                    User user = mWT_ViewModel.findUserWithPhone(phone).get();
                     if(user==null){
                         error.setText("该用户名不存在");
                         error.setVisibility(view.VISIBLE);

@@ -16,8 +16,6 @@ import android.widget.TextView;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
-import com.example.helloworld.database.user_Boat;
-import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
@@ -29,7 +27,7 @@ public class BoatQuery extends AppCompatActivity {
 
     ArrayList ship_data;
     TextView query_name, query_kind, query_weight, query_site, query_des, query_phone;
-    TextView mon,day;
+    TextView mon, day;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
     TextView test01;
 
@@ -53,7 +51,9 @@ public class BoatQuery extends AppCompatActivity {
         test01 = findViewById(R.id.test01);
         mon = findViewById(R.id.cargo_month01);
         day = findViewById(R.id.cargo_day01);
-
+    }
+}
+/*
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //拿到船和货的数据
         mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
@@ -61,15 +61,6 @@ public class BoatQuery extends AppCompatActivity {
             public void onChanged(List<user_Cargo> CargoData) {
                 try {
                     List<user_Boat> BoatData = mWT_ViewModel.getAlluserBoat().get();
-                    /*
-                    测试，成功在result界面显示第一位船主与第一位货主的username
-                    if(BoatData==null || BoatData.isEmpty()){
-                        text.setText("查询失败");
-                    }
-                    else{
-                        text.setText(BoatData.get(0).getUsername()+" "+CargoData.get(0).getUsername());
-                   }
-                     */
 
                     //在此后调用python程序即可，BoatData为船主数据，CargoData为货主数据
                     user_Boat userBoat = mWT_ViewModel.finduserBoatWithUsername(UserContext.getUser().getUsername()).get();
@@ -171,4 +162,4 @@ public class BoatQuery extends AppCompatActivity {
 
 }
 
-
+*/
