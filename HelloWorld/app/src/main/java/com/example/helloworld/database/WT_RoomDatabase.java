@@ -107,14 +107,13 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
                         user_Boat("dxs","123","董先生","95566",1400,1900,"沙土石子", "岳阳");
                 userBoat[9] = new
                         user_Boat("zxs","123","张先生","95566",1500,2300,"沙土石子", "巫山");
-
+*/
                 for(int i=0;i<10;i++){
-                    userCargo[i].setIsFillInfo();
-                    userBoat[i].setIsFillInfo();
-                    user_boatDao.insert(userBoat[i]);
+                    //userBoat[i].setIsFillInfo();
+                    //user_boatDao.insert(userBoat[i]);
                     user_cargoDao.insert(userCargo[i]);
                 }
-*/
+
                 //userCargo.setIsFillInfo();
                 //user_cargoDao.insert(userCargo);
                 //user_boatDao.insert(userBoat);

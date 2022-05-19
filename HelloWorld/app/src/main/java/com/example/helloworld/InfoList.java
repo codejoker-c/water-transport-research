@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
@@ -24,8 +25,7 @@ import java.util.List;
 
 public class InfoList extends AppCompatActivity {
 
-}
-/*
+
     RecyclerView cargo_list;
     private WT_ViewModel mWT_ViewModel;
     //ListView内部数据源
@@ -68,6 +68,7 @@ public class InfoList extends AppCompatActivity {
         mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
             @Override
             public void onChanged(List<user_Cargo> user_cargos) {
+
                 infoListAdapter.setCargoData(user_cargos);
                 infoListAdapter.notifyDataSetChanged();
             }
@@ -94,4 +95,3 @@ public class InfoList extends AppCompatActivity {
     }
 
 }
-*/

@@ -118,6 +118,7 @@ public class user_Cargo implements Serializable {    //你这个是可以序列�
 
     public user_Cargo(String phone, String password, String name, int cargo_weight, String cargo_type, String depart, String destin, int month, int day) {
         this.name = name;
+        this.password = password;
         this.phone = phone;
         this.cargo_type = cargo_type;
         this.cargo_weight = cargo_weight;
