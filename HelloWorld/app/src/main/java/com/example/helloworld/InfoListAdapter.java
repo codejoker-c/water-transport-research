@@ -42,8 +42,8 @@ public class InfoListAdapter extends RecyclerView.Adapter<InfoListAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         user_Cargo user_cargo = CargoData.get(position);
-        //holder.cargo_name.setText(user_cargo.name);
-        //holder.cargo_phone.setText(user_cargo.phone);
+        holder.cargo_name.setText(user_cargo.name);
+        holder.cargo_phone.setText(user_cargo.getPhone());
         holder.cargo_kind.setText(user_cargo.cargo_type);
         holder.cargo_site.setText(user_cargo.depart);
         holder.cargo_des.setText(user_cargo.destin);
@@ -67,7 +67,7 @@ public class InfoListAdapter extends RecyclerView.Adapter<InfoListAdapter.ViewHo
         TextView cargo_month,cargo_day;
         public ViewHolder(View view) {
             super(view);
-            //cargo_name = view.findViewById(R.id.cargo_name);
+            cargo_name = view.findViewById(R.id.const_user_item_name);
             cargo_kind = view.findViewById(R.id.cargo_kind);
             cargo_weight = view.findViewById(R.id.cargo_weight);
             cargo_site = view.findViewById(R.id.cargo_site);
@@ -75,7 +75,7 @@ public class InfoListAdapter extends RecyclerView.Adapter<InfoListAdapter.ViewHo
             cargo_day = view.findViewById(R.id.cargo_day);
             //cargo_arrow = view.findViewById(R.id.cargo_arrow);
             cargo_des = view.findViewById(R.id.cargo_des);
-            //cargo_phone = view.findViewById(R.id.cargo_phone);
+            cargo_phone = view.findViewById(R.id.const_phone_item_name);
 
         }
 

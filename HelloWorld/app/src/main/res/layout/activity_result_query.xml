@@ -157,8 +157,6 @@
                         android:layout_width="0dp"
                         android:layout_weight="5"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/const_hope"
-                        android:layout_alignBottom="@id/const_hope"
 
                         android:text="9"
                         android:textSize="20sp"
