@@ -114,6 +114,7 @@ dependencies {
     //fragment 依赖
     def fragment_version = "1.4.1"
     implementation "androidx.fragment:fragment:$fragment_version"
+
 }
 
 /

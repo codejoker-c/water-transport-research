@@ -6,9 +6,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
@@ -30,7 +33,7 @@ public class BoatMessageInput extends AppCompatActivity {
 
         spin_info = findViewById(R.id.spin_info_ship);
         name_ship = findViewById(R.id.name_ship);
-        phone_ship = findViewById(R.id.phone_ship);
+        //phone_ship = findViewById(R.id.phone_ship);
         weight_ship = findViewById(R.id.weight_ship);
         loadweight_ship = findViewById(R.id.loadweight_ship);
         depart_ship = findViewById(R.id.depart_ship);
@@ -39,8 +42,8 @@ public class BoatMessageInput extends AppCompatActivity {
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
     }
 
-        /*
-        load_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+        /*load_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 spin_info=(TextView) view;
@@ -53,14 +56,14 @@ public class BoatMessageInput extends AppCompatActivity {
             }
         });
 
-         */
+
         //刚进入页面时的初始化
-        /*
+
         try {
             user_Boat userBoat = mWT_ViewModel.finduserBoatWithUsername(UserContext.getUser().getUsername()).get();
             if(userBoat.name!=null){
                 name_ship.setText(userBoat.name);
-                phone_ship.setText(userBoat.phone);
+                //phone_ship.setText(userBoat.phone);
                 weight_ship.setText(userBoat.weight+"");
                 loadweight_ship.setText(userBoat.load_weight+"");
                 String[] str = getResources().getStringArray(R.array.spinner_array);
@@ -108,7 +111,7 @@ public class BoatMessageInput extends AppCompatActivity {
                 String name,phone,depart,loadtype;
                 int weight,loadweight;
                 name = name_ship.getText().toString().trim();
-                phone = phone_ship.getText().toString().trim();
+                //phone = phone_ship.getText().toString().trim();
                 weight = convertToInt(weight_ship.getText().toString(),0);
                 loadweight = convertToInt(loadweight_ship.getText().toString(),0);
                 //depart = depart_ship.getText().toString().trim();

@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -30,6 +32,7 @@ public class HomeMenuActivity extends AppCompatActivity {
     int[] picIds = { R.mipmap.slide_3,R.mipmap.slide_5,R.mipmap.slide_2, R.mipmap.slide_4};
     private AboutAdapter adapter;
 
+    @SuppressLint("HandlerLeak")
     Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -55,6 +58,7 @@ public class HomeMenuActivity extends AppCompatActivity {
         btn4 = findViewById(R.id.home_btn4);
         menu = findViewById(R.id.menu_vp);
         viewList = new ArrayList<>();
+
 
         //初始化ViewPager页面数据
         for (int i = 0; i < picIds.length; i++) {
