@@ -23,27 +23,29 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="44dp"
         android:src="@mipmap/user_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <View
-        android:id="@+id/ellipse_2"
+    <com.example.helloworld.CircleImage.XCRoundImageView
         android:layout_width="64dp"
+
         android:layout_height="64dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="40dp"
-        android:background="@drawable/ellipse_2"
+        android:layout_gravity="center"
+        android:src="@drawable/touxiang"
+
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
+
     <TextView
-        android:id="@+id/user_id"
+        android:id="@+id/get_user_name"
         android:layout_width="wrap_content"
         android:layout_height="26dp"
         android:layout_alignParentStart="true"
@@ -96,7 +98,7 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="178dp"
         android:src="@mipmap/func_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -244,6 +246,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <TextView
+        android:id="@+id/about_us_text"
         android:layout_width="60dp"
         android:layout_height="22dp"
         android:layout_alignParentLeft="true"

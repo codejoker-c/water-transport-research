@@ -25,6 +25,8 @@ import com.example.helloworld.database.User;
 import com.example.helloworld.databinding.FragmentUserBinding;
 import com.example.helloworld.user.UserContext;
 
+import org.w3c.dom.Text;
+
 public class UserFragment extends Fragment {
 
     Button logout;
@@ -75,6 +77,16 @@ public class UserFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentUserBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
+
+        TextView abt=root.findViewById(R.id.about_us_text);
+
+        abt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AboutActivity2.class);
+                startActivity(intent);
+            }
+        });
 
         //img=root.findViewById(R.id.about_us);
         /*
