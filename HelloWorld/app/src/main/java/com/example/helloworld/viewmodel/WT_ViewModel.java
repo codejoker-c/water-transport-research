@@ -18,6 +18,7 @@ public class WT_ViewModel extends AndroidViewModel {
     private WT_Repository mRepository;
 
     private final LiveData<List<user_Cargo>> mAll_userCargo;
+    private final LiveData<List<User>> mAllUser;
     //private MediatorLiveData<List<user_Cargo>> mAll_userCargo = new MediatorLiveData<>();
 
 
@@ -25,6 +26,7 @@ public class WT_ViewModel extends AndroidViewModel {
         super(application);
         mRepository = new WT_Repository(application);
         mAll_userCargo = mRepository.getAlluserCargo();
+        mAllUser = mRepository.getAllUser();
     }
 
     //插入数据，参数为User类
@@ -59,6 +61,10 @@ public class WT_ViewModel extends AndroidViewModel {
         return mAll_userCargo;
     }
 
+    public LiveData<List<User>> getAllUser(){
+        return mAllUser;
+    }
+
     public void update(user_Cargo userCargo) {
         mRepository.update(userCargo);
     }
@@ -75,4 +81,5 @@ public class WT_ViewModel extends AndroidViewModel {
     public LiveData<List<Order>> findOrdersWithuserId(Integer userId){
         return mRepository.findOrdersWithuserId(userId);
     }
+
 }

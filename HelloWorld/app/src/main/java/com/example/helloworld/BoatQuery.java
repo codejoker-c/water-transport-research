@@ -41,7 +41,6 @@ public class BoatQuery extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-
         query_name = findViewById(R.id.name01);
         query_kind = findViewById(R.id.cargo_kind01);
         query_weight = findViewById(R.id.cargo_weight01);
@@ -53,8 +52,9 @@ public class BoatQuery extends AppCompatActivity {
         day = findViewById(R.id.cargo_day01);
     }
 }
+
+
 /*
-        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //拿到船和货的数据
         mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
             @Override

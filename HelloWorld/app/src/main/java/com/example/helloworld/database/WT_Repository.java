@@ -75,6 +75,9 @@ public class WT_Repository {
         return muser_cargoDao.getAlluserCargo();
     }
 
+    public LiveData<List<User>> getAllUser(){
+        return muserDao.getAllUser();
+    }
 
     public void deleteAllCargo() {
         WT_RoomDatabase.databaseWriteExecutor.execute(() -> {
