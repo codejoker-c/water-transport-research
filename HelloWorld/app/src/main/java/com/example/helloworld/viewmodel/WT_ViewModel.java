@@ -68,6 +68,7 @@ public class WT_ViewModel extends AndroidViewModel {
     public void update(user_Cargo userCargo) {
         mRepository.update(userCargo);
     }
+
     public void update(User user) {
         mRepository.update(user);
     }

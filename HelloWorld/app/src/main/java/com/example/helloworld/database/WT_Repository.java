@@ -71,13 +71,13 @@ public class WT_Repository {
 
     public void update(user_Cargo userCargo) {
         WT_RoomDatabase.databaseWriteExecutor.execute(() -> {
-            muser_cargoDao.updata(userCargo);
+            muser_cargoDao.update(userCargo);
         });
     }
 
     public void update(User userBoat) {
         WT_RoomDatabase.databaseWriteExecutor.execute(() -> {
-            muserDao.updata(userBoat);
+            muserDao.update(userBoat);
         });
     }
 

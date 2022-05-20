@@ -2,6 +2,8 @@ package com.example.helloworld;
 
 
 
+import static io.grpc.okhttp.internal.Platform.logger;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -72,6 +74,13 @@ public class BoatQuery extends AppCompatActivity {
                     ship_length = BoatData.size();
                     cargo_length = CargoData.size();
 
+
+                    logger.info("这是提示信息");
+                    logger.info(String.valueOf(ship_length));
+                    logger.info(String.valueOf(BoatData.get(0).getDepart()));
+                    logger.info(String.valueOf(BoatData.get(0).getName()));
+                    logger.info(String.valueOf(BoatData.get(0).getPhone()));
+                    logger.info(String.valueOf(cargo_length));
 
                     initPython();
                     Integer cor_corgo=callPythonCode(BoatData, CargoData, ship_length, cargo_length,userBoat,test01)+1;

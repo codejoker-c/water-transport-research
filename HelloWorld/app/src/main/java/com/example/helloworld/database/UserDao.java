@@ -26,6 +26,6 @@ public interface UserDao {
     ListenableFuture<User> findUserWithPhone(String phone);
 
     @Update
-    void updata(User user);
+    void update(User user);
 
 }
