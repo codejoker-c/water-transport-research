@@ -56,6 +56,11 @@ public class WT_Repository {
     }
 
 
+    public ListenableFuture<List<User>> getAllUser(){
+        return muserDao.getAllUser();
+    }
+
+
     public ListenableFuture<user_Cargo> finduserCargoWithId(Integer id) {
         return muser_cargoDao.finduserCargoWithId(id);
     }
@@ -70,14 +75,18 @@ public class WT_Repository {
         });
     }
 
+    public void update(User userBoat) {
+        WT_RoomDatabase.databaseWriteExecutor.execute(() -> {
+            muserDao.updata(userBoat);
+        });
+    }
+
 
     public LiveData<List<user_Cargo>> getAlluserCargo() {
         return muser_cargoDao.getAlluserCargo();
     }
 
-    public LiveData<List<User>> getAllUser(){
-        return muserDao.getAllUser();
-    }
+
 
     public void deleteAllCargo() {
         WT_RoomDatabase.databaseWriteExecutor.execute(() -> {

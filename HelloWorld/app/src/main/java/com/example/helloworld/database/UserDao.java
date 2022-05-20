@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.google.common.util.concurrent.ListenableFuture;
 
@@ -19,8 +20,12 @@ public interface UserDao {
     void deleteAll();
 
     @Query("SELECT * FROM User")
-    LiveData<List<User>> getAllUser();
+    ListenableFuture<List<User>> getAllUser();
 
     @Query("SELECT * FROM User WHERE phone = :phone")
     ListenableFuture<User> findUserWithPhone(String phone);
+
+    @Update
+    void updata(User user);
+
 }

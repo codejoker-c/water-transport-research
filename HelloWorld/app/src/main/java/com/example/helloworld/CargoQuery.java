@@ -1,17 +1,34 @@
 package com.example.helloworld;
 
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
+import com.example.helloworld.database.User;
+import com.example.helloworld.database.user_Cargo;
+import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class CargoQuery extends AppCompatActivity {
 
-    TextView query_name, query_kind,query_weight, query_site, query_phone;
+    TextView query_name, query_kind, query_weight, query_site, query_phone;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
 
     @Override
@@ -29,16 +46,16 @@ public class CargoQuery extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
     }
-        /*
 
+}
 
-        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+       /* mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //拿到船和货的数据
         mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
             @Override
             public void onChanged(List<user_Cargo> CargoData) {
                 try {
-                    List<user_Boat> BoatData = mWT_ViewModel.getAlluserBoat().get();
+                    List<User> BoatData = mWT_ViewModel.getAlluserBoat().get();
 
                     //在此后调用python程序即可，BoatData为船主数据，CargoData为货主数据
                     user_Cargo userCargo = mWT_ViewModel.finduserCargoWithUsername(UserContext.getUser().getUsername()).get();
@@ -108,8 +125,8 @@ public class CargoQuery extends AppCompatActivity {
         } catch (Exception e) {
             return defaultValue;
         }
-    }
-*/
-}
+    }*/
+
+
 
 

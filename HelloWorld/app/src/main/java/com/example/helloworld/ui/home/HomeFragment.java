@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.example.helloworld.AboutActivity2;
 import com.example.helloworld.AboutAdapter;
 import com.example.helloworld.BoatMessageInput;
+import com.example.helloworld.BoatQuery;
 import com.example.helloworld.R;
 import com.example.helloworld.databinding.FragmentHomeBinding;
 
@@ -118,7 +119,7 @@ public class HomeFragment extends Fragment {
         want.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), BoatMessageInput.class);
+                Intent intent = new Intent(getActivity(), BoatQuery.class);
                 startActivity(intent);
             }
         });

@@ -1,5 +1,7 @@
 package com.example.helloworld;
 
+
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,6 +18,8 @@ import android.widget.TextView;
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+import com.example.helloworld.database.User;
+import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
@@ -50,20 +54,19 @@ public class BoatQuery extends AppCompatActivity {
         test01 = findViewById(R.id.test01);
         mon = findViewById(R.id.cargo_month01);
         day = findViewById(R.id.cargo_day01);
-    }
-}
 
 
-/*
         //拿到船和货的数据
+        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
             @Override
             public void onChanged(List<user_Cargo> CargoData) {
                 try {
-                    List<user_Boat> BoatData = mWT_ViewModel.getAlluserBoat().get();
+                    List<User> BoatData = mWT_ViewModel.getAllUser().get();
 
                     //在此后调用python程序即可，BoatData为船主数据，CargoData为货主数据
-                    user_Boat userBoat = mWT_ViewModel.finduserBoatWithUsername(UserContext.getUser().getUsername()).get();
+                    //用电话去找---------------------------------------------
+                    User userBoat = mWT_ViewModel.findUserWithPhone(UserContext.getUser().getPhone()).get();
 
                     Integer ship_length, cargo_length;
                     ship_length = BoatData.size();
@@ -74,17 +77,19 @@ public class BoatQuery extends AppCompatActivity {
                     Integer cor_corgo=callPythonCode(BoatData, CargoData, ship_length, cargo_length,userBoat,test01)+1;
 
                     //query_name.setText(cor_corgo.toString());
-                    user_Cargo userCargo=mWT_ViewModel.finduserCargoWithId(cor_corgo).get();
+
+                    user_Cargo userCargo=mWT_ViewModel.finduserCargoWithId(2).get();
+
+                    //query_name.setText(mWT_ViewModel.findUserWithPhone(userBoat.getPhone()).get().getPhone());
 
                     query_name.setText(userCargo.name);
-                    query_kind.setText(userCargo.cargo_type);
-                    query_weight.setText(String.valueOf(userCargo.cargo_weight));
-                    query_site.setText(userCargo.depart);
-                    query_des.setText(userCargo.destin);
-                    query_phone.setText(userCargo.phone);
-                    mon.setText(String.valueOf(userCargo.month));
-                    day.setText(String.valueOf(userCargo.day));
-
+//                    query_kind.setText(userCargo.cargo_type);
+//                    query_weight.setText(String.valueOf(userCargo.cargo_weight));
+//                    query_site.setText(userCargo.depart);
+//                    query_des.setText(userCargo.destin);
+//                    query_phone.setText(userCargo.getPhone());
+//                    mon.setText(String.valueOf(userCargo.month));
+//                    day.setText(String.valueOf(userCargo.day));
 
                 } catch (ExecutionException e) {
                     e.printStackTrace();
@@ -94,12 +99,13 @@ public class BoatQuery extends AppCompatActivity {
             }
         });
 
-        ImageButton ib_menu = findViewById(R.id.ib_menu);
-        ib_menu.setOnClickListener((View view)->{
-            Intent intent = new Intent();
-            UserContext.user_center(intent, BoatQuery.this);
-            startActivity(intent);
-        });
+//        ImageButton ib_menu = findViewById(R.id.ib_menu);
+//        ib_menu.setOnClickListener((View view)->{
+//            Intent intent = new Intent();
+//            UserContext.user_center(intent, BoatQuery.this);
+//            startActivity(intent);
+//        });
+
 
     }
 
@@ -111,7 +117,8 @@ public class BoatQuery extends AppCompatActivity {
     }
 
     // 调用python代码
-    Integer callPythonCode(List<user_Boat> BoatData, List<user_Cargo> CargoData, Integer ship_length, Integer cargo_length,user_Boat userboat,TextView test01) {
+
+    Integer callPythonCode(List<User> BoatData, List<user_Cargo> CargoData, Integer ship_length, Integer cargo_length, User userboat, TextView test01) {
 
         Python py = Python.getInstance();
         // 调用hello.py模块中的greet函数，并传一个参数
@@ -162,4 +169,12 @@ public class BoatQuery extends AppCompatActivity {
 
 }
 
-*/
+
+
+
+
+
+
+
+
+

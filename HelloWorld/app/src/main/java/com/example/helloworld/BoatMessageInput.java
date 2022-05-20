@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -13,7 +15,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.helloworld.database.User;
+import com.example.helloworld.database.UserStatus;
+import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
+
+import java.util.concurrent.ExecutionException;
 
 public class BoatMessageInput extends AppCompatActivity {
 
@@ -37,39 +44,39 @@ public class BoatMessageInput extends AppCompatActivity {
         weight_ship = findViewById(R.id.weight_ship);
         loadweight_ship = findViewById(R.id.loadweight_ship);
         depart_ship = findViewById(R.id.depart_ship);
-        load_type = findViewById(R.id.spinner_01);
+        //load_type = findViewById(R.id.spinner_01);
         error = findViewById(R.id.boat_info_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
-    }
 
 
-        /*load_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                spin_info=(TextView) view;
-                spin_info.setVisibility(View.VISIBLE);
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(BoatMessageInput.this, "Nothing", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        load_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                spin_info=(TextView) view;
+//                spin_info.setVisibility(View.VISIBLE);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//                Toast.makeText(BoatMessageInput.this, "Nothing", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
 
         //刚进入页面时的初始化
 
         try {
-            user_Boat userBoat = mWT_ViewModel.finduserBoatWithUsername(UserContext.getUser().getUsername()).get();
-            if(userBoat.name!=null){
-                name_ship.setText(userBoat.name);
+            User userBoat = mWT_ViewModel.findUserWithPhone(UserContext.getUser().getPhone()).get();
+            if(userBoat.getName()!=null){
+                name_ship.setText(userBoat.getName());
                 //phone_ship.setText(userBoat.phone);
-                weight_ship.setText(userBoat.weight+"");
-                loadweight_ship.setText(userBoat.load_weight+"");
+                weight_ship.setText(userBoat.getWeight()+"");
+                loadweight_ship.setText(userBoat.getLoad_weight()+"");
                 String[] str = getResources().getStringArray(R.array.spinner_array);
                 int position=0;
                 for(String i:str){
-                    if(i.equals(userBoat.load_type))
+                    if(i.equals(userBoat.getLoad_weight()))
                         break;
                     position++;
                 }
@@ -77,7 +84,7 @@ public class BoatMessageInput extends AppCompatActivity {
                 String[] str1 = getResources().getStringArray(R.array.port_list);
                 int position1=0;
                 for(String i:str1){
-                    if(i.equals(userBoat.depart))
+                    if(i.equals(userBoat.getDepart()))
                         break;
                     position1++;
                 }
@@ -116,20 +123,25 @@ public class BoatMessageInput extends AppCompatActivity {
                 loadweight = convertToInt(loadweight_ship.getText().toString(),0);
                 //depart = depart_ship.getText().toString().trim();
                 depart = depart_ship.getSelectedItem().toString();
-                loadtype = load_type.getSelectedItem().toString();
+                //loadtype = load_type.getSelectedItem().toString();
 
 
-                if(name.isEmpty()||phone.isEmpty()||weight==0||loadweight==0||depart.isEmpty()||loadtype.isEmpty()){
+                if(name.isEmpty()||weight==0||loadweight==0||depart.isEmpty()){
                     error.setText("信息填写不完整！");
                     error.setVisibility(view.VISIBLE);
                 }
                 else{
                     User user = UserContext.getUser();
-                    user_Boat userBoat = new user_Boat(user.getUsername(),user.getPassword(),name,phone,weight,loadweight,loadtype,depart);
+                    User userBoat = new User(user.getPhone(),user.getPassword());//,weight,loadweight,depart
+                    userBoat.setDepart(user.getDepart());
+                    userBoat.setLoad_weight(user.getLoad_weight());
+                    userBoat.setWeight(user.getWeight());
                     userBoat.setId(user.getId());
-                    userBoat.setIsFillInfo(); // 设置该用户已经完善信息
-                    userBoat.userStatus = UserStatus.boat;
-                    UserContext.setLoginState(userBoat);
+                    userBoat.setIsFillInfo(1); // 设置该用户已经完善信息
+                    //user.userStatus = UserStatus.boat;
+                    //设置登录状态------------------------------------------------------------
+                    UserContext.setLoginState(user);
+                    //------------------------------------------------------------
                     mWT_ViewModel.update(userBoat);
 
                     intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
@@ -141,5 +153,9 @@ public class BoatMessageInput extends AppCompatActivity {
                 break;
         }
     }
-*/
-}
+
+
+
+
+
+    }

@@ -130,31 +130,31 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
 
-                <TextView
-                    android:id="@+id/kind_txt_ship"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="20dp"
-                    android:text="船载重货物类型:"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+<!--                <TextView-->
+<!--                    android:id="@+id/kind_txt_ship"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:text="船载重货物类型:"-->
+<!--                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>-->
 
 
-                <Spinner
-                    android:id="@+id/spinner_01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_toRightOf="@+id/kind_txt_ship"
-                    android:background="@drawable/round_editstyle"
-                    android:entries="@array/spinner_array"/>
+<!--                <Spinner-->
+<!--                    android:id="@+id/spinner_01"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:layout_toRightOf="@+id/kind_txt_ship"-->
+<!--                    android:background="@drawable/round_editstyle"-->
+<!--                    android:entries="@array/spinner_array"/>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
             <LinearLayout
@@ -188,18 +188,13 @@
     </LinearLayout>
 
 
-
-
-
-
     <TextView
         android:id="@+id/spin_info_ship"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
         android:layout_marginLeft="50dp"
-        android:visibility="invisible"
-        ></TextView>
+        android:layout_marginTop="500dp"
+        android:visibility="invisible"></TextView>
 
 
     <Button
