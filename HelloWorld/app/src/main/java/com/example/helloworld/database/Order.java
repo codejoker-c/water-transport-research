@@ -14,12 +14,12 @@ public class Order {
     @PrimaryKey(autoGenerate = true)
     private Integer id;
 
-    // 货物的货主id
+    // 订单船主id
     @NonNull
     @ColumnInfo(name="userId")
     private Integer userId;
 
-    // 货物其实带
+    // 货物起始地
     @NonNull
     private String dep;
 
