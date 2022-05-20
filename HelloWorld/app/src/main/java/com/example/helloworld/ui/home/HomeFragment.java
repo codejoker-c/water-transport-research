@@ -23,6 +23,7 @@ import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.helloworld.AboutActivity2;
@@ -39,6 +40,7 @@ import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 
 /**
@@ -73,6 +75,9 @@ public class HomeFragment extends Fragment {
     List<user_Cargo> CargoData;
     private InfoListAdapter infoListAdapter;
 
+    TextView site,des,weight,kind,month,day,name,phone;
+
+    LinearLayout optimal;
     Button want;
     //ViewPager slide;
 //    List<View> viewList;    //ViewPager的数据源
@@ -126,11 +131,22 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // 向布局中填充(inflate)另一个布局
         // 第一个参数为想要添加的布局，第二个参数为容器，即要添加到哪个布局，第三个参数为是否直接添加到第二个参数布局上面
+        //TextView site,des,weight,kind,month,day,name,phone;
         binding = FragmentHomeBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
         //slide=root.findViewById(R.id.home_slide);
         want=root.findViewById(R.id.want);
         cargo_list=root.findViewById(R.id.cargo_info_home);
+        optimal=root.findViewById(R.id.optimal);
+
+        site=root.findViewById(R.id.cargo_site_optimal);
+        des=root.findViewById(R.id.cargo_des_optimal);
+        weight=root.findViewById(R.id.cargo_weight_optimal);
+        kind=root.findViewById(R.id.cargo_kind_optimal);
+        month=root.findViewById(R.id.cargo_month_optimal);
+        day=root.findViewById(R.id.cargo_day_optimal);
+        name=root.findViewById(R.id.const_user_item_name_optimal);
+        phone=root.findViewById(R.id.const_phone_item_name_optimal);
         // 获取控件对象,binding中成员的命名与控件的id有关
         //final TextView textView = binding.textHome;
 
@@ -142,6 +158,28 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //user_Cargo(String phone, String password, String name, int cargo_weight, String cargo_type, String depart, String destin, int month, int day) {
+
+        //拿到船和货的数据
+        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+
+//            optimal.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    user_Cargo temp=mWT_ViewModel.finduserCargoWithId(2).get();
+//                } catch (ExecutionException e) {
+//                    e.printStackTrace();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                Intent intent=new Intent();
+//                intent.setClass(getActivity(), InfoDesc.class);
+//                intent.putExtra("data",data);
+//                startActivity(intent);
+//            }
+//        });
 
 
 //        slide.setOutlineProvider(new ViewOutlineProvider() {
@@ -179,8 +217,7 @@ public class HomeFragment extends Fragment {
         //设置适配器
         cargo_list.setAdapter(infoListAdapter);
 
-        //拿到船和货的数据
-        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+
         //添加观测，每当表单中信息发生改变时，就重新设置UI显示信息
         mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
             @Override

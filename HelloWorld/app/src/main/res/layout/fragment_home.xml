@@ -37,6 +37,7 @@
 <!--            android:layout_gravity="center_horizontal" />-->
 
         <LinearLayout
+            android:id="@+id/optimal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -105,7 +106,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/cargo_site"
+                        android:id="@+id/cargo_site_optimal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
@@ -117,7 +118,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/cargo_des"
+                        android:id="@+id/cargo_des_optimal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -155,7 +156,7 @@
 
                             <TextView
 
-                                android:id="@+id/cargo_weight"
+                                android:id="@+id/cargo_weight_optimal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignBottom="@id/const_weight"
@@ -181,7 +182,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/cargo_kind"
+                                android:id="@+id/cargo_kind_optimal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
 
@@ -219,7 +220,7 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/cargo_month"
+                                    android:id="@+id/cargo_month_optimal"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
 
@@ -238,7 +239,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/cargo_day"
+                                    android:id="@+id/cargo_day_optimal"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="41"
@@ -273,7 +274,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/const_user_item_name"
+                                android:id="@+id/const_user_item_name_optimal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="11dp"
@@ -300,7 +301,7 @@
                                 android:textStyle="bold" />
 
                             <TextView
-                                android:id="@+id/const_phone_item_name"
+                                android:id="@+id/const_phone_item_name_optimal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="18234631953"
