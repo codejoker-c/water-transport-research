@@ -6,6 +6,7 @@ import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.example.helloworld.database.Order;
 import com.example.helloworld.database.User;
 import com.example.helloworld.database.WT_Repository;
 import com.example.helloworld.database.user_Cargo;
@@ -36,6 +37,8 @@ public class WT_ViewModel extends AndroidViewModel {
         mRepository.insert(user);
     }
 
+    public void insert(Order order){mRepository.insert(order);}
+
     //通过username字段查询数据，返回User类，因为是异步查询，即开了新线程，故加了ListenableFuture来修饰
     //通过ListenableFuture.get()方法可以获得User类
 
@@ -51,8 +54,6 @@ public class WT_ViewModel extends AndroidViewModel {
         return mRepository.finduserCargoWithId(id);
     }
 
-
-
     //Cargo查询仍然使用LiveData，因为LiveData方便货主信息界面更新信息
     public LiveData<List<user_Cargo>> getAlluserCargo() {
         return mAll_userCargo;
@@ -65,5 +66,13 @@ public class WT_ViewModel extends AndroidViewModel {
 
     public void deleteAllCargo() {
         mRepository.deleteAllCargo();
+    }
+
+    public void deleteuser_cargoWithId(Integer id){
+        mRepository.deleteuser_CargoWithId(id);
+    }
+
+    public LiveData<List<Order>> findOrdersWithuserId(Integer userId){
+        return mRepository.findOrdersWithuserId(userId);
     }
 }

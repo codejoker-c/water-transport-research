@@ -32,4 +32,7 @@ public interface user_CargoDao {
 
     @Query("DELETE FROM user_Cargo")
     void deleteAllCargo();
+
+    @Query("DELETE FROM user_Cargo WHERE id=:id")
+    void deleteuser_CargoWithId(Integer id);
 }
