@@ -91,11 +91,6 @@ public class HomeMenuActivity extends AppCompatActivity {
                 intent.setClass(HomeMenuActivity.this, InfoList.class);
                 startActivity(intent);
                 break;
-            case R.id.ib_menu:
-                intent.setClass(HomeMenuActivity.this, UserFragment.class);
-                //UserContext.user_center(intent, UserActivity.class);
-                startActivity(intent);
-                break;
             case R.id.home_btn4:
                 intent.setClass(HomeMenuActivity.this, AboutActivity2.class);
                 startActivity(intent);

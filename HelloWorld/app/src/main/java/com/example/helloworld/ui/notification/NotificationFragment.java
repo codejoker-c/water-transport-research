@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -91,7 +93,8 @@ public class NotificationFragment extends Fragment {
         View root = binding.getRoot();
 
 
-
+        Toolbar myToolbar = root.findViewById(R.id.my_toolbar);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(myToolbar);
 
         TextView text_underline=root.findViewById(R.id.huoyuan_under_line);
         text_underline.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
@@ -133,7 +136,7 @@ public class NotificationFragment extends Fragment {
             }
 
         });
-        TextView textView = binding.textNotification;
+
 
         return root;
     }

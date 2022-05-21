@@ -1,6 +1,9 @@
 package com.example.helloworld;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -9,17 +12,27 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 
 
+import com.example.helloworld.database.Order;
+import com.example.helloworld.database.OrderStatus;
 import com.example.helloworld.databinding.ActivityFootbarBinding;
+import com.example.helloworld.viewmodel.WT_ViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
 public class FootbarActivity extends AppCompatActivity {
 
     private ActivityFootbarBinding binding;
+    WT_ViewModel mWT_ViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+
+        Order order = new Order(1,"123","123", OrderStatus.doing);
+        mWT_ViewModel.insert(order);
+
+
         //setContentView(R.layout.activity_footbar);
         // 获取布局填充部分
         binding = ActivityFootbarBinding.inflate(getLayoutInflater());

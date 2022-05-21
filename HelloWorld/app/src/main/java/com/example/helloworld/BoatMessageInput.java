@@ -147,9 +147,6 @@ public class BoatMessageInput extends AppCompatActivity {
                     startActivity(intent);
                 }
                 break;
-            case R.id.ib_menu:
-                UserContext.user_center(intent, BoatMessageInput.this);
-                break;
         }
     }
 

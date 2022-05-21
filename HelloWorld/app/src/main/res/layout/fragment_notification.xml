@@ -6,88 +6,99 @@
     android:layout_height="match_parent"
     tools:context=".ui.notification.NotificationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/text_notification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:paddingTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".InfoList">
-
-        <include layout="@layout/main_titlebar"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        tools:context=".InfoList">
+        <include layout="@layout/main_titlebar" />
+        <!--
         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/new_user_back_ground"
+            android:gravity="center"
+            >
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:padding="10dp"
-                android:background="@drawable/new_user_back_ground"
-                android:gravity="center">
-<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-android:background="#517DC1">
-            <TextView
+                android:layout_height="match_parent"
+                android:background="#517DC1">
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#517DC1"
                     android:gravity="center"
                     android:text="货源大厅"
-                    android:textColor="@color/white"
-                    android:background="#517DC1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
-</LinearLayout>
+                    android:textColor="@color/white" />
+            </LinearLayout>
         </RelativeLayout>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:orientation="horizontal">
-            <TextView  android:layout_height="wrap_content"
-                      android:id="@+id/huoyuan_under_line"
-                      android:textSize="17dp"
-                       android:layout_width="0dp"
-                       android:layout_weight="20"
-                      android:textColor="@color/black" android:text="发货地"
-                      android:layout_marginLeft="10dp"/>
-            <TextView  android:layout_height="wrap_content"
+        -->
 
-                      android:textSize="17dp"
-                      android:layout_width="0dp"
-                      android:layout_weight="20"
-                       android:gravity="center"
-                      android:textColor="@color/black" android:text="收货地"
-                      android:layout_marginLeft="10dp"/>
-            <TextView  android:layout_height="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal">
 
-                      android:textSize="17dp"
-                       android:layout_width="0dp"
-                       android:layout_weight="20"
-                       android:gravity="center"
-                       android:textColor="@color/black" android:text="船型"
-                      android:layout_marginLeft="10dp"/>
-            <TextView android:layout_height="wrap_content"
+            <TextView
+                android:id="@+id/huoyuan_under_line"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="20"
+                android:text="发货地"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
-                      android:textSize="17dp"
-                      android:layout_width="0dp"
-                      android:layout_weight="20"
-                      android:gravity="center"
-                      android:textColor="@color/black" android:text="船长"
-                      android:layout_marginLeft="10dp"/>
-            <TextView android:layout_height="wrap_content"
+            <TextView
+                android:layout_width="0dp"
 
-                      android:textSize="17dp"
-                      android:layout_width="0dp"
-                      android:gravity="center"
-                      android:layout_weight="30"
-                      android:textColor="@color/black" android:text="用船类型"
-                      android:layout_marginLeft="10dp"/>
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="20"
+                android:gravity="center"
+                android:text="收货地"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="20"
+                android:gravity="center"
+                android:text="船型"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="20"
+                android:gravity="center"
+                android:text="船长"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="0dp"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="30"
+                android:gravity="center"
+                android:text="用船类型"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <!--    <ListView
@@ -101,11 +112,10 @@ android:background="#517DC1">
                 ></ListView>-->
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/cargo_info"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/item_infolist"
-        ></androidx.recyclerview.widget.RecyclerView>
+            android:id="@+id/cargo_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_infolist"></androidx.recyclerview.widget.RecyclerView>
 
 
         <LinearLayout

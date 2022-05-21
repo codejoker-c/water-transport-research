@@ -7,6 +7,8 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -40,6 +42,7 @@ import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 
@@ -129,12 +132,17 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // 向布局中填充(inflate)另一个布局
         // 第一个参数为想要添加的布局，第二个参数为容器，即要添加到哪个布局，第三个参数为是否直接添加到第二个参数布局上面
         //TextView site,des,weight,kind,month,day,name,phone;
         binding = FragmentHomeBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
         //slide=root.findViewById(R.id.home_slide);
+
+        Toolbar myToolbar = root.findViewById(R.id.my_toolbar);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
+
         want=root.findViewById(R.id.want);
         cargo_list=root.findViewById(R.id.cargo_info_home);
         optimal=root.findViewById(R.id.optimal);
