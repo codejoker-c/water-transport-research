@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.helloworld.database.User;
+import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.concurrent.ExecutionException;
@@ -73,9 +74,13 @@ public class RegActivity extends AppCompatActivity {
                         error.setVisibility(view.VISIBLE);
                     }
                     else{
-                        intent.setClass(RegActivity.this,MainActivity.class);
+
+                        intent.setClass(RegActivity.this,CompleteMessage.class);
                         muser = new User(phone,psd);
                         mWT_ViewModel.insert(muser);
+
+                        //User user = mWT_ViewModel.findUserWithPhone(phone).get();
+                        UserContext.setLoginState(muser);
                         startActivity(intent);
                     }
                 }

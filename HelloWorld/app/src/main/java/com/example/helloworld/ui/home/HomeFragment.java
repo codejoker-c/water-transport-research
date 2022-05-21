@@ -8,6 +8,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Handler;
@@ -18,16 +23,24 @@ import android.view.ViewGroup;
 import android.view.ViewOutlineProvider;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.helloworld.AboutActivity2;
 import com.example.helloworld.AboutAdapter;
 import com.example.helloworld.BoatMessageInput;
+import com.example.helloworld.BoatQuery;
+import com.example.helloworld.InfoDesc;
+import com.example.helloworld.InfoList;
+import com.example.helloworld.InfoListAdapter;
 import com.example.helloworld.R;
+import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.databinding.FragmentHomeBinding;
+import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 
 /**
@@ -55,25 +68,35 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
-    Button want;
-    ViewPager slide;
-    List<View> viewList;    //ViewPager的数据源
-    //<ImageView>pointList;  //存放显示器小点点的集
-    int[] picIds = { R.mipmap.slide_3,R.mipmap.slide_5,R.mipmap.slide_2, R.mipmap.slide_4};
-    private AboutAdapter adapter;
+    RecyclerView cargo_list;
+    DividerItemDecoration mDivider;
+    private WT_ViewModel mWT_ViewModel;
+    //ListView内部数据源
+    List<user_Cargo> CargoData;
+    private InfoListAdapter infoListAdapter;
 
-    @SuppressLint("HandlerLeak")
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(@NonNull Message msg) {
-            if (msg.what == 1) {
-                //接收到消息，页面向后一页
-                int currentItem = slide.getCurrentItem();
-                slide.setCurrentItem(currentItem + 1);
-                handler.sendEmptyMessageDelayed(1, 3000);
-            }
-        }
-    };
+    TextView site,des,weight,kind,month,day,name,phone;
+
+    LinearLayout optimal;
+    Button want;
+    //ViewPager slide;
+//    List<View> viewList;    //ViewPager的数据源
+//    //<ImageView>pointList;  //存放显示器小点点的集
+//    int[] picIds = { R.mipmap.slide_3,R.mipmap.slide_5,R.mipmap.slide_2, R.mipmap.slide_4};
+//    private AboutAdapter adapter;
+//
+//    @SuppressLint("HandlerLeak")
+//    Handler handler = new Handler() {
+//        @Override
+//        public void handleMessage(@NonNull Message msg) {
+//            if (msg.what == 1) {
+//                //接收到消息，页面向后一页
+//                int currentItem = slide.getCurrentItem();
+//                slide.setCurrentItem(currentItem + 1);
+//                handler.sendEmptyMessageDelayed(1, 3000);
+//            }
+//        }
+//    };
 
 
     /**
@@ -108,45 +131,119 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // 向布局中填充(inflate)另一个布局
         // 第一个参数为想要添加的布局，第二个参数为容器，即要添加到哪个布局，第三个参数为是否直接添加到第二个参数布局上面
+        //TextView site,des,weight,kind,month,day,name,phone;
         binding = FragmentHomeBinding.inflate(inflater,container,false);
         View root = binding.getRoot();
-        slide=root.findViewById(R.id.home_slide);
+        //slide=root.findViewById(R.id.home_slide);
         want=root.findViewById(R.id.want);
+        cargo_list=root.findViewById(R.id.cargo_info_home);
+        optimal=root.findViewById(R.id.optimal);
+
+        site=root.findViewById(R.id.cargo_site_optimal);
+        des=root.findViewById(R.id.cargo_des_optimal);
+        weight=root.findViewById(R.id.cargo_weight_optimal);
+        kind=root.findViewById(R.id.cargo_kind_optimal);
+        month=root.findViewById(R.id.cargo_month_optimal);
+        day=root.findViewById(R.id.cargo_day_optimal);
+        name=root.findViewById(R.id.const_user_item_name_optimal);
+        phone=root.findViewById(R.id.const_phone_item_name_optimal);
         // 获取控件对象,binding中成员的命名与控件的id有关
         //final TextView textView = binding.textHome;
 
         want.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), BoatMessageInput.class);
+                Intent intent = new Intent(getActivity(), BoatQuery.class);
                 startActivity(intent);
             }
         });
 
+        //user_Cargo(String phone, String password, String name, int cargo_weight, String cargo_type, String depart, String destin, int month, int day) {
+
+        //拿到船和货的数据
+        mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
+
+//            optimal.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    user_Cargo temp=mWT_ViewModel.finduserCargoWithId(2).get();
+//                } catch (ExecutionException e) {
+//                    e.printStackTrace();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                Intent intent=new Intent();
+//                intent.setClass(getActivity(), InfoDesc.class);
+//                intent.putExtra("data",data);
+//                startActivity(intent);
+//            }
+//        });
 
 
-        slide.setOutlineProvider(new ViewOutlineProvider() {
+//        slide.setOutlineProvider(new ViewOutlineProvider() {
+//            @Override
+//            public void getOutline(View view, Outline outline) {
+//                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), 30);
+//            }
+//        });
+
+//        viewList = new ArrayList<>();
+////初始化ViewPager页面数据
+//        for (int i = 0; i < picIds.length; i++) {
+//            View view = LayoutInflater.from(getContext()).inflate(R.layout.item_aboutvp, null);
+//            ImageView iv = view.findViewById(R.id.item_aboutvp_iv);
+//            iv.setImageResource(picIds[i]);
+//            viewList.add(view);
+//        }
+//
+//        //创建适配器对象
+//        adapter = new AboutAdapter(viewList);
+//        //设置适配器
+//        slide.setAdapter(adapter);
+//        // 发送切换页面消息
+//        handler.sendEmptyMessageDelayed(1, 2200);
+
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        cargo_list.setLayoutManager(linearLayoutManager);
+        //初始化分隔线、添加分隔线
+        mDivider = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL);
+        cargo_list.addItemDecoration(mDivider);
+
+        //创建适配器
+        infoListAdapter = new InfoListAdapter(getContext(),CargoData);
+        //设置适配器
+        cargo_list.setAdapter(infoListAdapter);
+
+
+        //添加观测，每当表单中信息发生改变时，就重新设置UI显示信息
+        mWT_ViewModel.getAlluserCargo().observe(this, new Observer<List<user_Cargo>>() {
             @Override
-            public void getOutline(View view, Outline outline) {
-                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), 30);
+            public void onChanged(List<user_Cargo> user_cargos) {
+
+//                List<user_Cargo> temp = null;
+//                for(int k=0;k<3;k++)
+//                    temp.add(user_cargos.get(k*3+1));
+                infoListAdapter.setCargoData(user_cargos);
+                infoListAdapter.notifyDataSetChanged();
             }
         });
 
-        viewList = new ArrayList<>();
-//初始化ViewPager页面数据
-        for (int i = 0; i < picIds.length; i++) {
-            View view = LayoutInflater.from(getContext()).inflate(R.layout.item_aboutvp, null);
-            ImageView iv = view.findViewById(R.id.item_aboutvp_iv);
-            iv.setImageResource(picIds[i]);
-            viewList.add(view);
-        }
+        infoListAdapter.setOnItemClickListener(new InfoListAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(RecyclerView parent, View view, int position, user_Cargo data) {
+                Intent intent=new Intent();
+                intent.setClass(getActivity(), InfoDesc.class);
+                intent.putExtra("data",data);
+                startActivity(intent);
+            }
 
-        //创建适配器对象
-        adapter = new AboutAdapter(viewList);
-        //设置适配器
-        slide.setAdapter(adapter);
-        // 发送切换页面消息
-        handler.sendEmptyMessageDelayed(1, 2200);
+        });
+
+
+
 
 
 

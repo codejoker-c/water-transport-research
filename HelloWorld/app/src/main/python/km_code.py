@@ -235,11 +235,11 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
 
     for i in range(Ship_info_array.size()):
         for j in range(Cargo_info_array.size()):
-            M_ship = Ship_info_array.get(i).weight
+            M_ship = Ship_info_array.get(i).getWeight()
             # V=Ship_info_array[i]["V_ship"]
             M_cargo = Cargo_info_array.get(j).cargo_weight
 
-            dis_ship_cargo = abs(Loc_Correspond[Ship_info_array.get(i).depart] - Loc_Correspond[
+            dis_ship_cargo = abs(Loc_Correspond[Ship_info_array.get(i).getDepart()] - Loc_Correspond[
                 Cargo_info_array.get(j).depart])
 
             dis_transport = abs(Loc_Correspond[Cargo_info_array.get(j).depart] - Loc_Correspond[
@@ -264,14 +264,14 @@ def final_func(Ship_info_array, Cargo_info_array, ship_length, cargo_length):
             # TransportFee6 = gate_num * gate_fee
 
             TransportFee7 = 0
-            if (Ship_info_array.get(i).load_weight < Cargo_info_array.get(j).cargo_weight):
+            if (Ship_info_array.get(i).getLoad_weight() < Cargo_info_array.get(j).cargo_weight):
                 TransportFee7 = -100000
             else:
                 TransportFee7 = 0
-            if ((Ship_info_array.get(i).load_type == Cargo_info_array.get(j).cargo_type)):
-                TransportFee7 = 0
-            else:
-                TransportFee7 = -100000
+            #if ((Ship_info_array.get(i).load_type == Cargo_info_array.get(j).cargo_type)):
+                #TransportFee7 = 0
+            #else:
+                #TransportFee7 = -100000
 
             date_arrival = str(Cargo_info_array.get(j).month) + '-' + str(
                 Cargo_info_array.get(j).day)

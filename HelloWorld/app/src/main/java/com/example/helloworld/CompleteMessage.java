@@ -1,28 +1,30 @@
 package com.example.helloworld;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.ViewModelProvider;
+        import static io.grpc.okhttp.internal.Platform.logger;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
+        import androidx.appcompat.app.ActionBar;
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.widget.Toolbar;
+        import androidx.lifecycle.ViewModelProvider;
 
-import com.example.helloworld.database.User;
-import com.example.helloworld.database.UserStatus;
-import com.example.helloworld.user.UserContext;
-import com.example.helloworld.viewmodel.WT_ViewModel;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.text.TextUtils;
+        import android.view.View;
+        import android.widget.AdapterView;
+        import android.widget.EditText;
+        import android.widget.Spinner;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import java.util.concurrent.ExecutionException;
+        import com.example.helloworld.database.User;
+        import com.example.helloworld.database.UserStatus;
+        import com.example.helloworld.user.UserContext;
+        import com.example.helloworld.viewmodel.WT_ViewModel;
 
-public class BoatMessageInput extends AppCompatActivity {
+        import java.util.concurrent.ExecutionException;
+
+public class CompleteMessage extends AppCompatActivity {
 
     TextView error;
     EditText name_ship,weight_ship,loadweight_ship;
@@ -32,36 +34,18 @@ public class BoatMessageInput extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_boat_message_input);
+        setContentView(R.layout.activity_complete_message);
         Toolbar myToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        name_ship = findViewById(R.id.name_ship);
-        //phone_ship = findViewById(R.id.phone_ship);
-        weight_ship = findViewById(R.id.weight_ship);
-        loadweight_ship = findViewById(R.id.loadweight_ship);
-        depart_ship = findViewById(R.id.depart_ship);
-        //load_type = findViewById(R.id.spinner_01);
-        error = findViewById(R.id.boat_info_error);
+        name_ship = findViewById(R.id.name_ship_complete);
+        weight_ship = findViewById(R.id.weight_ship_complete);
+        loadweight_ship = findViewById(R.id.loadweight_ship_complete);
+        depart_ship = findViewById(R.id.depart_ship_complete);
+        error = findViewById(R.id.boat_info_error_complete);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
-
-
-
-//        load_type.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                spin_info=(TextView) view;
-//                spin_info.setVisibility(View.VISIBLE);
-//            }
-//
-//            @Override
-//            public void onNothingSelected(AdapterView<?> parent) {
-//                Toast.makeText(BoatMessageInput.this, "Nothing", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
 
         //刚进入页面时的初始化
 
@@ -69,7 +53,6 @@ public class BoatMessageInput extends AppCompatActivity {
             User userBoat = mWT_ViewModel.findUserWithPhone(UserContext.getUser().getPhone()).get();
             if(userBoat.getName()!=null){
                 name_ship.setText(userBoat.getName());
-                //phone_ship.setText(userBoat.phone);
                 weight_ship.setText(userBoat.getWeight()+"");
                 loadweight_ship.setText(userBoat.getLoad_weight()+"");
                 String[] str = getResources().getStringArray(R.array.spinner_array);
@@ -79,7 +62,6 @@ public class BoatMessageInput extends AppCompatActivity {
                         break;
                     position++;
                 }
-                load_type.setSelection(position,true);
                 String[] str1 = getResources().getStringArray(R.array.port_list);
                 int position1=0;
                 for(String i:str1){
@@ -113,17 +95,13 @@ public class BoatMessageInput extends AppCompatActivity {
         Intent intent=new Intent();
 
         switch (view.getId()) {
-            case R.id.submit_ship:
-                String name,phone,depart,lodtype;
+            case R.id.submit_ship_complete:
+                String name,phone,depart;
                 int weight,loadweight;
                 name = name_ship.getText().toString().trim();
-                //phone = phone_ship.getText().toString().trim();
                 weight = convertToInt(weight_ship.getText().toString(),0);
                 loadweight = convertToInt(loadweight_ship.getText().toString(),0);
-                //depart = depart_ship.getText().toString().trim();
                 depart = depart_ship.getSelectedItem().toString();
-                //loadtype = load_type.getSelectedItem().toString();
-
 
                 if(name.isEmpty()||weight==0||loadweight==0||depart.isEmpty()){
                     error.setText("信息填写不完整！");
@@ -131,30 +109,31 @@ public class BoatMessageInput extends AppCompatActivity {
                 }
                 else{
                     User user = UserContext.getUser();
-                    User userBoat = new User(user.getPhone(),user.getPassword());//,weight,loadweight,depart
-                    userBoat.setDepart(user.getDepart());
-                    userBoat.setLoad_weight(user.getLoad_weight());
-                    userBoat.setWeight(user.getWeight());
-                    userBoat.setId(user.getId());
-                    userBoat.setIsFillInfo(1); // 设置该用户已经完善信息
+                    //User userBoat = new User(user.getPhone(),user.getPassword());
+                    user.setName(name);
+                    user.setDepart(depart);
+                    user.setLoad_weight(loadweight);
+                    user.setWeight(weight);
+                    user.setIsFillInfo(1); // 设置该用户已经完善信息
+
+                    logger.info("这是提示信息");
+                    logger.info(name);
+                    logger.info(depart);
+                    logger.info(user.getName());
+                    logger.info(user.getDepart());
+
                     //user.userStatus = UserStatus.boat;
                     //设置登录状态------------------------------------------------------------
-                    UserContext.setLoginState(user);
+                    //UserContext.setLoginState(user);
                     //------------------------------------------------------------
-                    mWT_ViewModel.update(userBoat);
+                    mWT_ViewModel.update(user);
 
-                    intent.setClass(BoatMessageInput.this,HomeMenuActivity.class);
+                    intent.setClass(CompleteMessage.this,FootbarActivity.class);
                     startActivity(intent);
                 }
                 break;
-            case R.id.ib_menu:
-                UserContext.user_center(intent, BoatMessageInput.this);
-                break;
+
         }
     }
 
-
-
-
-
-    }
+}

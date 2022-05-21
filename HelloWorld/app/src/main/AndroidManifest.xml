@@ -10,13 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".CompleteMessage"
+            android:exported="false" />
+        <activity
             android:name=".FootbarActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".InfoDesc"
@@ -33,12 +38,10 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HomeMenuActivity" />
-        </activity>
-        <!-- 这里本来是原始界面 -->
+        </activity> <!-- 这里本来是原始界面 -->
         <activity
             android:name=".InitialInterface"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

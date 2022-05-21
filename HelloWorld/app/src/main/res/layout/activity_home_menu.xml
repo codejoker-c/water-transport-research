@@ -5,10 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".HomeMenuActivity"
-    >
+    tools:context=".HomeMenuActivity">
 
-    <include layout="@layout/main_titlebar"/>
+    <include layout="@layout/main_titlebar" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/menu_vp"
@@ -28,45 +27,42 @@
         android:text="补充个人信息"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/white"
-        android:textStyle="bold"></Button>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/home_btn2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:background="@color/blue"
+        android:onClick="onClick"
         android:text="查询匹配结果"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
         android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        android:onClick="onClick">
-    </Button>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/home_btn3"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:background="@color/blue"
+        android:onClick="onClick"
         android:text="查看货物信息"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
         android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        android:onClick="onClick">
-    </Button>
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/home_btn4"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="20dp"
         android:background="@color/blue"
+        android:onClick="onClick"
         android:text="关于本软件"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
         android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        android:onClick="onClick">
-    </Button>
+        android:textStyle="bold"/>
 
 </LinearLayout>
