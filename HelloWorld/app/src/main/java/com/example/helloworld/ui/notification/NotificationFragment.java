@@ -93,8 +93,8 @@ public class NotificationFragment extends Fragment {
         View root = binding.getRoot();
 
 
-        Toolbar myToolbar = root.findViewById(R.id.my_toolbar);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(myToolbar);
+        //Toolbar myToolbar = root.findViewById(R.id.my_toolbar);
+        //((AppCompatActivity) getActivity()).setSupportActionBar(myToolbar);
 
         TextView text_underline=root.findViewById(R.id.huoyuan_under_line);
         text_underline.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线

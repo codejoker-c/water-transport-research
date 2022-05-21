@@ -140,8 +140,8 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
         //slide=root.findViewById(R.id.home_slide);
 
-        Toolbar myToolbar = root.findViewById(R.id.my_toolbar);
-        ((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
+        //Toolbar myToolbar = root.findViewById(R.id.my_toolbar);
+        //((AppCompatActivity) requireActivity()).setSupportActionBar(myToolbar);
 
         want=root.findViewById(R.id.want);
         cargo_list=root.findViewById(R.id.cargo_info_home);

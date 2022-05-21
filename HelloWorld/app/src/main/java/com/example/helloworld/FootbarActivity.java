@@ -29,9 +29,6 @@ public class FootbarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
 
-        Order order = new Order(1,"123","123", OrderStatus.doing);
-        mWT_ViewModel.insert(order);
-
 
         //setContentView(R.layout.activity_footbar);
         // 获取布局填充部分

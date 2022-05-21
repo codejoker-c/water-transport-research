@@ -22,49 +22,50 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".InfoList">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        tools:context=".InfoList">
 
-        <include layout="@layout/main_titlebar"/>
+
         <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:padding="10dp"
-                android:background="@drawable/new_user_back_ground"
-                android:gravity="center">
-            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                          android:background="#517DC1">
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="订单"
-                        android:textColor="@color/white"
-                        android:background="#517DC1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/new_user_back_ground"
+            android:gravity="center">
 
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#517DC1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#517DC1"
+                    android:gravity="center"
+                    android:text="订单"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+
+                    android:textColor="@color/white" />
             </LinearLayout>
         </RelativeLayout>
 
 
-
-
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/order_info"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/item_orderlist"
-        ></androidx.recyclerview.widget.RecyclerView>
+            android:id="@+id/order_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_orderlist"></androidx.recyclerview.widget.RecyclerView>
 
 
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="@color/white"
 
-        />
+            />
 
     </LinearLayout>
 
