@@ -34,7 +34,18 @@
                 android:padding="10dp"
                 android:background="@drawable/new_user_back_ground"
                 android:gravity="center">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                          android:background="#517DC1">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="订单"
+                        android:textColor="@color/white"
+                        android:background="#517DC1"
 
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+            </LinearLayout>
         </RelativeLayout>
 
 
