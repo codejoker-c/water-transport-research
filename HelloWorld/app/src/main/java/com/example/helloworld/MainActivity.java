@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.example.helloworld.database.UserStatus;
 import com.example.helloworld.database.User;
+import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     WT_ViewModel mWT_ViewModel; // 对数据库的操作
     //private static final Logger logger = Logger.getGlobal();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +44,22 @@ public class MainActivity extends AppCompatActivity {
         error = findViewById(R.id.login_error);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
         //logger.info(API.getHarbour());
+        /*
+        if(mWT_ViewModel.finduserCargoWithId(1)!=null)
+        {
+            logger.info("123");
+            try {
+                logger.info(mWT_ViewModel.finduserCargoWithId(2).get().name);
+                user_Cargo userCargo = mWT_ViewModel.finduserCargoWithId(3).get();
+                logger.info(userCargo.name+' '+userCargo.depart+' '+userCargo.destin);
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+         */
     }
 
 

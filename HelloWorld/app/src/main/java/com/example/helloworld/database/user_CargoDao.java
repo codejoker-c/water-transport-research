@@ -25,7 +25,7 @@ public interface user_CargoDao {
     void deleteuserCargoWithPhone(String phone);
 
     @Update
-    void updata(user_Cargo userCargo);
+    void update(user_Cargo userCargo);
 
     @Query("SELECT * FROM user_Cargo")
     LiveData<List<user_Cargo>> getAlluserCargo();

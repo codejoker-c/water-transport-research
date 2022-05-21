@@ -6,6 +6,7 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.ListeningExecutorService;
 
 import java.util.List;
 
@@ -66,7 +67,13 @@ public class WT_Repository {
 
     public void update(user_Cargo userCargo) {
         WT_RoomDatabase.databaseWriteExecutor.execute(() -> {
-            muser_cargoDao.updata(userCargo);
+            muser_cargoDao.update(userCargo);
+        });
+    }
+
+    public void update(User user){
+        WT_RoomDatabase.databaseWriteExecutor.execute(()->{
+            muserDao.update(user);
         });
     }
 
@@ -75,7 +82,7 @@ public class WT_Repository {
         return muser_cargoDao.getAlluserCargo();
     }
 
-    public LiveData<List<User>> getAllUser(){
+    public ListenableFuture<List<User>> getAllUser(){
         return muserDao.getAllUser();
     }
 

@@ -18,7 +18,7 @@ public class WT_ViewModel extends AndroidViewModel {
     private WT_Repository mRepository;
 
     private final LiveData<List<user_Cargo>> mAll_userCargo;
-    private final LiveData<List<User>> mAllUser;
+    private final ListenableFuture<List<User>> mAllUser;
     //private MediatorLiveData<List<user_Cargo>> mAll_userCargo = new MediatorLiveData<>();
 
 
@@ -61,7 +61,7 @@ public class WT_ViewModel extends AndroidViewModel {
         return mAll_userCargo;
     }
 
-    public LiveData<List<User>> getAllUser(){
+    public ListenableFuture<List<User>> getAllUser(){
         return mAllUser;
     }
 
@@ -74,12 +74,16 @@ public class WT_ViewModel extends AndroidViewModel {
         mRepository.deleteAllCargo();
     }
 
-    public void deleteuser_cargoWithId(Integer id){
+    public void deleteuser_CargoWithId(Integer id){
         mRepository.deleteuser_CargoWithId(id);
     }
 
     public LiveData<List<Order>> findOrdersWithuserId(Integer userId){
         return mRepository.findOrdersWithuserId(userId);
+    }
+
+    public void update(User user){
+        mRepository.update(user);
     }
 
 }
