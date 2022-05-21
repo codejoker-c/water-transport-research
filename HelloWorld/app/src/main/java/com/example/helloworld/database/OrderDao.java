@@ -19,6 +19,7 @@ public interface OrderDao {
 
     @Query("DELETE FROM `order` WHERE userId=:userid")
     void deleteOrdersWithuserId(Integer userid);
-
+    @Query("SELECT * FROM `order`")
+    LiveData<List<Order>> getAllOrder();
 
 }
