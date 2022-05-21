@@ -92,13 +92,13 @@ public class BoatQuery extends AppCompatActivity {
                     //query_name.setText(mWT_ViewModel.findUserWithPhone(userBoat.getPhone()).get().getPhone());
 
                     query_name.setText(userCargo.name);
-//                    query_kind.setText(userCargo.cargo_type);
-//                    query_weight.setText(String.valueOf(userCargo.cargo_weight));
-//                    query_site.setText(userCargo.depart);
-//                    query_des.setText(userCargo.destin);
-//                    query_phone.setText(userCargo.getPhone());
-//                    mon.setText(String.valueOf(userCargo.month));
-//                    day.setText(String.valueOf(userCargo.day));
+                    query_kind.setText(userCargo.cargo_type);
+                    query_weight.setText(String.valueOf(userCargo.cargo_weight));
+                    query_site.setText(userCargo.depart);
+                    query_des.setText(userCargo.destin);
+                    query_phone.setText(userCargo.getPhone());
+                    mon.setText(String.valueOf(userCargo.month));
+                    day.setText(String.valueOf(userCargo.day));
 
                 } catch (ExecutionException e) {
                     e.printStackTrace();
