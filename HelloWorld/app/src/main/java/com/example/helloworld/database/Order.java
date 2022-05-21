@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
@@ -35,12 +34,12 @@ public class Order {
 
     // 订单状态
     @NonNull
-    private OrderStatus orderStatus;
+    protected Integer orderStatus;
 
     // 备注信息
     private String remark;
 
-    public Order(@NonNull Integer userId, @NonNull String dep, @NonNull String des, @NonNull OrderStatus orderStatus){
+    public Order(@NonNull Integer userId, @NonNull String dep, @NonNull String des, @NonNull Integer orderStatus){
         this.userId=userId;
         this.dep = dep;
         this.des = des;
@@ -79,7 +78,7 @@ public class Order {
         this.type = type;
     }
 
-    public void setOrderStatus(@NonNull OrderStatus orderStatus) {
+    public void setOrderStatus(@NonNull Integer orderStatus) {
         this.orderStatus = orderStatus;
     }
 
@@ -111,10 +110,21 @@ public class Order {
     }
 
     @NonNull
-    public OrderStatus getOrderStatus() {
-        return orderStatus;
+    public String getOrderStatus() {
+        if(orderStatus.equals(0)) {
+            return "doing";
+        }else if(orderStatus.equals(1)){
+            return "finish";
+        }else if(orderStatus.equals(2)){
+            return "revoke";
+        }else{
+            return "Null";
+        }
+
     }
-
-
-
 }
+
+
+
+
+

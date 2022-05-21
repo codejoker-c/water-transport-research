@@ -101,15 +101,7 @@
                 android:textSize="15sp" />
         </LinearLayout>
 
-        <!--    <ListView
-                android:id="@+id/cargo_info"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:divider="@color/divider"
-                android:dividerHeight="1dp"
 
-
-                ></ListView>-->
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cargo_info"
