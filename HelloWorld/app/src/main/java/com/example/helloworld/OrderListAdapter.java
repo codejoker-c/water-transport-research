@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         return viewHolder;
     }
 
+    @SuppressLint("ResourceType")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Order order = OrderList.get(position);
@@ -55,15 +57,23 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
 
         holder.order_name.setText(""+order.getUserId());
+
         holder.order_phone.setText(order.getOrderStatus());
         if(holder.order_phone.getText().equals("doing")) {
-        holder.order_phone.setTextColor(0x1d953f);
+
+            holder.order_phone.setTextColor( holder.order_phone.getResources().getColor(R.drawable.green11));
+
         }else if(holder.order_phone.getText().equals("finish")){
-            holder.order_phone.setTextColor(0x130c0e);
+
+            holder.order_phone.setTextColor( holder.order_phone.getResources().getColor(R.drawable.red11));
+
         }else if(holder.order_phone.getText().equals("revoke")){
-            holder.order_phone.setTextColor(0xef4136);
+            holder.order_phone.setTextColor( holder.order_phone.getResources().getColor(R.drawable.black11));
+
         }else{
-            holder.order_phone.setTextColor(0xdecb00);
+
+            holder.order_phone.setTextColor( holder.order_phone.getResources().getColor(R.drawable.grey11));
+
         }
         holder.order_kind.setText(order.getType());
         holder.order_site.setText(order.getDep());
@@ -94,7 +104,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
             //cargo_arrow = view.findViewById(R.id.cargo_arrow);
             order_des = view.findViewById(R.id.order_des);
-            order_phone = view.findViewById(R.id.const_phone_item_name);
+            order_phone = view.findViewById(R.id.const_order_item_name);
 
         }
 

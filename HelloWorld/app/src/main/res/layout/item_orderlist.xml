@@ -188,7 +188,7 @@
                             android:textSize="10sp"/>
 
                     <TextView
-                            android:id="@+id/const_phone_item_name"
+                            android:id="@+id/const_order_item_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="3dp"
