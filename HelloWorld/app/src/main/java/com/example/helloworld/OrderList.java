@@ -79,7 +79,7 @@ public class OrderList extends AppCompatActivity {
             public void onItemClick(RecyclerView parent, View view, int position, Order data) {
                 Intent intent=new Intent();
                 intent.setClass(OrderList.this,OrderDesc.class);
-                intent.putExtra("data", (CharSequence) data);
+                intent.putExtra("data", data);
                 startActivity(intent);
             }
         });
