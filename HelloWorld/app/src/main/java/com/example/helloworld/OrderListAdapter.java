@@ -14,12 +14,14 @@ import com.example.helloworld.database.Order;
 import com.example.helloworld.database.user_Cargo;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.ViewHolder>  implements View.OnClickListener{
 
     Context context;
     List<Order> OrderList;
     private RecyclerView recyclerView;
+    private static final Logger logger = Logger.getGlobal();
 
     public OrderListAdapter(Context context, List<Order> Orderlist) {
         this.context = context;
@@ -44,6 +46,14 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Order order = OrderList.get(position);
 
+        logger.info("提示信息");
+        logger.info(String.valueOf(order.getUserId()));
+        logger.info(order.getOrderStatus());
+        logger.info(order.getDep());
+        logger.info(order.getDes());
+
+
+
         holder.order_name.setText(order.getUserId());
         holder.order_phone.setText(order.getOrderStatus());
         if(holder.order_phone.getText().equals("doing")) {
@@ -55,11 +65,11 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         }else{
             holder.order_phone.setTextColor(Integer.parseInt("#decb00"));
         }
-        holder.order_kind.setText(order.getType());
+        //holder.order_kind.setText(order.getType());
         holder.order_site.setText(order.getDep());
         holder.order_des.setText(order.getDes());
         //holder.cargo_arrow.setText("→");
-        holder.order_weight.setText(String.valueOf(order.getWeight()));
+        //holder.order_weight.setText(String.valueOf(order.getWeight()));
 
     }
 

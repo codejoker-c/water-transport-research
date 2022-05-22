@@ -124,7 +124,7 @@
                         android:id="@+id/const_kind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="货物种类:"
+                        android:text="货物种类"
                         android:textSize="10sp" />
 
                     <TextView

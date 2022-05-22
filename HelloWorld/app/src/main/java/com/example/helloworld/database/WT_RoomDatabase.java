@@ -86,6 +86,11 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
 
 
                 User user = new User("19917912481","123");
+                user.setDepart("上海");
+                user.setIsFillInfo(1);
+                user.setName("cym");
+                user.setLoad_weight(1500);
+                user.setWeight(2500);
                 userDao.insert(user);
 
 
