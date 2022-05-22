@@ -44,13 +44,13 @@ public class OrderList extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        TextView text_underline=findViewById(R.id.huoyuan_under_line);
-        text_underline.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
-        text_underline.getPaint().setAntiAlias(true);//抗锯齿
+//        TextView text_underline=findViewById(R.id.huoyuan_under_line);
+//        text_underline.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); //下划线
+//        text_underline.getPaint().setAntiAlias(true);//抗锯齿
 
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
-        order_list=findViewById(R.id.cargo_info);
+        order_list=findViewById(R.id.order_info);
         //CargoData=new ArrayList<>();
 
 
@@ -79,7 +79,7 @@ public class OrderList extends AppCompatActivity {
             @Override
             public void onItemClick(RecyclerView parent, View view, int position, Order data) {
                 Intent intent=new Intent();
-                intent.setClass(OrderList.this,InfoDesc.class);
+                intent.setClass(OrderList.this,OrderDesc.class);
                 intent.putExtra("data", (CharSequence) data);
                 startActivity(intent);
             }

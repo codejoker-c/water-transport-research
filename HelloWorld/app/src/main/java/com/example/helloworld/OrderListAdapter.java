@@ -36,7 +36,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_infolist, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_orderlist, parent, false);
         itemView.setOnClickListener(this);
         ViewHolder viewHolder = new ViewHolder(itemView);
         return viewHolder;
@@ -54,7 +54,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
 
 
-        holder.order_name.setText(order.getUserId());
+        holder.order_name.setText(""+order.getUserId());
         holder.order_phone.setText(order.getOrderStatus());
         if(holder.order_phone.getText().equals("doing")) {
         holder.order_phone.setTextColor(0x1d953f);
@@ -65,11 +65,11 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         }else{
             holder.order_phone.setTextColor(0xdecb00);
         }
-        //holder.order_kind.setText(order.getType());
+        holder.order_kind.setText(order.getType());
         holder.order_site.setText(order.getDep());
         holder.order_des.setText(order.getDes());
         //holder.cargo_arrow.setText("→");
-        //holder.order_weight.setText(String.valueOf(order.getWeight()));
+        holder.order_weight.setText(String.valueOf(order.getWeight()));
 
     }
 
@@ -94,7 +94,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
             //cargo_arrow = view.findViewById(R.id.cargo_arrow);
             order_des = view.findViewById(R.id.order_des);
-            order_phone = view.findViewById(R.id.order_phone_item_info);
+            order_phone = view.findViewById(R.id.const_phone_item_name);
 
         }
 
@@ -103,17 +103,17 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
     @Override
     public void onClick(View view) {
-        //根据RecyclerView获得当前View的位置
-        int position = recyclerView.getChildAdapterPosition(view);
-        //程序执行到此，会去执行具体实现的onItemClick()方法
-        if (onItemClickListener!=null){
-            onItemClickListener.onItemClick(recyclerView,view,position,OrderList.get(position));
-        }
+//        //根据RecyclerView获得当前View的位置
+//        int position = recyclerView.getChildAdapterPosition(view);
+//        //程序执行到此，会去执行具体实现的onItemClick()方法
+//        if (onItemClickListener!=null){
+//            onItemClickListener.onItemClick(recyclerView,view,position,OrderList.get(position));
+//        }
     }
 
     private OnItemClickListener onItemClickListener;
     public void setOnItemClickListener(OnItemClickListener onItemClickListener){
-        this.onItemClickListener = onItemClickListener;
+      //  this.onItemClickListener = onItemClickListener;
     }
 
     /**
