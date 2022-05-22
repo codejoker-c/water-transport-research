@@ -47,13 +47,13 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         holder.order_name.setText(order.getUserId());
         holder.order_phone.setText(order.getOrderStatus());
         if(holder.order_phone.getText().equals("doing")) {
-        holder.order_phone.setTextColor(Integer.parseInt("#1d953f"));
+        holder.order_phone.setTextColor(0x1d953f);
         }else if(holder.order_phone.getText().equals("finish")){
-            holder.order_phone.setTextColor(Integer.parseInt("#130c0e"));
+            holder.order_phone.setTextColor(0x130c0e);
         }else if(holder.order_phone.getText().equals("revoke")){
-            holder.order_phone.setTextColor(Integer.parseInt("#ef4136"));
+            holder.order_phone.setTextColor(0xef4136);
         }else{
-            holder.order_phone.setTextColor(Integer.parseInt("#decb00"));
+            holder.order_phone.setTextColor(0xdecb00);
         }
         holder.order_kind.setText(order.getType());
         holder.order_site.setText(order.getDep());
