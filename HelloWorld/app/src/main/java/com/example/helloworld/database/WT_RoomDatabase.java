@@ -53,6 +53,7 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
             super.onCreate(db);
             databaseWriteExecutor.execute(() -> {
                 user_CargoDao user_cargoDao = INSTANCE.user_cargoDao();
+                UserDao userDao = INSTANCE.UserDao();
 
                 user_cargoDao.deleteAllCargo();
 
@@ -84,8 +85,17 @@ public abstract class WT_RoomDatabase extends RoomDatabase {
                         user_Cargo("zsm","123","赵生明",1400,"矿石","岳阳","江阴",3, 11);
 
 
+                User user = new User("19917912481","123");
+                user.setDepart("上海");
+                user.setIsFillInfo(1);
+                user.setName("cym");
+                user.setLoad_weight(1500);
+                user.setWeight(2500);
+                userDao.insert(user);
 
-/*
+
+
+                /*
 
                 userBoat[0] = new
                         user_Boat("刘峥","123","刘峥","95566",600,1300,"沙土石子", "重庆");

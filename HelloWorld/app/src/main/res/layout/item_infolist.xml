@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
+    android:layout_marginLeft="20dp"
     android:layout_marginTop="10dp"
-    android:layout_marginRight="10dp"
+    android:layout_marginRight="20dp"
     android:layout_marginBottom="10dp"
     android:background="@drawable/item_back_update_ui"
     android:elevation="30dp"
-    android:padding="10dp">
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,27 +21,28 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="17dp"
+                android:background="@mipmap/item_start_place" />
+
+            <ImageView
+                android:layout_width="4dp"
+                android:layout_height="15dp"
+
+                android:layout_marginLeft="23dp"
+                android:background="@mipmap/item_temp_change"
+
+                />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="24dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/item_start_place" />
-
-            <ImageView
-                android:layout_width="7dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="28dp"
-                android:background="@drawable/item_temp_change"
-
-                />
-
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginLeft="15dp"
-                android:background="@drawable/item_end_place"
-
-                />
+                android:layout_marginBottom="17dp"
+                android:background="@mipmap/item_end_place" />
         </LinearLayout>
 
         <LinearLayout
@@ -55,10 +56,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="17dp"
                 android:text="出发"
-                android:textSize="26dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -66,17 +68,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginBottom="17dp"
                 android:text="目的"
-                android:textSize="26dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -92,11 +96,10 @@
 
                     <TextView
                         android:id="@+id/const_weight"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="货物吨位："
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:text="货物吨位"
+                        android:textSize="10sp" />
 
                     <TextView
 
@@ -104,11 +107,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@id/const_weight"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
                         android:layout_toRightOf="@id/const_weight"
                         android:text="货物重量"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -121,19 +124,17 @@
                         android:id="@+id/const_kind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="货物种类:"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:text="货物种类"
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/cargo_kind"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
                         android:text="货物种类"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -147,7 +148,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="27dp"
+                    android:layout_marginTop="17dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -155,12 +156,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="到达时间"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:textSize="10sp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -168,10 +169,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
 
-                            android:layout_marginLeft="11dp"
+
                             android:text="9"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
 
                         <TextView
                             android:id="@+id/const_month"
@@ -179,24 +180,24 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="0dp"
                             android:text="月"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
 
                         <TextView
                             android:id="@+id/cargo_day"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="41"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
+                            android:text="30"
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
 
                         <TextView
                             android:id="@+id/const_day"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="日"
-                            android:textSize="14dp"
-                            android:textStyle="bold" />
+                            android:textColor="@color/black"
+                            android:textSize="10sp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -205,7 +206,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="27dp"
+                    android:layout_marginTop="17dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -213,26 +214,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="货主信息"
-
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/const_user_item_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="3dp"
                         android:text="王大锤"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="27dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="17dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -241,17 +240,16 @@
                         android:layout_height="wrap_content"
                         android:text="货主手机"
 
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
+                        android:textSize="10sp" />
 
                     <TextView
                         android:id="@+id/const_phone_item_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
                         android:text="18234631953"
-                        android:textSize="14dp"
-
-                        android:textStyle="bold" />
+                        android:textColor="@color/black"
+                        android:textSize="10sp" />
                 </LinearLayout>
 
             </LinearLayout>

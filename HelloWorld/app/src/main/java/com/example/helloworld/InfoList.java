@@ -85,12 +85,6 @@ public class InfoList extends AppCompatActivity {
 
         });
 
-        ImageButton ib_menu = findViewById(R.id.ib_menu);
-        ib_menu.setOnClickListener((View view)->{
-            Intent intent = new Intent();
-            UserContext.user_center(intent,InfoList.this);
-            startActivity(intent);
-        });
 
     }
 

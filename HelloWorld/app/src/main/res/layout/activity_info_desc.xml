@@ -4,294 +4,362 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1F1F1"
     tools:context=".InfoDesc">
+
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".resultQuery">
-        <include layout="@layout/main_titlebar"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".resultQuery">
+
+        <include layout="@layout/main_titlebar" />
+
 
         <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:padding="10dp"
-                android:background="@drawable/new_user_back_ground"
-                android:gravity="center">
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="10dp">
 
             <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
 
-                    android:text="具体结果"
-                    android:textColor="#FF6600"
-                    android:background="@drawable/text_view_shape_set"
+                android:background="@drawable/text_view_shape_set"
+                android:text="具体结果"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
 
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+                android:textColor="#FF6600" />
 
         </RelativeLayout>
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp">
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                      android:id="@+id/const_info"
-                      android:textSize="20dp"
-                      android:textColor="#3366CC"
-                      android:text="货物信息"
-                      android:layout_marginLeft="10dp"></TextView>
-        </LinearLayout>
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
+        <!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/item_round"
+                    >
 
-                android:background="@color/divider"
-        ></TextView>
+                    <TextView
+                        android:id="@+id/const_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="货物信息"
+                        android:textColor="#3366CC"
+                        android:textSize="20dp"></TextView>
+                </LinearLayout>
+        -->
+
         <LinearLayout
-                android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/item_round"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/const_huoming"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/const_info"
+                    android:layout_weight="50"
 
                     android:text="货名:"
-                    android:textColor="@color/divider"
+                    android:textColor="@color/grey"
                     android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
+                    ></TextView>
 
-            <TextView
+                <TextView
                     android:id="@+id/cargo_huoming"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_huoming"
+                    android:layout_weight="50"
 
                     android:text="货名"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/const_dunwei"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/const_info"
-
+                    android:layout_weight="50"
                     android:text="吨位:"
-                    android:textColor="@color/divider"
-                    android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
-            <TextView
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"></TextView>
+
+                <TextView
                     android:id="@+id/cargo_dunwei"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_dunwei"
+                    android:layout_weight="50"
 
                     android:text="吨位"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/const_dangqiandi"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/const_info"
+
+                    android:layout_weight="50"
 
                     android:text="当前地:"
-                    android:textColor="@color/divider"
-                    android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"></TextView>
 
-            <TextView
+                <TextView
                     android:id="@+id/cargo_dangqiandi"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_dangqiandi"
+                    android:layout_weight="50"
 
                     android:text="当前地"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/const_mudidi"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/const_info"
+
+                    android:layout_weight="50"
 
                     android:text="目的地:"
-                    android:textColor="@color/divider"
-                    android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
-            <TextView
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"></TextView>
+
+                <TextView
                     android:id="@+id/cargo_mudidi"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_mudidi"
+                    android:layout_weight="50"
 
                     android:text="目的地"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_marginBottom="10dp"
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/const_qiwangriqi"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/const_info"
+
+                    android:layout_weight="50"
 
                     android:text="期望日期:"
-                    android:textColor="@color/divider"
+                    android:textColor="@color/grey"
                     android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
+                    ></TextView>
 
-            <TextView
+                <TextView
                     android:id="@+id/cargo_qiwangriqi"
                     android:layout_width="0dp"
-                    android:layout_weight="12"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_qiwangriqi"
+                    android:layout_weight="12"
                     android:text="期"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
 
-            <TextView
+                <TextView
                     android:id="@+id/const_month"
                     android:layout_width="0dp"
-                    android:layout_weight="12"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_qiwangriqi"
-                    android:layout_toRightOf="@id/cargo_qiwangriqi"
                     android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/cargo_qiwangriqi"
+                    android:layout_weight="12"
                     android:text="月"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
 
-            <TextView
+                <TextView
                     android:id="@+id/cargo_day2"
                     android:layout_width="0dp"
-                    android:layout_weight="12"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_qiwangriqi"
-                    android:layout_toRightOf="@id/const_month"
                     android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/const_month"
+                    android:layout_weight="12"
                     android:text="望"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
-            <TextView
+
+                <TextView
                     android:id="@+id/const_day"
                     android:layout_width="0dp"
-                    android:layout_weight="14"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_qiwangriqi"
-                    android:layout_toRightOf="@id/cargo_day2"
                     android:layout_marginLeft="1dp"
+                    android:layout_toRightOf="@id/cargo_day2"
+                    android:layout_weight="14"
                     android:text="日"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
 
 
+            </LinearLayout>
         </LinearLayout>
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
+        <!--
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
 
-                android:background="@color/divider"
-        ></TextView>
+                    android:background="@color/divider"></TextView>
+        -->
         <LinearLayout
-                android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/item_round"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/const_huozhuxingming"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@id/const_info"
+
+                    android:layout_weight="50"
 
                     android:text="货主姓名:"
-                    android:textColor="@color/divider"
-                    android:textSize="20sp"
-                    android:textStyle="bold"></TextView>
-            <TextView
+                    android:textColor="@color/grey"
+                    android:textSize="20sp"></TextView>
+
+                <TextView
                     android:id="@+id/cargo_huozhuxingming"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_huozhuxingming"
+                    android:layout_weight="50"
 
                     android:text="货主姓名"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
-        </LinearLayout>
-        <LinearLayout
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:orientation="horizontal"
                 android:layout_marginBottom="10dp"
-                android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView
+                android:orientation="horizontal">
+
+                <TextView
                     android:id="@+id/const_huozhudianhua"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
-                    android:text="货主电话:"
-                    android:layout_alignLeft="@id/const_info"
 
-                    android:textColor="@color/divider"
+                    android:layout_weight="50"
+                    android:text="货主电话:"
+
+                    android:textColor="@color/grey"
                     android:textSize="20sp"
-                    android:textStyle="bold"
-            ></TextView>
-            <TextView
+                    ></TextView>
+
+                <TextView
                     android:id="@+id/cargo_huozhudianhua"
                     android:layout_width="0dp"
-                    android:layout_weight="50"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/const_huozhudianhua"
+                    android:layout_weight="50"
 
                     android:text="货主电话"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
+            </LinearLayout>
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="25dp"
+        android:paddingTop="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/grab_order"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/shape_corners_blue"
+            android:text="点击抢单"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+        </Button>
 
     </LinearLayout>
 </RelativeLayout>

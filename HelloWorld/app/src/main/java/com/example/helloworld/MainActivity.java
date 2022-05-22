@@ -1,9 +1,5 @@
 package com.example.helloworld;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.ViewModelProvider;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +7,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.helloworld.database.UserStatus;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.helloworld.database.Order;
+import com.example.helloworld.database.OrderStatus;
 import com.example.helloworld.database.User;
-import com.example.helloworld.database.user_Cargo;
+import com.example.helloworld.database.WT_RoomDatabase;
 import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.concurrent.ExecutionException;
-import java.util.logging.Logger;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
          */
+
+
+
     }
 
 
@@ -98,10 +101,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.register:
                 intent.setClass(MainActivity.this,RegActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.ib_menu:
-                UserContext.user_center(intent,MainActivity.this);
                 startActivity(intent);
                 break;
         }

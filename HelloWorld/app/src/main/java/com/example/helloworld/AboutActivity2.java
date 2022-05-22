@@ -87,14 +87,6 @@ public class AboutActivity2 extends AppCompatActivity {
 
 
 
-        ImageButton ib_menu = findViewById(R.id.ib_menu);
-        ib_menu.setOnClickListener((View view)->{
-            Intent intent = new Intent();
-            UserContext.user_center(intent,AboutActivity2.this);
-            startActivity(intent);
-        });
-
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

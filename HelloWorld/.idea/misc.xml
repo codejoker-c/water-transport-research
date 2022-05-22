@@ -54,8 +54,12 @@
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/ic_baseline_order_2_24.xml" value="0.137" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/ic_baseline_sticky_note_2_24.xml" value="0.137" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/item_back_update_ui.xml" value="0.1" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/item_round.xml" value="0.1" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/new_user_back_ground.xml" value="0.1" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/qr_code.xml" value="0.1285" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/rectangle_3.xml" value="0.1285" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/shape_corners.xml" value="0.102" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/some_id.xml" value="0.1" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/drawable/user_background.xml" value="0.1605" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_about2.xml" value="0.25" />
@@ -64,25 +68,28 @@
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_cargo_query.xml" value="0.17391304347826086" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_footbar.xml" value="0.22" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_home_menu.xml" value="0.3" />
-        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_info_desc.xml" value="0.22735507246376813" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_info_desc.xml" value="0.22" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_info_list.xml" value="0.22" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_initial_interface.xml" value="0.12182971014492754" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_new_user.xml" value="0.6666666666666666" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_reg.xml" value="0.2952755905511811" />
-        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_result_query.xml" value="0.22" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_result_query.xml" value="0.4466666666666667" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/activity_user.xml" value="0.3" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_dashboard.xml" value="0.3132603406326034" />
-        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_home.xml" value="0.2310126582278481" />
-        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_notification.xml" value="0.20679886685552407" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_notification.xml" value="0.5" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_notifications.xml" value="0.3132603406326034" />
-        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_order.xml" value="0.35036496350364965" />
-        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_user.xml" value="0.22" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_order.xml" value="0.1" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/fragment_user.xml" value="0.4466666666666667" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/item_aboutvp.xml" value="0.3" />
-        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/item_infolist.xml" value="0.6" />
-        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/main_titlebar.xml" value="0.12658227848101267" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/item_infolist.xml" value="0.3333333333333333" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/item_orderlist.xml" value="0.8333333333333334" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/main_titlebar.xml" value="0.22" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/layout/settings_activity.xml" value="0.22" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />
         <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/menu/bottom_nav_menv.xml" value="0.49609375" />
+        <entry key="..\:/water-transport-research/HelloWorld/app/src/main/res/xml/root_preferences.xml" value="0.1" />
       </map>
     </option>
   </component>

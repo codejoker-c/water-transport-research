@@ -21,6 +21,7 @@ import com.example.helloworld.AboutActivity2;
 import com.example.helloworld.HomeMenuActivity;
 import com.example.helloworld.InfoList;
 import com.example.helloworld.R;
+import com.example.helloworld.SettingsActivity;
 import com.example.helloworld.database.User;
 import com.example.helloworld.databinding.FragmentUserBinding;
 import com.example.helloworld.user.UserContext;
@@ -29,8 +30,9 @@ import org.w3c.dom.Text;
 
 public class UserFragment extends Fragment {
 
-    Button logout;
+    //Button logout;
     private FragmentUserBinding binding;
+    ImageView settings;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -79,6 +81,7 @@ public class UserFragment extends Fragment {
         View root = binding.getRoot();
 
         TextView abt=root.findViewById(R.id.about_us_text);
+        settings = binding.settings;
 
         abt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +89,11 @@ public class UserFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), AboutActivity2.class);
                 startActivity(intent);
             }
+        });
+
+        settings.setOnClickListener((View v)->{
+            Intent intent = new Intent(getActivity(), SettingsActivity.class);
+            startActivity(intent);
         });
 
         //img=root.findViewById(R.id.about_us);
