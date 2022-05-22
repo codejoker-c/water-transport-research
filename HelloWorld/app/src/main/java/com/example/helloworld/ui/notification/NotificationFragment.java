@@ -134,7 +134,6 @@ public class NotificationFragment extends Fragment {
                 intent.putExtra("data",data);
                 startActivity(intent);
             }
-
         });
 
 

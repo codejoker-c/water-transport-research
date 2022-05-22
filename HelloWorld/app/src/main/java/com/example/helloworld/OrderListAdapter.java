@@ -59,21 +59,14 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         holder.order_name.setText(""+order.getUserId());
 
         holder.order_phone.setText(order.getOrderStatus());
-        if(holder.order_phone.getText().equals("doing")) {
-
+        if(holder.order_phone.getText().equals("正在进行")) {
             holder.order_phone.setTextColor( holder.order_phone.getResources().getColor(R.drawable.green11));
-
-        }else if(holder.order_phone.getText().equals("finish")){
-
+        }else if(holder.order_phone.getText().equals("已经完成")){
             holder.order_phone.setTextColor( holder.order_phone.getResources().getColor(R.drawable.red11));
-
-        }else if(holder.order_phone.getText().equals("revoke")){
+        }else if(holder.order_phone.getText().equals("已经取消")){
             holder.order_phone.setTextColor( holder.order_phone.getResources().getColor(R.drawable.black11));
-
         }else{
-
             holder.order_phone.setTextColor( holder.order_phone.getResources().getColor(R.drawable.grey11));
-
         }
         holder.order_kind.setText(order.getType());
         holder.order_site.setText(order.getDep());
@@ -113,12 +106,12 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
     @Override
     public void onClick(View view) {
-//        //根据RecyclerView获得当前View的位置
-//        int position = recyclerView.getChildAdapterPosition(view);
-//        //程序执行到此，会去执行具体实现的onItemClick()方法
-//        if (onItemClickListener!=null){
-//            onItemClickListener.onItemClick(recyclerView,view,position,OrderList.get(position));
-//        }
+        //根据RecyclerView获得当前View的位置
+        int position = recyclerView.getChildAdapterPosition(view);
+        //程序执行到此，会去执行具体实现的onItemClick()方法
+        if (onItemClickListener!=null){
+            onItemClickListener.onItemClick(recyclerView,view,position,OrderList.get(position));
+        }
     }
 
     private OnItemClickListener onItemClickListener;

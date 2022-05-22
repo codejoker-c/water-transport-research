@@ -14,12 +14,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;
 import com.chaquo.python.android.AndroidPlatform;
+import com.example.helloworld.database.Order;
 import com.example.helloworld.database.User;
 import com.example.helloworld.database.user_Cargo;
 import com.example.helloworld.user.UserContext;
@@ -36,6 +39,7 @@ public class BoatQuery extends AppCompatActivity {
     TextView mon, day;
     private WT_ViewModel mWT_ViewModel;//实例化WT_ViewModel来与数据库进行交互
     TextView test01;
+    Button grab_order;
 
 
     @Override
@@ -46,16 +50,18 @@ public class BoatQuery extends AppCompatActivity {
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-
+        grab_order = findViewById(R.id.grab_order2);
         query_name = findViewById(R.id.name01);
         query_kind = findViewById(R.id.cargo_kind01);
         query_weight = findViewById(R.id.cargo_weight01);
         query_site = findViewById(R.id.cargo_site01);
         query_des = findViewById(R.id.cargo_des01);
         query_phone = findViewById(R.id.phone01);
-        test01 = findViewById(R.id.test01);
+        //test01 = findViewById(R.id.test01);
         mon = findViewById(R.id.cargo_month01);
         day = findViewById(R.id.cargo_day01);
+
+
 
 
         //拿到船和货的数据
@@ -99,6 +105,22 @@ public class BoatQuery extends AppCompatActivity {
                     query_phone.setText(userCargo.getPhone());
                     mon.setText(String.valueOf(userCargo.month));
                     day.setText(String.valueOf(userCargo.day));
+
+                    grab_order.setOnClickListener((View v) -> {
+                        Order order =
+                                new Order(UserContext.getUser().getId(), userCargo.depart, userCargo.destin, 0);
+                        order.refinePara(String.valueOf(userCargo.cargo_weight), userCargo.cargo_type);
+
+                        //logger.info("提示信息");
+                        //logger.info(String.valueOf(order.getUserId()));
+                        //logger.info(order.getDep());
+                        //logger.info(order.getDes());
+
+                        mWT_ViewModel.insert(order);
+                        mWT_ViewModel.deleteuser_CargoWithId(userCargo.getId());
+                        Toast toast = Toast.makeText(getApplicationContext(), "抢单成功", Toast.LENGTH_SHORT);
+                        toast.show();
+                    });
 
                 } catch (ExecutionException e) {
                     e.printStackTrace();

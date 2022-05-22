@@ -48,15 +48,16 @@ public class InfoDesc extends AppCompatActivity {
         grabOrder.setOnClickListener((View v) -> {
             Order order =
                     new Order(UserContext.getUser().getId(), userCargo.depart, userCargo.destin, 0);
+            order.refinePara(String.valueOf(userCargo.cargo_weight), userCargo.cargo_type);
 
-            logger.info("提示信息");
-            logger.info(String.valueOf(order.getUserId()));
-            logger.info(order.getDep());
-            logger.info(order.getDes());
+            //logger.info("提示信息");
+            //logger.info(String.valueOf(order.getUserId()));
+            //logger.info(order.getDep());
+            //logger.info(order.getDes());
 
             mWT_ViewModel.insert(order);
             mWT_ViewModel.deleteuser_CargoWithId(userCargo.getId());
-            Toast toast=Toast.makeText(getApplicationContext(), "抢单成功", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(), "抢单成功", Toast.LENGTH_SHORT);
             toast.show();
         });
 

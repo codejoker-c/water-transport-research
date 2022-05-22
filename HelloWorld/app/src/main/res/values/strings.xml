@@ -4,9 +4,9 @@
         <u>注册</u>
     </string>
     <string name="title_activity_footbar">FootbarActivity</string>
-    <string name="title_home">主页</string>
+    <string name="title_home">抢单</string>
     <string name="title_order">订单</string>
-    <string name="title_notifications">消息</string>
+    <string name="title_notifications">货源大厅</string>
     <string name="title_user">我的</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

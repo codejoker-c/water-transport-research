@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentOnAttachListener;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.helloworld.InfoDesc;
 import com.example.helloworld.InfoListAdapter;
+import com.example.helloworld.OrderDesc;
 import com.example.helloworld.OrderListAdapter;
 import com.example.helloworld.R;
 import com.example.helloworld.database.Order;
@@ -126,8 +128,8 @@ public class OrderFragment extends Fragment {
             @Override
             public void onItemClick(RecyclerView parent, View view, int position, Order data) {
                 Intent intent=new Intent();
-                intent.setClass(getActivity(), InfoDesc.class);
-
+                intent.setClass(getActivity(), OrderDesc.class);
+                intent.putExtra("data", (Parcelable) data);
                 startActivity(intent);
             }
         } );

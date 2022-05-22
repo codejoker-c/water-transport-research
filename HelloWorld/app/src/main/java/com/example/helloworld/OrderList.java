@@ -69,7 +69,6 @@ public class OrderList extends AppCompatActivity {
         mWT_ViewModel.findOrdersWithuserId(UserContext.getUser().getId()).observe(this, new Observer<List<Order>>() {
             @Override
             public void onChanged(List<Order> Orders) {
-
                 orderListAdapter.setCargoData(Orders);
                 orderListAdapter.notifyDataSetChanged();
             }
@@ -83,9 +82,6 @@ public class OrderList extends AppCompatActivity {
                 intent.putExtra("data", (CharSequence) data);
                 startActivity(intent);
             }
-
-
-
         });
 
 

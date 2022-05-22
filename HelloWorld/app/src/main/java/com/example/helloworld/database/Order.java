@@ -46,6 +46,11 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
+    public void refinePara(String weight,String type){
+        this.weight = weight;
+        this.type = type;
+    }
+
     public String getRemark() {
         return remark;
     }
@@ -112,11 +117,11 @@ public class Order {
     @NonNull
     public String getOrderStatus() {
         if(orderStatus.equals(0)) {
-            return "doing";
+            return "正在进行";
         }else if(orderStatus.equals(1)){
-            return "finish";
+            return "已经完成";
         }else if(orderStatus.equals(2)){
-            return "revoke";
+            return "已经取消";
         }else{
             return "Null";
         }
