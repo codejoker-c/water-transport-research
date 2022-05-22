@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/user_info"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="44dp"
@@ -41,9 +41,9 @@
         android:layout_gravity="center"
         android:src="@drawable/touxiang"
 
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintBottom_toBottomOf="@+id/user_info"
+        app:layout_constraintStart_toStartOf="@+id/user_info"
+        app:layout_constraintTop_toTopOf="@+id/user_info" />
 
     <ImageView
         android:id="@+id/settings"
@@ -52,11 +52,11 @@
         android:layout_marginTop="26dp"
         android:layout_marginEnd="30dp"
         android:src="@mipmap/settings"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/user_info"
+        app:layout_constraintTop_toTopOf="@+id/user_info" />
 
     <TextView
-        android:id="@+id/get_user_name"
+        android:id="@+id/user_phone"
         android:layout_width="wrap_content"
         android:layout_height="26dp"
         android:layout_alignParentStart="true"
@@ -66,8 +66,8 @@
         android:gravity="center_vertical"
         android:text="船主用户名"
         android:textAppearance="@style/username"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/user_info"
+        app:layout_constraintTop_toTopOf="@+id/user_info" />
 
     <ImageView
         android:layout_width="20dp"
@@ -75,11 +75,11 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="80dp"
         android:src="@mipmap/ic_id"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/user_info"
+        app:layout_constraintTop_toTopOf="@+id/user_info" />
 
     <TextView
-        android:id="@+id/phone"
+        android:id="@+id/user_id"
         android:layout_width="56dp"
         android:layout_height="20dp"
         android:layout_alignParentLeft="true"
@@ -89,8 +89,8 @@
         android:gravity="center_vertical"
         android:text="12345"
         android:textAppearance="@style/phone"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/user_info"
+        app:layout_constraintTop_toTopOf="@+id/user_info" />
 
 
     <ImageView
@@ -101,8 +101,8 @@
         android:layout_marginStart="284dp"
         android:layout_marginTop="60dp"
         android:src="@mipmap/qr_code"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toStartOf="@+id/user_info"
+        app:layout_constraintTop_toTopOf="@+id/user_info" />
 
 
     <ImageView
@@ -135,7 +135,7 @@
             android:layout_marginTop="20dp"
             android:src="@mipmap/history"
             app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"/>
+            app:layout_constraintTop_toBottomOf="@+id/user_info"/>
     <TextView
         android:id="@+id/textView3"
         android:layout_width="60dp"
@@ -148,7 +148,7 @@
         android:text="@string/history"
         android:textAppearance="@style/func"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/user_info" />
 
     <ImageView
         android:id="@+id/imageView5"

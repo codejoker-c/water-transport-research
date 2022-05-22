@@ -32,7 +32,9 @@ public class UserFragment extends Fragment {
 
     //Button logout;
     private FragmentUserBinding binding;
-    ImageView settings;
+    ImageView settings,userInfo;
+    TextView user_phone,user_id;
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -82,6 +84,11 @@ public class UserFragment extends Fragment {
 
         TextView abt=root.findViewById(R.id.about_us_text);
         settings = binding.settings;
+        user_phone = binding.userPhone;
+        user_id = binding.userId;
+        userInfo = binding.userInfo;
+        user_phone.setText(UserContext.getUser().getPhone());
+        user_id.setText(String.valueOf(UserContext.getUser().getId()));
 
         abt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,13 +103,18 @@ public class UserFragment extends Fragment {
             startActivity(intent);
         });
 
+        userInfo.setOnClickListener(view -> {
+            Intent intent = new Intent(getActivity(),UserInfo.class);
+            startActivity(intent);
+        });
+
         //img=root.findViewById(R.id.about_us);
         /*
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AboutActivity2.class);
-                startActivity(intent);
+                startActivity(inte nt);
             }
         });
         */
