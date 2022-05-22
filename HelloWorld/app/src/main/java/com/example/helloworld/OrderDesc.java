@@ -43,7 +43,7 @@ public class OrderDesc extends AppCompatActivity {
         dangqiandi.setText(order.getDep());
         mudidi.setText(order.getDes());
 
-        huozhuxingming.setText("" + order.getUserId());
+
         order_status.setText("" + order.getOrderStatus());
 
         if (order_status.getText().equals("正在进行")) {
@@ -71,7 +71,7 @@ public class OrderDesc extends AppCompatActivity {
         dangqiandi = findViewById(R.id.order_dangqiandi);
         mudidi = findViewById(R.id.order_mudidi);
         order_status = findViewById(R.id.order_status);
-
+        huozhuxingming=findViewById(R.id.order_user_item_name);
 
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
     }

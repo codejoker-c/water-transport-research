@@ -7,9 +7,11 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 // 存放与船主对应的订单，订单的状态有正在进行，已经完成
 @Entity(tableName = "order", foreignKeys = @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "userId"),indices = @Index(value={"userId"}))
-public class Order {
+public class Order implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private Integer id;
 
@@ -126,6 +128,7 @@ public class Order {
             return "Null";
         }
     }
+
 }
 
 

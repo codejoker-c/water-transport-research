@@ -129,7 +129,7 @@ public class OrderFragment extends Fragment {
             public void onItemClick(RecyclerView parent, View view, int position, Order data) {
                 Intent intent=new Intent();
                 intent.setClass(getActivity(), OrderDesc.class);
-                intent.putExtra("data", (Parcelable) data);
+                intent.putExtra("data", data);
                 startActivity(intent);
             }
         } );
