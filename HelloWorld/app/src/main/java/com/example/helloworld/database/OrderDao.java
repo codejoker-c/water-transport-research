@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.google.common.util.concurrent.ListenableFuture;
 
@@ -19,7 +20,11 @@ public interface OrderDao {
 
     @Query("DELETE FROM `order` WHERE userId=:userid")
     void deleteOrdersWithuserId(Integer userid);
+
     @Query("SELECT * FROM `order`")
     LiveData<List<Order>> getAllOrder();
+
+    @Update
+    void update(Order order);
 
 }

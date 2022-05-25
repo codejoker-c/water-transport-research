@@ -82,6 +82,12 @@ public class WT_Repository {
         });
     }
 
+    public void update(Order order){
+        WT_RoomDatabase.databaseWriteExecutor.execute(()->{
+            morderDao.update(order);
+        });
+    }
+
 
     public LiveData<List<user_Cargo>> getAlluserCargo() {
         return muser_cargoDao.getAlluserCargo();
@@ -103,5 +109,6 @@ public class WT_Repository {
     public LiveData<List<Order>> findOrdersWithuserId(Integer userId){
         return morderDao.findOrdersWithuserId(userId);
     }
+
 
 }

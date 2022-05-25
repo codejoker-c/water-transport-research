@@ -36,7 +36,7 @@ public class CompleteMessage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complete_message);
-        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        Toolbar myToolbar = findViewById(R.id.toolbar_complete);
         setSupportActionBar(myToolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
@@ -45,7 +45,6 @@ public class CompleteMessage extends AppCompatActivity {
         weight_ship = findViewById(R.id.weight_ship_complete);
         loadweight_ship = findViewById(R.id.loadweight_ship_complete);
         depart_ship = findViewById(R.id.depart_ship_complete);
-        error = findViewById(R.id.boat_info_error_complete);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
 
         //刚进入页面时的初始化

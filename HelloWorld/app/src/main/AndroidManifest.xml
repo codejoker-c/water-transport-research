@@ -20,7 +20,13 @@
         </activity>
         <activity
             android:name=".OrderDesc"
-            android:exported="true" />
+            android:exported="false"
+            android:parentActivityName=".HomeMenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".HomeMenuActivity" />
+        </activity>
+
         <activity
             android:name=".SettingsActivity"
             android:exported="false"

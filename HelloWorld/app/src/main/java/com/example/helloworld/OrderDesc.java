@@ -15,6 +15,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.helloworld.database.Order;
 
+import com.example.helloworld.database.User;
+import com.example.helloworld.user.UserContext;
 import com.example.helloworld.viewmodel.WT_ViewModel;
 
 import java.util.logging.Logger;
@@ -23,6 +25,7 @@ public class OrderDesc extends AppCompatActivity {
 
     TextView huoming, dunwei, dangqiandi, mudidi, huozhuxingming;
     TextView order_status;
+    Button finish, revoke;
 
 
     WT_ViewModel mWT_ViewModel;
@@ -63,6 +66,20 @@ public class OrderDesc extends AppCompatActivity {
         //获取任务栏，并且添加返回父activity的按钮
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+        finish.setOnClickListener(view -> {
+            order.setOrderStatus(1);
+            mWT_ViewModel.update(order);
+            Toast toast = Toast.makeText(getApplicationContext(), "订单已完成", Toast.LENGTH_SHORT);
+            toast.show();
+        });
+
+        revoke.setOnClickListener(view -> {
+            order.setOrderStatus(2);
+            mWT_ViewModel.update(order);
+            Toast toast = Toast.makeText(getApplicationContext(), "订单已取消", Toast.LENGTH_SHORT);
+            toast.show();
+        });
     }
 
     public void initView() {
@@ -71,8 +88,9 @@ public class OrderDesc extends AppCompatActivity {
         dangqiandi = findViewById(R.id.order_dangqiandi);
         mudidi = findViewById(R.id.order_mudidi);
         order_status = findViewById(R.id.order_status);
-        huozhuxingming=findViewById(R.id.order_user_item_name);
-
+        huozhuxingming = findViewById(R.id.order_user_item_name);
+        finish = findViewById(R.id.order_finish_btn);
+        revoke = findViewById(R.id.order_revoke_btn);
         mWT_ViewModel = new ViewModelProvider(this).get(WT_ViewModel.class);
     }
 
