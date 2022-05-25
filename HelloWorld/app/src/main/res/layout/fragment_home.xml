@@ -53,17 +53,19 @@
                 android:id="@+id/want"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:text="Want"
-
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:text="查询"
+                android:textSize="16dp"
+                android:textStyle="bold"
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/item_back_update_ui"
                 android:orientation="horizontal">
 
